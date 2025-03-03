@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Page with Sidebar</title>
+    <style>
+        body
+		{
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+			overflow: hidden;
+			height: calc(100vh);
+			background-color: #3b4652;
+		}
+	
+
+	
+		.banner
+		{
+			position: fixed;
+			top: 0;
+			align: center;
+			width: 1400px;
+			height: auto; /* Adjust to fit the content or the image */
+			background-color: #4CAF50;
+			z-index: 1000; /* Keep it on top */
+			box-sizing: border-box; /* Include padding and borders in width/height */
+			padding: 0;
+			overflow: hidden; /* Prevent any content overflow */
+		}
+		
+		.banner img
+		{
+			width: 100%; /* Make the image fit the width of the banner */
+			height: auto; /* Maintain the image's aspect ratio */
+			display: block; /* Prevent extra whitespace around the image */
+		}
+		
+		
+        .container
+		{
+            display: flex;
+            width: 1400px;
+			max-width: 1400px;
+            /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+			height: calc(100vh - 100px); /* Full height minus the banner height */
+			margin-top: 100px; /* Add margin to push the container below the banner */
+			overflow: hidden;
+			background-color: white; /* Keep the container area white */
+		}
+
+        .sidebar
+		{
+            width: 314px;
+			padding: 0px 20px; /*top, left*/
+			overflow-y: scroll; /* Enable vertical scrolling */
+			background-color: #f8f9fa;
+		}
+
+		.content
+		{
+            flex: 1;
+			padding: 20px;
+			/*margin-top: 10px;*/
+		}
+
+        .content-section
+		{
+			height: 100%; /* Full height of the content area */
+			/*overflow-y: auto;  Enable vertical scrolling within the section */
+			display: none;
+		}
+
+        .content-section.active
+		{
+			height: 100%; /* Full height of the content area */
+			/*overflow-y: auto; /* Enable vertical scrolling within the section */
+			display: block;
+        }
+		
+		#section_about
+		{
+			padding: 10px 25px 23px; /* Adds 50px of padding to the bottom */
+			margin-right: -22px; /*Pushes scroll bar to the right*/
+			margin-top: -20px; /*Moves the scroll bar up to touch shadow*/
+			height: 100%; /* Full height of the content area */
+			overflow-y: scroll; /* Enable vertical scrolling within the section */
+			box-sizing: border-box; /* Ensures padding is within dimensions */
+		}
+		
+
+        .collapsible
+		{
+            cursor: pointer;
+            text-align: left;
+            outline: none;
+            border: none;
+            background: none;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .content-section p, .content-section .sub-section {
+            padding: 0 10px;
+        }
+
+        .sub-section {
+            display: none;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin: 10px 0;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .sidebar a:hover {
+            text-decoration: none;
+        }
+
+        .sidebar .nested {
+            display: none;
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .sidebar .active {
+            display: block;
+        }
+    </style>
+</head>
+
+
+<!--This is where you put the html divs which make up the page, up top you style those divs with css-->
+<body>
+	
+	
+	<div class="banner"
+        <!--Your Banner Content Here-->
+		<img src="images/web_help_banner.png" style="width: 100%; height: auto;">
+	</div>
+
+	</div>
+	
+
+    <div class="container">
+        <div class="sidebar">
+            <!--<h3>&nbsp;&nbsp;Table of Contents</h3>-->
+            <!--These are the sub-section names that expand in the table of contents-->
+			<ul>
+			
+			
+				<!--About-->
+				<li>
+				    <button class="collapsible" onclick="showContent('section_About')">About</button>
+                    <ul id="toc-About" class="nested"></ul>
+                </li>
+				
+				<!--EULA-->
+				<li>
+				    <button class="collapsible" onclick="showContent('section_EULA')">License Agreement</button>
+                    <ul id="toc-EULA" class="nested"></ul>
+                </li>
+				
+				
+				<!--Installatioin-->
+				<li>
+				    <button class="collapsible" onclick="showContent('section_Installation')">Installation</button>
+					<ul id="toc-Installation" class="nested"></ul>
+                </li>
+				
+				<!--Quick Start Guide-->
+				<li>
+				    <button class="collapsible" onclick="showContent('section_QuickStartGuide')">Quick Start Guide</button>
+					<ul id="toc-QuickStartGuide" class="nested"></ul>
+                </li>
+				
+				
+				<!--Display-->
+				<li>
+				    <button class="collapsible" onclick="toggleCollapse('toc-Display')">Display</button>
+                    <ul id="toc-Display" class="nested">
+                        <li><a href="#" onclick="showContent('section_Xray')">Xray Selected Objects</a></li>
+						<li><a href="#" onclick="showContent('section_wire')">Wireframe Selected Objects</a></li>
+						<li><a href="#" onclick="showContent('section_shelfSizer')">Increase Shelf Height Toolbox</a></li>
+						<li><a href="#" onclick="showContent('section_HUD')">Extra HUD Toolbox</a></li>
+                    </ul>
+                </li>
+				
+				
+				<!--Selection-->
+				<li>
+				    <button class="collapsible" onclick="toggleCollapse('toc-Selection')">Selection</button>
+                    <ul id="toc-Selection" class="nested">
+                        <li><a href="#" onclick="showContent('section_skipSelector')">Select Every Other Edge Vert Face</a></li>
+						<li><a href="#" onclick="showContent('section_half')">Select Half Your Mesh from Edge Loop</a></li>
+						<li><a href="#" onclick="showContent('section_findGB')">Show Geometry Border Edges</a></li>
+						<li><a href="#" onclick="showContent('section_matID')">Select Faces by Material id</a></li>
+						<li><a href="#" onclick="showContent('section_graph')">Graph Materials from Selected Faces</a></li>
+                    </ul>
+                </li>
+				
+				
+				<!--Transform-->
+				<li>
+				    <button class="collapsible" onclick="toggleCollapse('toc-Transform')">Transform</button>
+                    <ul id="toc-Transform" class="nested">
+                        <li><a href="#" onclick="showContent('section_pivot')">Move Pivot to Selection Center</a></li>
+						<li><a href="#" onclick="showContent('section_rebuild')">Rebuild Rotation Axis from Component</a></li>
+						<li><a href="#" onclick="showContent('section_faceY')">Rotate Mesh to Face Y Axis</a></li>
+						<li><a href="#" onclick="showContent('section_stSurf')">Snap Objects to Surface Normal</a></li>
+						<li><a href="#" onclick="showContent('section_stCent')">Duplicate Object to Components</a></li>
+                    </ul>
+                </li>			
+				
+				
+				<!--Modeling-->
+				<li>
+				    <button class="collapsible" onclick="toggleCollapse('toc-Modeling')">Modeling</button>
+                    <ul id="toc-Modeling" class="nested">
+						<li><a href="#" onclick="showContent('section_refMaker')">Reference Planes Toolbox</a></li>
+					    <li><a href="#" onclick="showContent('section_lattice')">Axis Aligned Lattice Deformer</a></li>
+                        <li><a href="#" onclick="showContent('section_vertSnapper')">Vert Snapping Toolbox</a></li>
+						<li><a href="#" onclick="showContent('section_cleanCombine')">Clean Combine</a></li>
+						<li><a href="#" onclick="showContent('section_cleanExtract')">Clean Extract</a></li>
+						<li><a href="#" onclick="showContent('section_cleanDuplicate')">Clean Duplicate</a></li>
+						<li><a href="#" onclick="showContent('section_mirrorEr')">Mirror and Instance Toolbox</a></li>
+						<li><a href="#" onclick="showContent('section_CPAS')">Create Primitive at Selection Toolbox</a></li>
+						<li><a href="#" onclick="showContent('section_weldTC')">Weld Selected to Closest</a></li>
+						<li><a href="#" onclick="showContent('section_weldTT')">Weld Selected to Target</a></li>
+                    </ul>
+                </li>
+				
+				
+				<!--Normals-->
+				<li>
+				    <button class="collapsible" onclick="toggleCollapse('toc-Normals')">Normals</button>
+                    <ul id="toc-Normals" class="nested">
+                        <li><a href="#" onclick="showContent('section_tbExporter')">Marmoset Export Toolbox</a></li>
+						<li><a href="#" onclick="showContent('section_uvEdges')">UV Edges Toolbox</a></li>
+						<li><a href="#" onclick="showContent('section_normR')">Normal Map Viewport Mode</a></li>
+                    </ul>
+                </li>
+
+
+				<!--UV Mapping-->
+				<li>
+				    <button class="collapsible" onclick="toggleCollapse('toc-UVMapping')">UV Mapping</button>
+                    <ul id="toc-UVMapping" class="nested">
+                        <li><a href="#" onclick="showContent('section_checkerMap')">Checker Map Toolbox</a></li>
+						<li><a href="#" onclick="showContent('section_uvGrabber')">UV Grabber Toolbox</a></li>
+						<li><a href="#" onclick="showContent('section_udimPacker')">Udim Packing Toolbox</a></li>
+						<li><a href="#" onclick="showContent('section_lightMapper')">Light Mapping Toolbox</a></li>
+						<li><a href="#" onclick="showContent('section_unWrapper')">Fast and Easy UVs Toolbox</a></li>
+						<li><a href="#" onclick="showContent('section_gridUV')">Gridify UVs</a></li>
+						<li><a href="#" onclick="showContent('section_recUV')">Rectangularize UVs</a></li>
+						<li><a href="#" onclick="showContent('section_uvMapper')">UV Mapping Toolbox</a></li>
+					</ul>
+                </li>
+				
+				
+				<!--Materials-->
+				<li>
+				    <button class="collapsible" onclick="toggleCollapse('toc-Materials')">Materials</button>
+                    <ul id="toc-Materials" class="nested">
+                        <li><a href="#" onclick="showContent('section_copy')">Copy Material from Face</a></li>
+						<li><a href="#" onclick="showContent('section_paste')">Paste Material from Clipboard</a></li>
+						<li><a href="#" onclick="showContent('section_replace')">Replace Material id from Clipboard</a></li>
+						<li><a href="#" onclick="showContent('section_defaultMat')">Change Default Material Toolbox</a></li>
+					</ul>
+                </li>			
+				
+				
+				
+				<!--File Export-->
+				<li>
+				    <button class="collapsible" onclick="toggleCollapse('toc-fileExport')">File Export</button>
+                    <ul id="toc-fileExport" class="nested">
+                        <li><a href="#" onclick="showContent('section_objHandler')">Obj Import Export Toolbox</a></li>
+						<li><a href="#" onclick="showContent('section_export')">One Click Import Export to C:\drive</a></li>
+					</ul>
+                </li>			
+				
+				
+				<!--Utilities-->
+				<li>
+				    <button class="collapsible" onclick="toggleCollapse('toc-Utilities')">Utilities</button>
+                    <ul id="toc-Utilities" class="nested">
+                        <li><a href="#" onclick="showContent('section_DEG')">Delete Empty Groups</a></li>
+						<li><a href="#" onclick="showContent('section_slowPlugins')">Fast Open Maya</a></li>
+						<li><a href="#" onclick="showContent('section_close')">Fast Close Maya</a></li>
+						<li><a href="#" onclick="showContent('section_sPref')">Advanced Save Preferences</a></li>
+						<li><a href="#" onclick="showContent('section_DM')">Dynamic Measuring Toolbox</a></li>
+						<li><a href="#" onclick="showContent('section_name')">Naming Toolbox</a></li>
+						<br></br>
+                    </ul>
+                </li>			
+			</ul>
+        </div>
+
+        
+		<!--These are the ids for each sub section that and the content each page displays-->
+		<div class="content">
+			<!--About-->
+            <div id="section_about" class="content-section active">
+				<p></p>
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
+				bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+			</div>
+		
+		
+			<!--UV Mapping-->
+            <div id="section_uvMapper" class="content-section">
+                <p>This is the content for UV Mapping Toolbox.</p>
+            </div>
+			
+			<div id="section_lightMapper" class="content-section">
+                <p>This is the content for Light Mapping Toolbox.</p>
+            </div>
+			
+			<div id="section_uvGrabber" class="content-section">
+                <p>This is the content for UV Grabber Toolbox.</p>
+            </div>
+			
+			<!--Modeling-->
+			<div id="section_vertSnapper" class="content-section">
+                <p>This is the content for Vert Snapping Toolbox.</p>
+            </div>
+			
+			<div id="section_cleanCombine" class="content-section">
+                <p>This is the content for Clean Combine.</p>
+            </div>
+			
+			<div id="section_cleanExtract" class="content-section">
+                <p>This is the content for Clean Extract.</p>
+            </div>
+			
+			<div id="section_cleanDuplicate" class="content-section">
+                <p>This is the content for Clean Duplicate.</p>
+            </div>
+			
+			<div id="section_mirrorEr" class="content-section">
+                <p>This is the content for Mirror and Instance Toolbox.</p>
+            </div>
+			
+			
+			
+			
+			
+			
+
+        </div>
+		
+		
+    </div>
+    <script>
+        function showContent(sectionId) {
+            var sections = document.querySelectorAll('.content-section');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        function toggleCollapse(sectionId) {
+            var section = document.getElementById(sectionId);
+            if (section.style.display === 'none' || section.style.display === '') {
+                section.style.display = 'block';
+            } else {
+                section.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
