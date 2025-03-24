@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Malcolm341 Help</title>
     <style>
-        body
+		body
 		{
             font-family: Arial, sans-serif;
             display: flex;
@@ -14,9 +14,8 @@
 			overflow: hidden;
 			height: calc(100vh);
 			background-color: #3b4652;
+			color: hsl(0, 0%, 0%); /*font color for whole document*/
 		}
-	
-
 	
 		.banner
 		{
@@ -39,8 +38,7 @@
 			display: block; /* Prevent extra whitespace around the image */
 		}
 		
-		
-        .container
+		.container
 		{
             display: flex;
             width: 1400px;
@@ -55,6 +53,7 @@
         .sidebar
 		{
             width: 314px;
+			flex-shrink: 0; /* Prevent shrinking */
 			padding: 0px 20px; /*top, left*/
 			overflow-y: scroll; /* Enable vertical scrolling */
 			background-color: #f8f9fa;
@@ -62,36 +61,43 @@
 
 		.content
 		{
-            flex: 1;
-			padding: 20px;
-			/*margin-top: 10px;*/
+            height: 100%; /* Full height of the content area */
+			display: block;
+			padding-top: 0px;
+			padding-left: 20px;
+			padding-right: 20px;
+			/*padding-bottom: 23px;*/
+			/*margin-right: -22px; Pushes scroll bar to the right*/
+			/*margin-top: -14px; /*Moves the scroll bar up to touch shadow*/
+			height: 100%; /* Full height of the content area */
+			overflow-y: scroll; /* Enable vertical scrolling within the section */
+			box-sizing: border-box; /* Ensures padding is within dimensions */
+			
+			flex: 1;
+			/*word-wrap: break-word;  Ensures long words or unbroken text wrap */
+			overflow-wrap: break-word;  /*Modern equivalent, ensures text wraps appropriately */
+			line-height: 1.6; /* Adjust the value to increase or decrease the vertical space */
 		}
 
         .content-section
 		{
 			height: 100%; /* Full height of the content area */
-			/*overflow-y: auto;  Enable vertical scrolling within the section */
 			display: none;
 		}
+		
+		.content-section a /*Style links*/
+		{
+			text-decoration: none; /* Removes the underline */
+			color: #007bff; /* Sets the default link color (blue) */
+		}
+		
 
         .content-section.active
 		{
 			height: 100%; /* Full height of the content area */
-			/*overflow-y: auto; /* Enable vertical scrolling within the section */
 			display: block;
-        }
-		
-		#section_about
-		{
-			padding: 10px 25px 23px; /* Adds 50px of padding to the bottom */
-			margin-right: -22px; /*Pushes scroll bar to the right*/
-			margin-top: -20px; /*Moves the scroll bar up to touch shadow*/
-			height: 100%; /* Full height of the content area */
-			overflow-y: scroll; /* Enable vertical scrolling within the section */
-			box-sizing: border-box; /* Ensures padding is within dimensions */
 		}
 		
-
         .collapsible
 		{
             cursor: pointer;
@@ -105,11 +111,7 @@
             color: #007bff;
         }
 
-        .content-section p, .content-section .sub-section {
-            padding: 0 10px;
-        }
-
-        .sub-section {
+		.sub-section {
             display: none;
         }
 
@@ -140,68 +142,301 @@
         .sidebar .active {
             display: block;
         }
+		
+		h1
+		{
+			line-height: 0.0;
+		}
+		
+		h2
+		{
+			font-size: 18px;
+			font-weight: bold;
+			line-height: 0.0;
+		}
+		
+		.hf1
+		{
+			font-size: 32px;
+			font-weight: bold;
+			line-height: 0.95;
+    	}
+		
+		.hf2
+		{
+			font-size: 18px;
+			font-weight: bold;
+			line-height: 0.0;
+    	}
+		
+		.notInline
+		{
+			/*vertical-align: middle;*/
+			margin-top: -45px;
+		}
+		
+		.QSG-image-QSG-text-container
+		{
+			display: flex;
+			align-items: center; /* Aligns items at the bottom of the container used to be flex-start*/
+		}
+		
+		.QSG-left-image
+		{
+			width: 50px;
+			height: auto;
+			margin-right: 10px; /* Space between the image and the text */
+		}
+		
+		.QSG-text-container
+		{
+			display: flex;
+			flex-direction: column; /* Stacks text rows vertically */
+		}
+		
+		.QSG-text-row
+		{
+			margin: 0px 0; /* Space between the text rows */
+		}
+		
+		.script-icon
+		{
+			width: 50px;
+			height: auto;
+			margin-right: 10px; /* Space between the image and the text */
+			margin-top: 6px;
+		}
+
+		.centered-gif
+		{
+			display: flex;
+			justify-content: left; /* Centers the image horizontally */
+			/*align-items: center; /* Centers the image vertically */
+			width: 100%; /* Full width of the container */
+			/*height: calc(100vh - 100px); /* Full height minus the banner height */
+			box-sizing: border-box; /* Include padding in the height calculation */
+			
+		}
+		
+		.scaled-gif
+		{
+			max-width: 400px; /* Set the desired width */
+			width: 100%; /* Set the desired width */
+			height: auto; /* Maintain the aspect ratio */
+			/*image-rendering: auto; /* Browser default: uses an appropriate algorithm to achieve high-quality image scaling */
+			/* Other possible values: 
+			- `crisp-edges`: Applies a pixelated look. 
+			- `pixelated`: Similar to `crisp-edges`, but with a more exaggerated effect.
+			- `smooth`: Forces smoother, high-quality scaling, especially useful for antialiasing. */
+			/*margin: 0 auto; /* Centers the image horizontally */
+			/*display: flex;*/
+		}
+		
+		.seafoam-button
+		{
+			background-color: #6da4a4; /*Background colour*/
+			border: 1px solid black; /*Border colour*/
+			/*padding: 5px; /* Increase padding vertical */
+			/*padding-left: 10px; /* Add padding to the left */
+			
+			margin-bottom: 5px;
+			box-sizing: border-box; /* Include padding and border in the element's total width and height */
+			width: 150px; /* Set a fixed width */
+			display: inline-block; /* Ensure the width is applied while staying inline */
+			text-align: center; /* Center text horizontally */
+		}
+		
+		.yellow-button
+		{
+			background-color: #b8ad63; /*Background colour*/
+			border: 1px solid black; /*Border colour*/
+			/*padding: 5px; /* Increase padding vertical */
+			/*padding-left: 10px; /* Add padding to the left */
+			
+			margin-bottom: 5px;
+			box-sizing: border-box; /* Include padding and border in the element's total width and height */
+			width: 150px; /* Set a fixed width */
+			display: inline-block; /* Ensure the width is applied while staying inline */
+			text-align: center; /* Center text horizontally */
+		}
+		
+		.red-button
+		{
+			background-color: #b36357; /*Background colour*/
+			border: 1px solid black; /*Border colour*/
+			/*padding: 5px; /* Increase padding vertical */
+			/*padding-left: 10px; /* Add padding to the left */
+			
+			margin-bottom: 5px;
+			box-sizing: border-box; /* Include padding and border in the element's total width and height */
+			width: 150px; /* Set a fixed width */
+			display: inline-block; /* Ensure the width is applied while staying inline */
+			text-align: center; /* Center text horizontally */
+		}
+		
+		.orange-button
+		{
+			background-color: #c58552; /*Background colour*/
+			border: 1px solid black; /*Border colour*/
+			/*padding: 5px; /* Increase padding vertical */
+			/*padding-left: 10px; /* Add padding to the left */
+			
+			margin-bottom: 5px;
+			box-sizing: border-box; /* Include padding and border in the element's total width and height */
+			width: 150px; /* Set a fixed width */
+			display: inline-block; /* Ensure the width is applied while staying inline */
+			text-align: center; /* Center text horizontally */
+		}
+		
+		.green-button
+		{
+			background-color: #579678; /*Background colour*/
+			border: 1px solid black; /*Border colour*/
+			/*padding: 5px; /* Increase padding vertical */
+			/*padding-left: 10px; /* Add padding to the left */
+			
+			margin-bottom: 5px;
+			box-sizing: border-box; /* Include padding and border in the element's total width and height */
+			width: 150px; /* Set a fixed width */
+			display: inline-block; /* Ensure the width is applied while staying inline */
+			text-align: center; /* Center text horizontally */
+		}
+		
+		.grey-button
+		{
+			background-color: #828282; /*Background colour*/
+			border: 1px solid black; /*Border colour*/
+			/*padding: 5px; /* Increase padding vertical */
+			/*padding-left: 10px; /* Add padding to the left */
+			
+			margin-bottom: 5px;
+			box-sizing: border-box; /* Include padding and border in the element's total width and height */
+			width: 150px; /* Set a fixed width */
+			display: inline-block; /* Ensure the width is applied while staying inline */
+			text-align: center; /* Center text horizontally */
+		}
+		
+		.purple-button
+		{
+			background-color: #9887c4; /*Background colour*/
+			border: 1px solid black; /*Border colour*/
+			/*padding: 5px; /* Increase padding vertical */
+			/*padding-left: 10px; /* Add padding to the left */
+			
+			margin-bottom: 5px;
+			box-sizing: border-box; /* Include padding and border in the element's total width and height */
+			width: 150px; /* Set a fixed width */
+			display: inline-block; /* Ensure the width is applied while staying inline */
+			text-align: center; /* Center text horizontally */
+		}
+		
+		.greenYellow-button
+		{
+			background-color: #80ab5e; /*Background colour*/
+			border: 1px solid black; /*Border colour*/
+			/*padding: 5px; /* Increase padding vertical */
+			/*padding-left: 10px; /* Add padding to the left */
+			
+			margin-bottom: 5px;
+			box-sizing: border-box; /* Include padding and border in the element's total width and height */
+			width: 150px; /* Set a fixed width */
+			display: inline-block; /* Ensure the width is applied while staying inline */
+			text-align: center; /* Center text horizontally */
+		}
+		
+		.blue-button
+		{
+			background-color: #5296b8; /*Background colour*/
+			border: 1px solid black; /*Border colour*/
+			/*padding: 5px; /* Increase padding vertical */
+			/*padding-left: 10px; /* Add padding to the left */
+			
+			margin-bottom: 5px;
+			box-sizing: border-box; /* Include padding and border in the element's total width and height */
+			width: 150px; /* Set a fixed width */
+			display: inline-block; /* Ensure the width is applied while staying inline */
+			text-align: center; /* Center text horizontally */
+		}
+		
+		
+		
+		.checkbox-button
+		{
+			color: #c2c2c2; /*Text colour*/ 
+			background-color: #444444; /*Background colour*/
+			border: 1px solid black; /*Border colour*/
+			/*padding: 5px; /* Increase padding vertical */
+			padding-left: 10px; /* Add padding to the left */
+			padding-right: 10px; /* Add padding to the left */
+			
+			margin-bottom: 5px;
+			box-sizing: border-box; /* Include padding and border in the element's total width and height */
+			width: 183px; /* Set a fixed width */
+			line-height: 25px;
+			display: inline-block; /* Ensure the width is applied while staying inline */
+			text-align: center; /* Center text horizontally */
+		}
+		
+		.page-end-vertical-space
+		{
+			padding-bottom: 300px;
+		}
+	
+		
     </style>
 </head>
 
 
 <!--This is where you put the html divs which make up the page, up top you style those divs with css-->
 <body>
-	
-	
 	<div class="banner"
         <!--Your Banner Content Here-->
-		<img src="images/web_help_banner.png" style="width: 100%; height: auto;">
+		<a href="https://www.gumroad.com/malcolm341" target="_blank">
+			<img src="images/web_help_banner.png" style="width: 100%; height: auto;">
+		</a>
 	</div>
 
-	</div>
-	
-
-    <div class="container">
+	<div class="container">
         <div class="sidebar">
             <!--<h3>&nbsp;&nbsp;Table of Contents</h3>-->
             <!--These are the sub-section names that expand in the table of contents-->
-			<ul>
-			
-			
-				<!--About-->
+			<ul>			
+				<!--About toc-->
 				<li>
 				    <button class="collapsible" onclick="showContent('section_About')">About</button>
-                    <ul id="toc-About" class="nested"></ul>
+                    <ul id="toc-About"></ul>
                 </li>
 				
-				<!--EULA-->
+				<!--License Agreement toc-->
 				<li>
-				    <button class="collapsible" onclick="showContent('section_EULA')">License Agreement</button>
-                    <ul id="toc-EULA" class="nested"></ul>
+				    <button class="collapsible" onclick="showContent('section_License')">License Agreement</button>
+                    <ul id="toc-License"></ul>
                 </li>
 				
-				
-				<!--Installatioin-->
+				<!--Installatioin toc-->
 				<li>
 				    <button class="collapsible" onclick="showContent('section_Installation')">Installation</button>
-					<ul id="toc-Installation" class="nested"></ul>
+					<ul id="toc-Installation"></ul>
                 </li>
 				
-				<!--Quick Start Guide-->
+				<!--Quick Start Guide toc-->
 				<li>
 				    <button class="collapsible" onclick="showContent('section_QuickStartGuide')">Quick Start Guide</button>
-					<ul id="toc-QuickStartGuide" class="nested"></ul>
+					<ul id="toc-QuickStartGuide"></ul>
                 </li>
 				
-				
-				<!--Display-->
+				<!--Display toc-->
 				<li>
 				    <button class="collapsible" onclick="toggleCollapse('toc-Display')">Display</button>
                     <ul id="toc-Display" class="nested">
                         <li><a href="#" onclick="showContent('section_Xray')">Xray Selected Objects</a></li>
 						<li><a href="#" onclick="showContent('section_wire')">Wireframe Selected Objects</a></li>
 						<li><a href="#" onclick="showContent('section_shelfSizer')">Increase Shelf Height Toolbox</a></li>
-						<li><a href="#" onclick="showContent('section_HUD')">Extra HUD Toolbox</a></li>
+						<li><a href="#" onclick="showContent('section_extraHUD')">Extra HUD Toolbox</a></li>
                     </ul>
                 </li>
 				
-				
-				<!--Selection-->
+				<!--Selection toc-->
 				<li>
 				    <button class="collapsible" onclick="toggleCollapse('toc-Selection')">Selection</button>
                     <ul id="toc-Selection" class="nested">
@@ -213,8 +448,7 @@
                     </ul>
                 </li>
 				
-				
-				<!--Transform-->
+				<!--Transform toc-->
 				<li>
 				    <button class="collapsible" onclick="toggleCollapse('toc-Transform')">Transform</button>
                     <ul id="toc-Transform" class="nested">
@@ -226,8 +460,7 @@
                     </ul>
                 </li>			
 				
-				
-				<!--Modeling-->
+				<!--Modeling toc-->
 				<li>
 				    <button class="collapsible" onclick="toggleCollapse('toc-Modeling')">Modeling</button>
                     <ul id="toc-Modeling" class="nested">
@@ -244,8 +477,7 @@
                     </ul>
                 </li>
 				
-				
-				<!--Normals-->
+				<!--Normals toc-->
 				<li>
 				    <button class="collapsible" onclick="toggleCollapse('toc-Normals')">Normals</button>
                     <ul id="toc-Normals" class="nested">
@@ -255,8 +487,7 @@
                     </ul>
                 </li>
 
-
-				<!--UV Mapping-->
+				<!--UV Mapping toc-->
 				<li>
 				    <button class="collapsible" onclick="toggleCollapse('toc-UVMapping')">UV Mapping</button>
                     <ul id="toc-UVMapping" class="nested">
@@ -271,8 +502,7 @@
 					</ul>
                 </li>
 				
-				
-				<!--Materials-->
+				<!--Materials toc-->
 				<li>
 				    <button class="collapsible" onclick="toggleCollapse('toc-Materials')">Materials</button>
                     <ul id="toc-Materials" class="nested">
@@ -283,9 +513,7 @@
 					</ul>
                 </li>			
 				
-				
-				
-				<!--File Export-->
+				<!--File Export toc-->
 				<li>
 				    <button class="collapsible" onclick="toggleCollapse('toc-fileExport')">File Export</button>
                     <ul id="toc-fileExport" class="nested">
@@ -294,8 +522,7 @@
 					</ul>
                 </li>			
 				
-				
-				<!--Utilities-->
+				<!--Utilities toc-->
 				<li>
 				    <button class="collapsible" onclick="toggleCollapse('toc-Utilities')">Utilities</button>
                     <ul id="toc-Utilities" class="nested">
@@ -305,161 +532,833 @@
 						<li><a href="#" onclick="showContent('section_sPref')">Advanced Save Preferences</a></li>
 						<li><a href="#" onclick="showContent('section_DM')">Dynamic Measuring Toolbox</a></li>
 						<li><a href="#" onclick="showContent('section_name')">Naming Toolbox</a></li>
-						<br></br>
+						<br>
+						<br>
+						<br>
+						<br>
                     </ul>
-                </li>			
+                </li>
+				
 			</ul>
         </div>
-
-        
-		<!--These are the ids for each sub section that and the content each page displays-->
+		
+		<!--These are the ids for each sub section and the content each page displays when you click a toc item-->
 		<div class="content">
-			<!--About-->
-            <div id="section_about" class="content-section active">
-				<p></p>
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				This is some text This is some text This is some text This is some text This is some text This is some text tttttttt
-				bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+			<!--About content-->
+			<div id="section_About" class="content-section active">
+				<br>
+				<span class=hf1>About</span>
+				<p>
+				The Mel Script Mega Pack is a collection of scripts and tools for Autodesk Maya.<br>
+				I created the Mega Pack to make Maya faster and easier to use, but it's also fun to automate tasks that would otherwise be time consuming and tedious inside of Maya. 
+				All the tools are written in MEL script which means they work on newly released versions of Maya without needing to be updated.
+				<p>
+				If you're new to the Mega Pack take a look at the <a href="#" onclick="showContent('section_QuickStartGuide')">Quick Start Guide</a> to get an overview of what each script does.
+				<br>
+				<br>
+				<p>
+				<span class=hf2>Follow me for updates on new tools, features, and bug fixes.</span><br>
+				Youtube <a href="https://www.youtube.com/malcolm341" target="_blank">www.youtube.com/malcolm341</a>
+				<br>
+				Gumroad <a href="https://www.gumroad.com/malcolm341" target="_blank">www.gumroad.com/malcolm341</a>
+				<br>
+				Artstation <a href="https://www.artstation.com/malcolm341" target="_blank">www.artstation.com/malcolm341</a>
+				<br>
+				LinkedIn <a href="https://www.linkedin.com/in/malcolm-andrieshyn-10135959/recent-activity/all " target="_blank">www.linkedin.com/in/malcolm-andrieshyn-10135959/recent-activity/all</a>
+				
+				<div class="page-end-vertical-space">
+				</div>
 			</div>
 		
+			<!--License Agreement content-->
+            <div id="section_License" class="content-section">
+				<br>
+				<span class=hf1>End User License Agreement</span>
+				<p>
+				<span class=hf2>By downloading any of the Malcolm341 script packs you agree to the End User License Agreement below</span>
+				<br>
+				<br>
+				If you are employed by a studio and working on site or remote please adhere to the Studio/Commercial License Agreement:
+				<p>
+				<span class=hf2>Studio/Commercial License - 1 Seat Required Per User</span><br>
+				Use the scripts on as many commercial projects as you like, but do not share the scripts between users, each person needs to buy a license for the scripts they use and that license should not be transferred to another person unless the current license holder is no longer employed by that studio.
+				<br>
+				<br>
+				If you are a student, academic institution, hobbyist, or freelancer meaning you are working a temporary contract less than one year please adhere to the Freelance/Academic License Agreement:
+				<p>
+				<span class=hf2>Freelance/Academic License - 1 Seat Required Per User</span><br>
+				Use the scripts on as many freelance projects as you like, but do not share the scripts between users, each person needs to buy a license for the scripts they use and that license should not be transferred to another person.
+				<br>
+				<br>
+				<span class=hf2>Redistributing, selling, or sharing any part of the Malcolm341 script packs is not permitted.</span><br>
+				Copyright © 2017 Malcolm Andrieshyn
+				
+				<div class="page-end-vertical-space">
+				</div>
+			</div>
+			
+			<!--Installation content-->
+            <div id="section_Installation" class="content-section">
+				<br>
+				<span class=hf1>Installation</span>
+				<p>
+				<span class =hf2>Compatability:</span><br>
+				-Works on the newest version of Maya and old versions of Maya back to 2019<br>
+				-Works on Maya LT and Student<br>
+				-Works on Maya 2018 update 6 and Maya 2017 update 5<br>
+				-Works on PC and Mac
+				<br>
+				<br>
+				<p>
+				<span class =hf2>How to Install the Scripts:</span>
+				<br>
+				Close Maya.
+				<p>
+				Download the .zip file you purchased to the your desktop.
+				<p>
+				Open the .zip and copy the shelf file contained in it to your desktop.
+				<p>
+				Open Maya.
+				<p>
+				Click the gear icon in the top left corner of Maya and choose load shelf. <!--<img src="images/gear_icon.png" class="notInline">-->
+				<p>
+				Browse to the shelf file you just copied to your desktop and load it.
+				<p>
+				You should now see a new shelf in Maya with the same name as the file on your desktop, it contains the scripts you purchased.
+				<p>
+				If you don't see any shelf names click the gear icon and turn on shelf tabs.
+				<p>
+				If you want to copy my scripts to a different shelf, hold Ctrl + Shift and Middle Mouse Drag any of my shelf buttons
+				to any other shelf. Make sure to keep holding Ctrl + Shift when you release the middle mouse button or the scripts will be
+				moved rather than copied.
+				<br>
+				<br>
+				<p>
+				<span class =hf2>How to Update the Scripts to the Latest Version:</span><br>
+				If you previously purchased a script pack you can update to the latest version at any time for free.
+				Updates include bug fixes, new features, and even new scripts if you purchased the Mega Pack, Modeling Pack, or UV Pack.
+				<p>
+				Delete the existing shelf you want to update in Maya first.
+				<p>
+				Close Maya.
+				<p>
+				Download the .zip file you purchased to your desktop. Use the original e-mail link you received, or look for the file in
+				your Gumroad or Artstation Library and download it from there.
+				<p>
+				Open the .zip and copy the shelf file contained in it to your desktop.
+				<p>
+				Open Maya.
+				<p>
+				Click the gear icon in the top left corner of Maya and choose load shelf. <!--<img src="images/gear_icon.png" class="notInline">-->
+				<p>
+				Browse to the shelf file you just copied to your desktop and load it.
+				<p>
+				You should now see a new shelf in Maya with the same name as the file on your desktop, it contains the latest versions of
+				the scripts you purchased.
+				<p>
+				If you don't see any shelf names click the gear icon and turn on shelf tabs.
+				<p>
+				Be aware that any scripts that you've moved or copied to other shelves are not updated. Unfortunately you'll
+				have to delete those buttons manually and copy my scripts back to your shelves again each time you want to update.
+				Alternatively, if you only have a couple buttons you want to update you can right click and choose edit on any of the buttons
+				on my shelf and copy paste the updated code directly into your shelf buttons.
+				
+				<div class="page-end-vertical-space">
+				</div>
+			</div>
+			
+			<!--Quick Start Guide content-->
+            <div id="section_QuickStartGuide" class="content-section">
+				<br>
+				<span class=hf1>Quick Start Guide</span>
+				<p style="height: 2px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/Help.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Help Button</b></p>
+						<p class="QSG-text-row">Takes you to the online help page.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/tbExp.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Marmoset Export Toolbox</b></p>
+						<p class="QSG-text-row">Speeds up exporting meshes for baking in Marmoset Toolbag or Substance Painter including name matching, material ids, and normal tools inside Maya.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/uvEdge.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>UV Edges Toolbox</b></p>
+						<p class="QSG-text-row">Harden normals on UV border edges while softening normals based on angle tolerance setting you choose.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/normR.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Normal Map Viewport Mode</b></p>
+						<p class="QSG-text-row">Applies normal map lighting to selected objects, from there you can render or screen capture the top viewport to generate normal map stamps and textures.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/obj.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Obj Import Export Toolbox</b></p>
+						<p class="QSG-text-row">Speeds up exporting meshes as .obj for use with applications like Zbrush. Export each mesh as a separate file, triangulate, import multiple, custom file location, and more.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/export.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>One Click Export to C:\drive</b></p>
+						<p class="QSG-text-row">Exports selection to a temp.ma, temp.obj, or temp.fbx file on your hard drive. Handy for moving objects between scenes or saving a temp file without any file browsing.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/import.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>One Click Import from C:\drive</b></p>
+						<p class="QSG-text-row">Imports the temp.ma, temp.obj, or temp.fbx file the above button creates without any file browsing.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/Xray.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Xray Selected Objects</b></p>
+						<p class="QSG-text-row">Toggle Xray mode on/off for selected objects. A bit better than the default Xray, this script will invert the selected objects Xray and if nothing’s selected it will Xray everything.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/wire.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Wireframe Selected Objects</b></p>
+						<p class="QSG-text-row">Toggle wireframe mode on/off for selected objects. Handy for looking through selected objects without changing any viewport settings.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/imgRef.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Reference Planes Toolbox</b></p>
+						<p class="QSG-text-row">Create multiple mesh reference planes each with a different image at the correct aspect ratio in one click. Great for rotoscoping, choose axis, scale width, and more.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/DEG.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Delete Empty Groups</b></p>
+						<p class="QSG-text-row">Deletes empty groups, transforms, and ghost nodes that are often left behind even after running Maya’s optimize scene and delete history.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/sPlugin.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Fast Open Maya</b></p>
+						<p class="QSG-text-row">A quick way to disable the plugins that significantly slow Maya down when it's opening, especially if you’re using a Maya version prior to 2022.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/close.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Fast Close Maya</b></p>
+						<p class="QSG-text-row">Closing Maya prior to Maya 2022 was extremely slow. The fast close tool can close Maya instantly in one click for Maya 2020, 2019, 2018, 2017.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/sPref.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Advanced Save Preferences</b></p>
+						<p class="QSG-text-row">Saves contents of script editor, MTK custom shelf, recent file history, tool settings, and other preferences that aren’t included in Maya's default save preference command.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/shelf.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Increase Shelf Height Toolbox</b></p>
+						<p class="QSG-text-row">Increase or decrease shelf height at any time to fit height of current shelf in one click. Custom shelf height is retained after Maya restart unlike other tools I've seen online.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/HUD.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Extra HUD Toolbox</b></p>
+						<p class="QSG-text-row">New HUD elements for working units, scene time warp on/off, up axis, selection counter, assigned materials, current UV set, preserve UVs on/off, project location, time since last save, time since last auto save, tool axis, camera distance, and camera based selection on/off.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/DM.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Dynamic Measuring Toolbox</b></p>
+						<p class="QSG-text-row">Creates a measurement node between two or more verts with a single click. Measurements update automatically so you can move meshes and verts around after creation.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/pivot.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Move Pivot to Selection Center</b></p>
+						<p class="QSG-text-row">Moves pivot to selection center in one click, works on components or objects.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/rebuild.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Rebuild Rotation Axis from Component</b></p>
+						<p class="QSG-text-row">Rebuilds rotation axis along selected component, works even if the transform is frozen. Fixes channel box values unlike the Maya default align to component tool.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/faceY.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Rotate Mesh to Face Y Axis</b></p>
+						<p class="QSG-text-row">Rotates the whole mesh so the selected component faces Y up, even if the transform is frozen. This is handy for un-rotating a mesh so you can work on it aligned with the world axis.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/stSurf.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Snap Objects to Surface Normal</b></p>
+						<p class="QSG-text-row">Snaps multiple objects to the selected surface aligned to the normal, similar to the snap together tool, but works on multiple objects and is faster to use.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/stCent.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Duplicate Object to Components</b></p>
+						<p class="QSG-text-row">Places a copy of your object at each selected component's center aligned to the normal.</p>
+					</div>
+				</div>
+
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/vSnap.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Vert Snapping Toolbox</b></p>
+						<p class="QSG-text-row">Snaps selected vertices to closest verts on a separate mesh. Saves lot of time if you’re working with two separate meshes that need to be seamless.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/weldTC.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Weld Selected to Closest</b></p>
+						<p class="QSG-text-row">Welds selected components to closest vertices without collapsing to a single point. Handy for quickly optimizing a mesh or a whole edge loop.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/weldTT.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Weld Selected to Target</b></p>
+						<p class="QSG-text-row">Welds selected components to target vertex. Easier and faster to use than the Maya default target weld because you don’t have to drag select the target.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/CPAS.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Create Primitive at Selection Toolbox</b></p>
+						<p class="QSG-text-row">Create a primitive at the selected component of another mesh aligned to its normal. Choose pivot location and scale. Handy for creating primitives aligned to face normals.</p>
+					</div>
+				</div>
+
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/lattice.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Axis Aligned Lattice Deformer</b></p>
+						<p class="QSG-text-row">Create a lattice deformer aligned to selected edge, vert, or face. Works on object or components, also works even if the transform is frozen.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/miror.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Mirror and Instance Toolbox</b></p>
+						<p class="QSG-text-row">Quickly mirror objects and speed up symmetrical modeling, with or without instancing. Faster to use than the Maya default mirror menu and has extra useful features.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/cmbine.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Clean Combine</b></p>
+						<p class="QSG-text-row">Combines meshes without creating a bunch of temp nodes in the outliner. Keeps your scene clean, preserves object name, pivot location, and scene hierarchy.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/extract.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Clean Extract and Separate</b></p>
+						<p class="QSG-text-row">Extracts selected faces without creating a bunch of temp nodes in the outliner. In object mode this tool separates polygon elements into separate meshes.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/dupeF.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Clean Duplicate Faces</b></p>
+						<p class="QSG-text-row">Duplicates selected faces in one click without creating a bunch of temp nodes in the outliner.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/dotPat.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Select Every Other Edge Vert Face Toolbox</b></p>
+						<p class="QSG-text-row">Selects alternating patterns of components, for example 1 on 1 off, or 3 on 3 off, or 4 on 4 off. Selects loops or rings.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/half.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Select Half Your Mesh from Edge Loop</b></p>
+						<p class="QSG-text-row">Converts any continuous edge loop selection to half of your mesh in face mode.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/findGB.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Show Geometry Border Edges</b></p>
+						<p class="QSG-text-row">Identify unwelded verts, failed mirroring operations, and other problem areas on your mesh. Easier and faster to see than the Maya default way.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/Name.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Naming Toolbox</b></p>
+						<p class="QSG-text-row">Rename multiple objects with increment in one click. Easier and faster to use than Maya’s default tool. Search and replace part of a name, add a prefix or suffix, and more.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/copy.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Copy Material from Face to Clipboard</b></p>
+						<p class="QSG-text-row">Copy a material from one face to the clipboard, allows for copy/pasting materials in the viewport without opening the hypershade.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/paste.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Paste Material from Clipboard</b></p>
+						<p class="QSG-text-row">Paste a material from the clipboard to faces or objects. Save time by applying materials in the viewport without opening the hypershade.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/replace.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Replace Material id from Clipboard</b></p>
+						<p class="QSG-text-row">Replace a material id on a whole object from the clipboard. Save time by applying materials in the viewport without opening the hypershade.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/default.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Change Default Material Toolbox</b></p>
+						<p class="QSG-text-row">Set the default material with a single click, or save a custom material and load it into any scene as the default. Useful if you like to model with a specific material applied.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/matID.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Select Faces by Material id</b></p>
+						<p class="QSG-text-row">Selects all faces that share the same mat id on a single mesh, so you can work with the selection even if the same mat id is found on other meshes in the scene.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/graph.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Graph Materials from Selected Faces</b></p>
+						<p class="QSG-text-row">Graphs materials in the hypershade from faces. Faster than Maya’s default tool because it only graphs what you have selected in the viewport.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/checker.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Checker Map Toolbox</b></p>
+						<p class="QSG-text-row">Toggle a custom checker map image on/off for your objects in one click, or choose from four built in checker styles. Remembers your original material assignments, tile, rotate, and more.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/uvGrab.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>UV Grabber Toolbox</b></p>
+						<p class="QSG-text-row">Grabs UV snapshots with one click and sends them directly to Photoshop or the image viewer of your choice. Saves a lot of time and works with UDIM tiles.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/Udim.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Udim Packing Toolbox</b></p>
+						<p class="QSG-text-row">Pack UDIM tiles interactively while maintaining texel density, or pack tiles automatically based on world space location. Significantly faster and easier to use than Maya’s default tool.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/Lmap.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Light Mapping Toolbox</b></p>
+						<p class="QSG-text-row">Create lightmap UVs in one click. Use the angle method for minimal seams, or start from map1 and automatically fix areas that aren't mapped properly for baking.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/unwrap.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Fast and Easy UVs Toolbox</b></p>
+						<p class="QSG-text-row">Automatically create UVs for your mesh, then cut and sew semi-interactively to make adjustments. Useful for organic shapes or if you prefer faster UV creation with a bit less control.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/gridUV.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Gridify UVs</b></p>
+						<p class="QSG-text-row">UV maps faces into a seamless grid of symmetrical squares. Works on any face selection, but may require unfolding and straightening after.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/recUV.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Rectangularize UVs</b></p>
+						<p class="QSG-text-row">UV maps faces into a seamless grid with correct aspect ratio. A bit harder to use than gridUV, but doesn’t require any unfolding or straightening after.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/uvMap.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>UV Mapping Toolbox</b></p>
+						<p class="QSG-text-row">Custom and existing UV tools organized for quick access. Create UVs faster than Maya’s UV Toolkit and use the custom tools to accomplish what Maya can’t.</p>
+					</div>
+				</div>
+				</span>
+				
+				<div class="page-end-vertical-space">
+				</div>
+			</div>
 		
-			<!--UV Mapping-->
+			<!--Display content-->
+            <div id="section_Xray" class="content-section">
+				<br>
+				<span class=hf1>Xray Selected Objects</span>
+				<p>
+				<img src="images/quick_start_guide/Xray.png" class="script-icon">
+				<p>
+				<br>
+				Toggles Xray mode on/off for selected objects.
+				<p>
+				If nothing's selected Xray mode will toggle all objects in the scene on/off. This can be useful for resetting the scene back to normal
+				without needing to select individual objects.
+				<p>
+				<div class="centered-gif">
+					<a href="gifs/Xray_02.gif" target="_blank"><img src="gifs/Xray_02.gif" class="scaled-gif"></a>
+				</div>
+				
+				<div class="page-end-vertical-space">
+				</div>
+            </div>
+			
+			<div id="section_wire" class="content-section">
+				<br>
+				<span class=hf1>Wireframe Selected Objects</span>
+				<p>
+				<img src="images/quick_start_guide/wire.png" class="script-icon">
+				<p>
+				<br>
+				Toggles wireframe mode on/off for selected objects.
+				<p>
+				If nothing's selected wireframe mode will toggle all objects in the scene on/off. This can be useful for resetting the scene back to normal
+				without needing to select individual objects.
+				<p>
+				<div class="centered-gif">
+					<a href="gifs/wire_02.gif" target="_blank"><img src="gifs/wire_02.gif" class="scaled-gif"></a>
+				</div>
+				
+				<div class="page-end-vertical-space">
+				</div>
+            </div>
+			
+			<div id="section_shelfSizer" class="content-section">
+				<br>
+				<span class=hf1>Increase Shelf Height Toolbox</span>
+				<p>
+				<img src="images/quick_start_guide/shelf.png" class="script-icon">
+				</p>
+				<br>
+				
+				<span class="seafoam-button">Show Shelf Tabs</span><br>
+				Toggles shelf tabs on/off.
+				<br>
+				<br>
+				
+				<span class="yellow-button">Fit Height to Icons</span><br>
+				<div class="centered-gif">
+					<a href="gifs/shelfSizer_02.gif" target="_blank"><img src="gifs/shelfSizer_02.gif" class="scaled-gif"></a>
+				</div>
+				Fits the vertical height of the shelf to the number of rows of icons in it.
+				<br>
+				<br>
+				
+				<span class="red-button">Reset Height</span><br>
+				Resets shelf height to default.
+				<br>
+				<br>
+				
+				<span class="orange-button">Increase Height</span><br>
+				Increases shelf height by 32, 10, or 1.
+				<br>
+				<br>
+				
+				<span class="green-button">Decrease Height</span><br>
+				Decreases shelf height by 32, 10, or 1.
+				
+				<div class="page-end-vertical-space">
+				</div>
+            </div>
+			
+			<div id="section_extraHUD" class="content-section">
+				<br>
+				<span class=hf1>Extra HUD Toolbox</span>
+				<p>
+				<img src="images/quick_start_guide/HUD.png" class="script-icon">
+				</p>
+				<br>
+				
+				<div class="centered-gif">
+					<a href="gifs/extraHUD_02.gif" target="_blank"><img src="gifs/extraHUD_02.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				
+				<span class="grey-button" style="width: 183px;">Reset</span><br>
+				Resets the toolbox back to defualt settings. If Maya crashes and some of the checkboxes become inverted, use the reset button to fix this issue.
+				<br>
+				<br>
+				
+				<span class="checkbox-button">Working Units <span style="background-color: #292929;">&nbsp;✔&nbsp;</span></span><br>
+				Turn on if you want to see the current working units Maya is set to. For example, meters, centimeters, feet, etc.
+				<br>
+				<br>
+				
+				<span class="checkbox-button">Scene Time Warp <span style="background-color: #292929;">&nbsp;✔&nbsp;</span></span><br>
+				Turn on if you want to see if the enable scene time warp feature is on or off for the current scene.
+				<br>
+				<br>
+				
+				<span class="checkbox-button">Up Axis <span style="background-color: #292929;">&nbsp;✔&nbsp;</span></span><br>
+				Turn on if you want to see the current up axis Maya is set to. For example, y or z.
+				<br>
+				<br>
+				
+				<span class="checkbox-button">Selected Items <span style="background-color: #292929;">&nbsp;✔&nbsp;</span></span><br>
+				Turn on if you want to see the number of currently selected items, anything you select will be automatically counted and the number displayed.
+				<br>
+				<br>
+				
+				<span class="checkbox-button">Assigned Materials <span style="background-color: #292929;">&nbsp;✔&nbsp;</span></span><br>
+				Turn on if you want to see the names of the materials that are assigned to the currently selected objects or faces. The material names displayed will update as your selection changes.
+				<br>
+				<br>
+				
+				<span class="checkbox-button">UV Set <span style="background-color: #292929;">&nbsp;✔&nbsp;</span></span><br>
+				Turn on if you want to see what UV set is currently active for the selected mesh.
+				<br>
+				<br>
+				
+				<span class="checkbox-button">Preserve UVs <span style="background-color: #292929;">&nbsp;✔&nbsp;</span></span><br>
+				Turn on if you want to see if the preserve UVs feature is on or off.
+				<br>
+				<br>
+				
+				<span class="checkbox-button">Project <span style="background-color: #292929;">&nbsp;✔&nbsp;</span></span><br>
+				Turn on if you want to see the current project path Maya is set to.
+				<br>
+				<br>
+				
+				<span class="checkbox-button">Last Save <span style="background-color: #292929;">&nbsp;✔&nbsp;</span></span><br>
+				Turn on if you want to see how long it's been since you last saved the scene. The timer will reset if you save, save as, or increment save.
+				<br>
+				<br>
+				
+				<span class="checkbox-button">Last Auto Save <span style="background-color: #292929;">&nbsp;✔&nbsp;</span></span><br>
+				Turn on if you want to see how long it's been since Maya last auto saved the scene. If auto save is disabled in the preferences the timer will display auto save disabled. If you're using a Maya version older than Maya 2019 this feature won't work and the timer will display requires Maya 2019 or later.
+				<br>
+				<br>
+				
+				<span class="checkbox-button">Tool Axis <span style="background-color: #292929;">&nbsp;✔&nbsp;</span></span><br>
+				Turn on if you want to see the axis orientation mode for the current tool. For example move tool world, object, component, etc.
+				<br>
+				<br>
+				
+				<span class="checkbox-button">Cam Distance <span style="background-color: #292929;">&nbsp;✔&nbsp;</span></span><br>
+				Turn on if you want to see the distance the camera is from the currently selected object.
+				<br>
+				<br>
+				
+				<span class="checkbox-button">Cam Selection <span style="background-color: #292929;">&nbsp;✔&nbsp;</span></span><br>
+				Turn on if you want to see if camera based selection is active. For example, on or off.
+				<br>
+				<br>
+				
+				<b><a href="https://youtu.be/4laRTHUJPlE?list=PLAUgGUDpaMENfz8Nd7Zw-LxDK_v5ZflY6" target="_blank">YouTube Video</a></b>
+				
+				<div class="page-end-vertical-space">
+				</div>				
+            </div>
+			
+			
+			<!--Selection content-->
+			<div id="section_skipSelector" class="content-section">
+				<br>
+				<span class=hf1>Select Every Other Edge Vert Face Toolbox</span>
+				<p>
+				<img src="images/quick_start_guide/dotPat.png" class="script-icon">
+				</p>
+				<br>
+				
+				<span class =hf2>Compatability:</span><br>
+				-N-gons are not supported and will be ignored during pattern selection<br>
+				-Triangles are not supported, if you have any triangles selected while using the tool the selection will come out wrong<br>
+				-Non-symmetrical patterns are not supported, so 4/on 3/off style patterns are not possible in this tool
+				<br>
+				<br>
+				
+				<span class="purple-button">invert dot/pat</span><br>
+				Inverts the last pattern that was selected by the tool.
+				<br>
+				<br>
+				
+				<span class="greenYellow-button">dot loop</span><br>
+				<div class="centered-gif">
+					<a href="gifs/skipSelecter_01.gif" target="_blank"><img src="gifs/skipSelecter_01.gif" class="scaled-gif"></a>
+				</div>
+				Selects every other component on the current loop. The current loop is defined by selecting two adjacent components of the same type and running the tool.
+				<br>
+				<br>
+				
+				<span class="blue-button">pat loop</span><br>
+				<div class="centered-gif">
+					<a href="gifs/skipSelecter_02.gif" target="_blank"><img src="gifs/skipSelecter_02.gif" class="scaled-gif"></a>
+				</div>
+				Selects a user defined pattern of loops on the current mesh. The loop pattern is defined by selecting two or more adjacent components of the same type and running the tool. For example, selecting 4 adjacent faces will produce a 4/on 4/off pattern. Non-symmetrical patterns are not supported, so 4/on 3/off is not possible in this tool.
+				<br>
+				<br>
+				
+				<span class="grey-button">to loop</span><br>
+				Converts the current selection to a component loop of that type, this can be helpful to convert Non-symmetrical or partial selection patterns into component loops.
+				<br>
+				<br>
+				
+				<span class="grey-button">to ring</span><br>
+				Converts the current selection to a component ring of that type, this can be helpful to convert Non-symmetrical or partial selection patterns into component rings.
+				<br>
+				<br>
+				
+				<span class="greenYellow-button">dot ring</span><br>
+				<div class="centered-gif">
+					<a href="gifs/skipSelecter_03.gif" target="_blank"><img src="gifs/skipSelecter_03.gif" class="scaled-gif"></a>
+				</div>
+				Selects every other component on the current ring. The current ring is defined by selecting two adjacent components of the same type and running the tool.
+				<br>
+				<br>
+				
+				<span class="blue-button">pat ring</span><br>
+				<div class="centered-gif">
+					<a href="gifs/skipSelecter_04.gif" target="_blank"><img src="gifs/skipSelecter_04.gif" class="scaled-gif"></a>
+				</div>
+				Selects a user defined pattern of rings on the current mesh. The ring pattern is defined by selecting two or more adjacent components of the same type and running the tool. For example, selecting 4 adjacent faces will produce a 4/on 4/off pattern. Non-symmetrical patterns are not supported, so 4/on 3/off is not possible in this tool.
+				<br>
+				<br>
+				
+				<b><a href="https://youtu.be/X7at0KhauWk?list=PLAUgGUDpaMENfz8Nd7Zw-LxDK_v5ZflY6" target="_blank">YouTube Video</a></b>
+				
+				<div class="page-end-vertical-space">
+				</div>
+            </div>
+			
+			
+			
+			
+			<!--UV Mapping content-->
             <div id="section_uvMapper" class="content-section">
                 <p>This is the content for UV Mapping Toolbox.</p>
             </div>
@@ -468,11 +1367,15 @@
                 <p>This is the content for Light Mapping Toolbox.</p>
             </div>
 			
+			<div id="section_checkerMap" class="content-section">
+                fjkjasdfkljklasdjfkljklsfdkjalsdldskfjl
+            </div>
+			
 			<div id="section_uvGrabber" class="content-section">
                 <p>This is the content for UV Grabber Toolbox.</p>
             </div>
 			
-			<!--Modeling-->
+			<!--Modeling content-->
 			<div id="section_vertSnapper" class="content-section">
                 <p>This is the content for Vert Snapping Toolbox.</p>
             </div>
@@ -492,17 +1395,12 @@
 			<div id="section_mirrorEr" class="content-section">
                 <p>This is the content for Mirror and Instance Toolbox.</p>
             </div>
-			
-			
-			
-			
-			
-			
-
-        </div>
 		
-		
+		</div>
+	
     </div>
+	
+	
     <script>
         function showContent(sectionId) {
             var sections = document.querySelectorAll('.content-section');
