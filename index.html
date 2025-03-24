@@ -211,18 +211,21 @@
 		{
 			display: flex;
 			justify-content: left; /* Centers the image horizontally */
-			/*align-items: center; /* Centers the image vertically */
 			width: 100%; /* Full width of the container */
-			/*height: calc(100vh - 100px); /* Full height minus the banner height */
 			box-sizing: border-box; /* Include padding in the height calculation */
 			
+			
+			/*align-items: center; /* Centers the image vertically */
+			/*height: calc(100vh - 100px); /* Full height minus the banner height */
 		}
 		
 		.scaled-gif
 		{
-			max-width: 600px; /* Set the desired width */
+			max-width: 600px; /* Set the desired width used to be 400*/
 			width: 100%; /* Set the desired width */
 			height: auto; /* Maintain the aspect ratio */
+			
+			
 			/*image-rendering: auto; /* Browser default: uses an appropriate algorithm to achieve high-quality image scaling */
 			/* Other possible values: 
 			- `crisp-edges`: Applies a pixelated look. 
@@ -1309,7 +1312,7 @@
 				
 				<span class="greenYellow-button">dot loop</span><br>
 				<div class="centered-gif">
-					<a href="gifs/skipSelecter_01.gif" target="_blank"><img src="gifs/skipSelecter_01.gif" class="scaled-gif"></a>
+					<a href="gifs/skipSelecter_01.gif" target="_blank"><img src="gifs/skipSelecter_thumb_01.gif" class="scaled-gif"></a>
 				</div>
 				Selects every other component on the current loop. The current loop is defined by selecting two adjacent components of the same type and running the tool.
 				<br>
@@ -1317,7 +1320,7 @@
 				
 				<span class="blue-button">pat loop</span><br>
 				<div class="centered-gif">
-					<a href="gifs/skipSelecter_02.gif" target="_blank"><img src="gifs/skipSelecter_02.gif" class="scaled-gif"></a>
+					<a href="gifs/skipSelecter_02.gif" target="_blank"><img src="gifs/skipSelecter_thumb_02.gif" class="scaled-gif"></a>
 				</div>
 				Selects a user defined pattern of loops on the current mesh. The loop pattern is defined by selecting two or more adjacent components of the same type and running the tool. For example, selecting 4 adjacent faces will produce a 4/on 4/off pattern. Non-symmetrical patterns are not supported, so 4/on 3/off is not possible in this tool.
 				<br>
@@ -1335,7 +1338,7 @@
 				
 				<span class="greenYellow-button">dot ring</span><br>
 				<div class="centered-gif">
-					<a href="gifs/skipSelecter_03.gif" target="_blank"><img src="gifs/skipSelecter_03.gif" class="scaled-gif"></a>
+					<a href="gifs/skipSelecter_03.gif" target="_blank"><img src="gifs/skipSelecter_thumb_03.gif" class="scaled-gif"></a>
 				</div>
 				Selects every other component on the current ring. The current ring is defined by selecting two adjacent components of the same type and running the tool.
 				<br>
@@ -1343,7 +1346,7 @@
 				
 				<span class="blue-button">pat ring</span><br>
 				<div class="centered-gif">
-					<a href="gifs/skipSelecter_04.gif" target="_blank"><img src="gifs/skipSelecter_04.gif" class="scaled-gif"></a>
+					<a href="gifs/skipSelecter_04.gif" target="_blank"><img src="gifs/skipSelecter_thumb_04.gif" class="scaled-gif"></a>
 				</div>
 				Selects a user defined pattern of rings on the current mesh. The ring pattern is defined by selecting two or more adjacent components of the same type and running the tool. For example, selecting 4 adjacent faces will produce a 4/on 4/off pattern. Non-symmetrical patterns are not supported, so 4/on 3/off is not possible in this tool.
 				<br>
