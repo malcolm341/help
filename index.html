@@ -4813,7 +4813,7 @@
 			</></></>
 			
 			
-			<div id="section_defaultMat" class="content-section active">
+			<div id="section_defaultMat" class="content-section">
 				<br>
 				<span class=hf1>Change Default Material Toolbox</span>
 				<p>
@@ -4854,7 +4854,7 @@
 				The exported material stays on the hard drive so you only need to export it once for the custom material button to work, even after Maya restart.
 				<br>
 				<div class="centered-gif">
-					<a href="gifs/checkerMap_01.gif" target="_blank"><img src="gifs/checkerMap_thumb_01.gif" class="scaled-gif"></a>
+					<a href="gifs/defaultMat_01.gif" target="_blank"><img src="gifs/defaultMat_thumb_01.gif" class="scaled-gif"></a>
 				</div>
 				<br>
 				<br>
@@ -4930,37 +4930,32 @@
     </div>
 	
 	
-<script>
-    // Store scroll positions keyed by section ID
-    const sectionScrollPositions = {};
-
-    function showContent(sectionId) {
-        // Save scroll position of currently active section
-        const currentSection = document.querySelector('.content-section.active');
-        if (currentSection) {
-            sectionScrollPositions[currentSection.id] = currentSection.scrollTop;
-            currentSection.classList.remove('active');
-        }
-
-        // Show the new section
-        const newSection = document.getElementById(sectionId);
-        newSection.classList.add('active');
-
-        // Restore scroll position for the new section
-        const savedScroll = sectionScrollPositions[sectionId] || 0;
-        newSection.scrollTo({ top: savedScroll, behavior: 'instant' });
-    }
-
-    function toggleCollapse(sectionId) {
-        const section = document.getElementById(sectionId);
-        section.style.display = (section.style.display === 'none' || section.style.display === '') ? 'block' : 'none';
-    }
-</script>
-
-
-
-
+	<script>
+		// Store scroll positions keyed by section ID
+		const sectionScrollPositions = {};
 	
+		function showContent(sectionId) {
+			// Save scroll position of currently active section
+			const currentSection = document.querySelector('.content-section.active');
+			if (currentSection) {
+				sectionScrollPositions[currentSection.id] = currentSection.scrollTop;
+				currentSection.classList.remove('active');
+			}
+	
+			// Show the new section
+			const newSection = document.getElementById(sectionId);
+			newSection.classList.add('active');
+	
+			// Restore scroll position for the new section
+			const savedScroll = sectionScrollPositions[sectionId] || 0;
+			newSection.scrollTo({ top: savedScroll, behavior: 'instant' });
+		}
+	
+		function toggleCollapse(sectionId) {
+			const section = document.getElementById(sectionId);
+			section.style.display = (section.style.display === 'none' || section.style.display === '') ? 'block' : 'none';
+		}
+	</script>
 	
 	
 	<!--Temp script to scroll the page to specific spot while I work on it-->
@@ -4993,5 +4988,53 @@
             }
         }
     </script>
+	
+	
+<!--Script to make external links to pages work if the main index.html page is already open-->
+<script>
+function activateSectionFromHash() {
+  const hash = location.hash.replace('#', '');
+  if (!hash) return;
+
+  // Activate the section
+  if (typeof showContent === 'function') {
+    showContent(hash);
+  }
+
+  // Force-expand the correct TOC group
+  const tocGroups = document.querySelectorAll('.sidebar ul > li');
+  tocGroups.forEach(group => {
+    const nestedList = group.querySelector('.nested');
+    const links = nestedList?.querySelectorAll('a') || [];
+    links.forEach(link => {
+      if (link.getAttribute('onclick')?.includes(hash)) {
+        if (nestedList) nestedList.style.display = 'block';
+      }
+    });
+  });
+
+  // Scroll to the section
+  const target = document.getElementById(hash);
+  if (target) {
+    setTimeout(() => {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  }
+}
+
+window.addEventListener('DOMContentLoaded', activateSectionFromHash);
+window.addEventListener('hashchange', activateSectionFromHash);
+</script>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </body>
 </html>
