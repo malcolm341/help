@@ -637,7 +637,7 @@
 				<span class=hf1>About</span>
 				<p>
 				The Mel Script Mega Pack is a collection of scripts and tools for Autodesk Maya.<br>
-				I created the Mega Pack to make Maya faster and easier to use, and it's also fun to automate tasks that would otherwise be time consuming and tedious inside of Maya. 
+				I created the Mega Pack to make Maya faster and easier to use, and it's fun to automate tasks that would otherwise be time consuming and tedious inside of Maya. 
 				All the tools are written in MEL script which means they work on newly released versions of Maya without needing to be updated.
 				<p>
 				If you're new to the Mega Pack take a look at the <a href="#" onclick="showContent('section_QuickStartGuide')">Quick Start Guide</a> to get an overview of what each script does.
@@ -690,10 +690,12 @@
 				<p>
 				<span class =hf2>Compatability:</span><br>
 				-Works on the newest version of Maya and old versions of Maya back to 2019<br>
-				-Works on Maya Student<br>
 				-Works on Maya 2018 update 6<br>
 				-Works on Maya 2017 update 5<br>
+				-Works on Maya Student<br>
 				-Works on PC and Mac<br>
+				-Checker Map Toolbox doesn't work on Maya LT<br>
+				-Change Default Material Toolbox doesn't work on Maya LT<br>
 				<p>
 				<br>
 				
@@ -756,7 +758,7 @@
 			
 			<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 			<!--Quick Start Guide content-->
-			<div id="section_QuickStartGuide" class="content-section">
+			<div id="section_QuickStartGuide" class="content-section active">
 				<br>
 				<span class=hf1>Quick Start Guide</span>
 				<p style="height: 2px; margin-top: 10px; margin-bottom: 10px;"></p>
@@ -782,7 +784,7 @@
 					<img src="images/quick_start_guide/uvEdge.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>UV Edges Toolbox</b></p>
-						<p class="QSG-text-row">Softens all normals and then hardens UV border edges based on a tolerence angle.</p>
+						<p class="QSG-text-row">Automatically sets normals for baking, softens all normals then hardens UV border edges correctly based on a tolerence angle.</p>
 					</div>
 				</div>
 				
@@ -791,7 +793,7 @@
 					<img src="images/quick_start_guide/normR.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Normal Map Viewport Mode</b></p>
-						<p class="QSG-text-row">Applies normal map lighting to selected objects, from there you can render or screen capture the top viewport to generate normal map stamps and textures.</p>
+						<p class="QSG-text-row">Applies normal map shading to selected objects, from there you can render or screen capture the top viewport to generate normal map stamps and textures.</p>
 					</div>
 				</div>
 				
@@ -809,7 +811,7 @@
 					<img src="images/quick_start_guide/export.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>One Click Export to C:\drive</b></p>
-						<p class="QSG-text-row">Exports selection to a temp.ma, temp.obj, or temp.fbx file on your hard drive. Handy for moving objects between scenes or saving a temp file without any file browsing.</p>
+						<p class="QSG-text-row">Exports selection to a temp.ma, temp.obj, or temp.fbx file on your hard drive. This is helpful for moving objects between scenes or saving a temp file without any file browsing.</p>
 					</div>
 				</div>
 				
@@ -827,7 +829,7 @@
 					<img src="images/quick_start_guide/Xray.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Xray Selected Objects</b></p>
-						<p class="QSG-text-row">Toggle Xray mode on/off for selected objects. If nothing's selected Xray mode will toggle all objects in the scene on/off.</p>
+						<p class="QSG-text-row">Toggles Xray mode on/off for selected objects. If nothing's selected Xray mode toggles all objects in the scene on/off.</p>
 					</div>
 				</div>
 				
@@ -836,7 +838,7 @@
 					<img src="images/quick_start_guide/wire.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Wireframe Selected Objects</b></p>
-						<p class="QSG-text-row">Toggle wireframe mode on/off for selected objects. Handy for looking through selected objects without changing any viewport settings.</p>
+						<p class="QSG-text-row">Toggles wireframe mode on/off for selected objects. Handy for looking through selected objects without changing any viewport settings.</p>
 					</div>
 				</div>
 				
@@ -845,7 +847,7 @@
 					<img src="images/quick_start_guide/imgRef.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Reference Planes Toolbox</b></p>
-						<p class="QSG-text-row">Create multiple mesh reference planes each with a different image at the correct aspect ratio in one click. Great for rotoscoping, choose axis, scale width, and more.</p>
+						<p class="QSG-text-row">Creates multiple mesh reference planes each with a different image at the correct aspect ratio in one click. Great for rotoscoping if you prefer physical reference planes in the scene instead of image planes.</p>
 					</div>
 				</div>
 				
@@ -863,16 +865,16 @@
 					<img src="images/quick_start_guide/sPlugin.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Fast Open Maya</b></p>
-						<p class="QSG-text-row">A quick way to disable the plugins that significantly slow Maya down when it's opening, especially if you’re using a Maya version prior to 2022.</p>
+						<p class="QSG-text-row">A quick way to disable the plugins that significantly slow down Maya when it's opening.</p>
 					</div>
 				</div>
-				
+
 				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
 				<div class="QSG-image-QSG-text-container">
 					<img src="images/quick_start_guide/close.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Fast Close Maya</b></p>
-						<p class="QSG-text-row">Closing Maya prior to Maya 2022 was extremely slow. The fast close tool can close Maya instantly in one click for Maya 2020, 2019, 2018, 2017.</p>
+						<p class="QSG-text-row">Closing Maya prior to Maya 2022 was extremely slow. The fast close tool closes Maya instantly for Maya 2020, 2019, 2018, 2017.</p>
 					</div>
 				</div>
 				
@@ -890,7 +892,7 @@
 					<img src="images/quick_start_guide/shelf.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Increase Shelf Height Toolbox</b></p>
-						<p class="QSG-text-row">Increase or decrease shelf height at any time to fit height of current shelf in one click. Custom shelf height is retained after Maya restart unlike other tools I've seen online.</p>
+						<p class="QSG-text-row">Increases or decreases shelf height to fit height of current shelf. Custom shelf height is retained after Maya restart unlike other tools I've seen online.</p>
 					</div>
 				</div>
 				
@@ -899,7 +901,7 @@
 					<img src="images/quick_start_guide/HUD.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Extra HUD Toolbox</b></p>
-						<p class="QSG-text-row">New HUD elements for working units, scene time warp on/off, up axis, selection counter, assigned materials, current UV set, preserve UVs on/off, project location, time since last save, time since last auto save, tool axis, camera distance, and camera based selection on/off.</p>
+						<p class="QSG-text-row">New HUD elements for working units, grid size, scene time warp on/off, up axis, selection counter, assigned materials, current UV set, preserve UVs on/off, project location, time since last save, time since last auto save, tool axis, camera distance, and camera based selection on/off.</p>
 					</div>
 				</div>
 				
@@ -908,7 +910,7 @@
 					<img src="images/quick_start_guide/DM.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Dynamic Measuring Toolbox</b></p>
-						<p class="QSG-text-row">Creates a measurement node between two or more verts with a single click. Measurements update automatically so you can move meshes and verts around after creation.</p>
+						<p class="QSG-text-row">Creates a measurement node between two or more verts with a single click. Measurements update automatically if you move the meshes or verts around after creation.</p>
 					</div>
 				</div>
 				
@@ -929,13 +931,13 @@
 						<p class="QSG-text-row">Rebuilds rotation axis along selected component, works even if the transform is frozen. Fixes channel box values unlike the Maya default align to component tool.</p>
 					</div>
 				</div>
-				
+
 				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
 				<div class="QSG-image-QSG-text-container">
 					<img src="images/quick_start_guide/faceY.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Rotate Mesh to Face Y Axis</b></p>
-						<p class="QSG-text-row">Rotates the whole mesh so the selected component faces Y up, even if the transform is frozen. This is handy for un-rotating a mesh so you can work on it aligned with the world axis.</p>
+						<p class="QSG-text-row">Rotates the whole mesh so the selected component faces Y up, even if the transform is frozen. This is helpful for un-rotating a mesh so you can work on it aligned with the world axis.</p>
 					</div>
 				</div>
 				
@@ -953,7 +955,7 @@
 					<img src="images/quick_start_guide/stCent.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Duplicate Object to Components</b></p>
-						<p class="QSG-text-row">Duplicates your object to each selected component and aligns to normal.</p>
+						<p class="QSG-text-row">Duplicates your object to each selected component and aligns to normal, also works with instances.</p>
 					</div>
 				</div>
 
@@ -983,7 +985,7 @@
 						<p class="QSG-text-row">Welds selected components to target vertex. Easier and faster to use than the Maya default target weld because you don’t have to drag select the target.</p>
 					</div>
 				</div>
-				
+
 				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
 				<div class="QSG-image-QSG-text-container">
 					<img src="images/quick_start_guide/CPAS.png" class="QSG-left-image">
@@ -1028,13 +1030,13 @@
 						<p class="QSG-text-row">Extracts selected faces without creating a bunch of temp nodes in the outliner. In object mode this tool separates polygon elements into separate meshes.</p>
 					</div>
 				</div>
-				
+
 				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
 				<div class="QSG-image-QSG-text-container">
 					<img src="images/quick_start_guide/dupeF.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Clean Duplicate Faces</b></p>
-						<p class="QSG-text-row">Duplicates selected faces in one click without creating a bunch of temp nodes in the outliner.</p>
+						<p class="QSG-text-row">Duplicates selected faces without creating a bunch of temp nodes in the outliner.</p>
 					</div>
 				</div>
 				
@@ -1055,13 +1057,13 @@
 						<p class="QSG-text-row">Converts any continuous edge loop selection to half of your mesh in face mode.</p>
 					</div>
 				</div>
-				
+
 				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
 				<div class="QSG-image-QSG-text-container">
 					<img src="images/quick_start_guide/findGB.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Show Geometry Border Edges</b></p>
-						<p class="QSG-text-row">Identify unwelded verts, failed mirroring operations, and other problem areas on your mesh. Easier and faster to see than the Maya default way.</p>
+						<p class="QSG-text-row">Selects geometry border edges. Identify unwelded verts, failed mirroring operations, and other problem areas on your mesh. Easier to use than the built in show border edges display setting.</p>
 					</div>
 				</div>
 				
@@ -1070,7 +1072,7 @@
 					<img src="images/quick_start_guide/Name.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Naming Toolbox</b></p>
-						<p class="QSG-text-row">Rename multiple objects with increment in one click. Easier and faster to use than Maya’s default tool. Search and replace part of a name, add a prefix or suffix, and more.</p>
+						<p class="QSG-text-row">Rename multiple objects with increment in one click. Easier and faster to use than Maya’s built in naming tool. Search and replace part of a name, add a prefix or suffix, and more.</p>
 					</div>
 				</div>
 				
@@ -1078,7 +1080,7 @@
 				<div class="QSG-image-QSG-text-container">
 					<img src="images/quick_start_guide/copy.png" class="QSG-left-image">
 					<div class="QSG-text-container">
-						<p class="QSG-text-row"><b>Copy Material from Face to Clipboard</b></p>
+						<p class="QSG-text-row"><b>Copy Material to Clipboard</b></p>
 						<p class="QSG-text-row">Copy a material from one face to the clipboard, allows for copy/pasting materials in the viewport without opening the hypershade.</p>
 					</div>
 				</div>
@@ -1097,16 +1099,17 @@
 					<img src="images/quick_start_guide/replace.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Replace Material id from Clipboard</b></p>
-						<p class="QSG-text-row">Replace a material id on a whole object from the clipboard. Save time by applying materials in the viewport without opening the hypershade.</p>
+						<p class="QSG-text-row">Replace a material id on a whole object from the clipboard. Save time by replacing material ids in the viewport without opening the hypershade.</p>
 					</div>
 				</div>
-				
+<!--Scroll to me-->
+<div id="target-section"></div>				
 				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
 				<div class="QSG-image-QSG-text-container">
 					<img src="images/quick_start_guide/default.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Change Default Material Toolbox</b></p>
-						<p class="QSG-text-row">Set the default material with a single click, or save a custom material and load it into any scene as the default. Useful if you like to model with a specific material applied.</p>
+						<p class="QSG-text-row">Toggles a custom default material on/off for the scene without losing existing material assignments. Choose from six built in default materials, or use your own custom material.</p>
 					</div>
 				</div>
 				
@@ -1115,7 +1118,7 @@
 					<img src="images/quick_start_guide/matID.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Select Faces by Material id</b></p>
-						<p class="QSG-text-row">Selects all faces that share the same mat id on a single mesh, so you can work with the selection even if the same mat id is found on other meshes in the scene.</p>
+						<p class="QSG-text-row">Selects all faces that have the same mat id on a single mesh and ignores other meshes in the scene that have the same mat id so you don't get duplicate selections.</p>
 					</div>
 				</div>
 				
@@ -1124,7 +1127,7 @@
 					<img src="images/quick_start_guide/graph.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Graph Materials from Selected Faces</b></p>
-						<p class="QSG-text-row">Graphs materials in the hypershade from faces. Faster than Maya’s default tool because it only graphs what you have selected in the viewport.</p>
+						<p class="QSG-text-row">Graphs materials in the Hypershade from selected faces only, unlike Maya's built in graph command which graphes all materials assigned to the mesh.</p>
 					</div>
 				</div>
 				
@@ -1133,7 +1136,7 @@
 					<img src="images/quick_start_guide/checker.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Checker Map Toolbox</b></p>
-						<p class="QSG-text-row">Toggle a custom checker map image on/off for your objects in one click, or choose from four built in checker styles. Remembers your original material assignments, tile, rotate, and more.</p>
+						<p class="QSG-text-row">Toggles a custom checker map texture on/off for the scene without losing existing material assignments. Choose from four built in checker maps and one built in directional map, or use your own custom textures.</p>
 					</div>
 				</div>
 				
@@ -1142,7 +1145,7 @@
 					<img src="images/quick_start_guide/uvGrab.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>UV Grabber Toolbox</b></p>
-						<p class="QSG-text-row">Grabs UV snapshots with one click and sends them directly to Photoshop or the image viewer of your choice. Saves a lot of time and works with UDIM tiles.</p>
+						<p class="QSG-text-row">Takes UV snapshots with one click and opens them in Photoshop or the image viewer of your choice. Saves a lot of time exporting wireframes and works with UDIM tiles.</p>
 					</div>
 				</div>
 				
@@ -1151,7 +1154,7 @@
 					<img src="images/quick_start_guide/Udim.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Udim Packing Toolbox</b></p>
-						<p class="QSG-text-row">Pack UDIM tiles interactively while maintaining texel density, or pack tiles automatically based on world space location. Significantly faster and easier to use than Maya’s default tool.</p>
+						<p class="QSG-text-row">Packs UDIM tiles. Significantly easier to use than Maya’s Layout UV window for packing UDIM tiles and comes with a bunch of custom tools to make working with UDIMs faster.</p>
 					</div>
 				</div>
 				
@@ -1160,7 +1163,7 @@
 					<img src="images/quick_start_guide/LMap.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Light Mapping Toolbox</b></p>
-						<p class="QSG-text-row">Create lightmap UVs in one click. Use the angle method for minimal seams, or start from map1 and automatically fix areas that aren't mapped properly for baking.</p>
+						<p class="QSG-text-row">Creates lightmap UVs in one click. Use the angle method for minimal seams, or start from map1 and automatically fix areas that aren't mapped properly for baking.</p>
 					</div>
 				</div>
 				
@@ -1168,8 +1171,8 @@
 				<div class="QSG-image-QSG-text-container">
 					<img src="images/quick_start_guide/unwrap.png" class="QSG-left-image">
 					<div class="QSG-text-container">
-						<p class="QSG-text-row"><b>Fast and Easy UVs Toolbox</b></p>
-						<p class="QSG-text-row">Automatically create UVs for your mesh, then cut and sew semi-interactively to make adjustments. Useful for organic shapes or if you prefer faster UV creation with a bit less control.</p>
+						<p class="QSG-text-row"><b>Easy UVs Toolbox</b></p>
+						<p class="QSG-text-row">Automatically creates UVs for your mesh. Cut and sew interactively to make adjustments. Use the other built in tools to finalize and layout your UVs without needing to leave the toolbox. Useful for organic shaped meshes or if you prefer faster UV creation with a bit less control.</p>
 					</div>
 				</div>
 				
@@ -1178,7 +1181,7 @@
 					<img src="images/quick_start_guide/gridUV.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Gridify UVs</b></p>
-						<p class="QSG-text-row">UV maps faces into a seamless grid of symmetrical squares. Works on any face selection, but may require unfolding and straightening after.</p>
+						<p class="QSG-text-row">UV maps selected faces into a uniform grid of UVs. Existing UVs are not required for this tool to work, so you can gridify UVs on unmapped faces if you want.</p>
 					</div>
 				</div>
 				
@@ -1187,7 +1190,7 @@
 					<img src="images/quick_start_guide/recUV.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Rectangularize UVs</b></p>
-						<p class="QSG-text-row">UV maps faces into a seamless grid with correct aspect ratio. A bit harder to use than gridUV, but doesn’t require any unfolding or straightening after.</p>
+						<p class="QSG-text-row">UV maps selected faces into a non-uniform grid of UVs with correct aspect ratio. Better and faster results than Maya's straighten UVs tool because faces are UV mapped instead of trying to straighten existing UVs which is slow and error prone. Existing UVs are not required for this tool to work.</p>
 					</div>
 				</div>
 				
@@ -1196,7 +1199,7 @@
 					<img src="images/quick_start_guide/uvMap.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>UV Mapping Toolbox</b></p>
-						<p class="QSG-text-row">Custom and existing UV tools organized for quick access. Create UVs faster than Maya’s UV Toolkit and use the custom tools to accomplish what Maya can’t.</p>
+						<p class="QSG-text-row">Creates UVs faster than Maya's UV Toolkit. The best UV mapping commands and the best UV Toolkit commands all in one place, plus a bunch of custom tools to make working with UVs even faster. All the buttons are visable all the time, so you don't have to expand menus or apply settings to create UVs.</p>
 					</div>
 				</div>
 				</span>
@@ -2389,7 +2392,7 @@
 				<br>
 				
 				<span class="yellow-button">easy normals</span><br>
-				Softens all normals and then hardens UV border edges based on the tolerence angle you set in the easy normals input field. Lowing the tolerance will create more hard UV border edges and raising the tolerence will create more soft UV border edges. A good number to start with is 45.1, from there you can raise or lower the tolerence incrementally and run the tool again until you get the desired result.
+				Softens all normals and then hardens UV border edges based on the tolerence angle you set in the easy normals input field. Lowering the tolerance will create more hard UV border edges and raising the tolerence will create more soft UV border edges. A good number to start with is 45.1, from there you can raise or lower the tolerence incrementally and run the tool again until you get the desired result.
 				<p></p>
 				
 				Easy normals can be helpful for automatically assigning hard edges for baking without hardening edges that should be left as soft, for example two halves of a sphere or a cylinder.
@@ -2564,7 +2567,7 @@
 				<br>
 				
 				<span class="yellow-button">easy normals</span><br>
-				Softens all normals and then hardens UV border edges based on the tolerence angle you set in the easy normals input field. Lowing the tolerance will create more hard UV border edges and raising the tolerence will create more soft UV border edges. A good number to start with is 45.1, from there you can raise or lower the tolerence incrementally and run the tool again until you get the desired result.
+				Softens all normals and then hardens UV border edges based on the tolerence angle you set in the easy normals input field. Lowering the tolerance will create more hard UV border edges and raising the tolerence will create more soft UV border edges. A good number to start with is 45.1, from there you can raise or lower the tolerence incrementally and run the tool again until you get the desired result.
 				<p></p>
 				
 				Easy normals can be helpful for automatically assigning hard edges for baking without hardening edges that should be left as soft, for example two halves of a sphere or a cylinder.
@@ -4824,7 +4827,7 @@
 			</></></>
 			
 			
-			<div id="section_defaultMat" class="content-section">
+			<div id="section_defaultMat" class="content-section active">
 				<br>
 				<span class=hf1>Change Default Material Toolbox</span>
 				<p>
@@ -4838,7 +4841,7 @@
 				This toolbox is helpful if you prefer a different default material other than the one the built in use default material button applies.
 				<p></p>
 				
-				Choose from six default materials, or use your own custom material.
+				Choose from six built in default materials, or use your own custom material.
 				<br>
 				<br>
 <!--Scroll to me
