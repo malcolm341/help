@@ -857,7 +857,7 @@
 					<img src="images/quick_start_guide/DEG.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Delete Empty Groups</b></p>
-						<p class="QSG-text-row">Deletes empty groups, transforms, and ghost nodes that are often left behind even after running Maya’s optimize scene and delete history.</p>
+						<p class="QSG-text-row">Deletes empty groups, transforms, and ghost nodes that are often left behind even after running Maya’s optimize scene size and delete history.</p>
 					</div>
 				</div>
 				
@@ -4932,6 +4932,45 @@
 			
 			<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 			<!--Utilities content-->
+			<div id="section_DEG" class="content-section active">
+				<br>
+				<span class=hf1>Delete Empty Groups</span>
+				<p></p>
+				<img src="images/quick_start_guide/DEG.png" class="script-icon">
+				<p></p>
+				<br>
+
+				<div class="bold">Deletes empty groups, transforms, and ghost nodes in the outliner.</div>
+				<p></p>
+				
+				This tool is useful because it deletes nodes that Maya's built in optimize scene size and delete history commands leave behind. This tool deletes all empty nodes in the outliner.
+				<br>
+				<br>
+				
+				<div class="bold">Limitations:</div>
+				<br>
+				-Doesn't work on skinned meshes
+				<br>
+				-You can't undo past the point you used this tool
+				<br>
+				<br>
+				
+				Because the tool deletes empty groups sometimes you can get into situations where you have a ghost node inside a group, but technically it's not an empty group yet because it has a ghost node in it. To fully delete all empty groups run the tool multiple times until the Outliner is clean.
+				<br>
+				<div class="centered-gif">
+					<a href="gifs/DEG_01.gif" target="_blank"><img src="gifs/DEG_thumb_01.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br>
+				
+				<a href="https://youtu.be/jDHbW4zEzJI?list=PLAUgGUDpaMENfz8Nd7Zw-LxDK_v5ZflY6" target="_blank"><span class="youtube-link">YouTube Video from 2020</span></a>
+				<p></p>
+				
+				<div class="page-end-vertical-space"></div>		
+            </div>
+			</></></>
+			
+			<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 			<div id="section_slowPlugins" class="content-section">
 				<br>
 				<span class=hf1>Fast Open Maya</span>
@@ -5065,7 +5104,7 @@
 			
 			
 			<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-			<div id="section_sPref" class="content-section active">
+			<div id="section_sPref" class="content-section">
 				<br>
 				<span class=hf1>Advanced Save Preferences</span>
 				<p></p>
