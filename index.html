@@ -911,7 +911,7 @@
 					<img src="images/quick_start_guide/DM.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Dynamic Measuring Toolbox</b></p>
-						<p class="QSG-text-row">Creates a measurement node between two or more verts with a single click. Measurements update automatically if you move the meshes or verts around after creation.</p>
+						<p class="QSG-text-row">Creates a measurement node between two or more vertices with a single click. Measurements update automatically if you move the meshes or verts around after creation.</p>
 					</div>
 				</div>
 				
@@ -2483,15 +2483,15 @@
 				</div>
 				<br>
 				<br>
-					
-				<span class="greenYellow-button">C &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; P &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; R </span><br>
-				C copies the current material id from a single selected face to the clipboard.
+				
+				<span class="greenYellow-button" style="width: 59px;">C</span> <span class="greenYellow-button" style="width: 58px;">P</span> <span class="greenYellow-button" style="width: 59px;">R</span><br>
+				C copies the material id from a single selected face to the clipboard.
 				<p></p>
 				
 				P pastes the material id from the clipboard to selected faces or objects.
 				<p></p>
 				
-				R pastes the material from the clipboard to a single selected face and all faces that share that same material id on the current mesh.
+				R replaces the material id on the mesh with the copied material from the clipboard.
 				<br>
 				<div class="centered-gif">
 					<a href="gifs/tbExporter_04.gif" target="_blank"><img src="gifs/tbExporter_thumb_04.gif" class="scaled-gif"></a>
@@ -4930,9 +4930,14 @@
 			
 			
 			
+			
+			
+			
+			
+			
 			<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 			<!--Utilities content-->
-			<div id="section_DEG" class="content-section active">
+			<div id="section_DEG" class="content-section">
 				<br>
 				<span class=hf1>Delete Empty Groups</span>
 				<p></p>
@@ -4944,6 +4949,9 @@
 				<p></p>
 				
 				This tool is useful because it deletes nodes that Maya's built in optimize scene size and delete history commands leave behind. This tool deletes all empty nodes in the outliner.
+				<p></p>
+				
+				Preserves deformer history so you don't lose rigging and other types of deformers
 				<br>
 				<br>
 				
@@ -5125,6 +5133,95 @@
 				<div class="page-end-vertical-space"></div>		
             </div>
 			</></></>
+			
+			
+			<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+			<div id="section_DM" class="content-section active">
+				<br>
+				<span class=hf1>Dynamic Measuring Toolbox</span>
+				<p></p>
+				<img src="images/quick_start_guide/DM.png" class="script-icon">
+				<p></p>
+				<br>
+
+				<div class="bold">Creates a dynamic measure node between two or more vertices.</div>
+				<p></p>
+				
+				Measure nodes update dynamically so you can move the mesh or vertices around after creation and see the measure distance update.
+				<p></p>
+				
+				This toolbox is really useful if you need to measure a polygon curved surface because you can select multiple vertices and measure the total distance of those verts along a path.
+				<p></p>
+				
+				To get started make sure the toolbox is open before selecting any verts, you need to do this so the toolbox can track your selection order.
+				<p></p>
+				
+				Hold shift and select the verts you want to measure in the order you want the measure path to follow. Press the dynamic measure button to create a measure node between selected vertices.
+				<p></p>
+
+				The distance value is attached to the last selected vert, so you can choose which end of the measure node you want the distance displayed at by selecting the vertices in a specific order. This is helpful to avoid distance values that overlap on top of eachother.
+				<p></p>
+				
+				Measure nodes are created in a group named m341_measure_nodes_01.
+				<p></p>
+				
+				Maya's undo doesn't work correctly with this toolbox and undoing will create empty nodes in the Outliner. To avoid this, use the undo measure button, or select a measure group in the Outliner and delete it.
+				<br>
+				<div class="centered-gif">
+					<a href="gifs/DM_01.gif" target="_blank"><img src="gifs/DM_thumb_01.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br>
+
+<!--Scroll to me
+<div id="target-section"></div>-->
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> multi color</span><br>
+				Turn on if you want each measure node to be created with a random colour. This is helpful if you're creating more than one measure node on the same mesh so you can tell which distance belongs to which measure node.
+				<br>
+				<div class="centered-gif">
+					<a href="gifs/DM_02.gif" target="_blank"><img src="gifs/DM_thumb_02.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br>
+
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> working units</span><br>
+				Turn on if you want to see the current working units Maya is set to displayed in the HUD. For example, meters, centimeters, feet, etc.
+				<br>
+				<br>
+				
+				<span class="grey-button" style="width: 34px;">ft</span> <span class="grey-button" style="width: 34px;">in</span> <span class="grey-button" style="width: 33px;">m</span> <span class="grey-button" style="width: 33px;">cm</span> <span class="grey-button" style="width: 33px;">mm</span><br>
+				Sets the Maya working units to feet, inches, meters, centimeters, or millimeters.
+				<p></p>
+				
+				Measure nodes update automatically to display distance in the working units Maya is currently set to.
+				<br>
+				<br>
+				
+				<span class="yellow-button">dynamic measure</span><br>
+				Creates a dynamic measure node between two or more selected vertices.
+				<div class="centered-gif">
+					<a href="gifs/DM_03.gif" target="_blank"><img src="gifs/DM_thumb_03.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br>
+				
+				<span class="red-button">undo measure</span><br>
+				Removes the last created measure node each time you press the button.
+				<p></p>
+				
+				Maya's undo doesn't work correctly with this toolbox and undoing will create empty nodes in the Outliner. To avoid this, use the undo measure button, or select a measure group in the Outliner and delete it.
+				<br>
+				<br>
+				
+				<a href="https://youtu.be/bC1lhtDG0no?list=PLAUgGUDpaMENfz8Nd7Zw-LxDK_v5ZflY6" target="_blank"><span class="youtube-link">YouTube Video</span></a>
+				<p></p>
+				
+				<div class="page-end-vertical-space"></div>		
+            </div>
+			</></></>
+			
+			
+
 
 
 			
