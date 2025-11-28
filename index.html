@@ -1073,7 +1073,7 @@
 					<img src="images/quick_start_guide/Name.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Naming Toolbox</b></p>
-						<p class="QSG-text-row">Rename multiple objects with increment in one click. Easier and faster to use than Maya’s built in naming tool. Search and replace part of a name, add a prefix or suffix, and more.</p>
+						<p class="QSG-text-row">A bunch of custom tools to make renaming objects easier than Maya’s built in naming tool. Name matching for baking, removing or replacing part of a name, incrementing names with a letter instead of a number, aphabetically sort the outliner, and more.</p>
 					</div>
 				</div>
 				
@@ -5127,7 +5127,7 @@
 				<br>
 				<br>
 				
-				<a href="https://youtu.be/mDONY44P4jA?list=PLAUgGUDpaMENfz8Nd7Zw-LxDK_v5ZflY6" target="_blank"><span class="youtube-link">YouTube Video from 2020</span></a>
+				<a href="https://youtu.be/mDONY44P4jA?list=PLAUgGUDpaMENfz8Nd7Zw-LxDK_v5ZflY6&t=312" target="_blank"><span class="youtube-link">YouTube Video from 2020</span></a>
 				<p></p>
 				
 				<div class="page-end-vertical-space"></div>		
@@ -5136,7 +5136,7 @@
 			
 			
 			<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-			<div id="section_DM" class="content-section active">
+			<div id="section_DM" class="content-section">
 				<br>
 				<span class=hf1>Dynamic Measuring Toolbox</span>
 				<p></p>
@@ -5177,6 +5177,9 @@
 <div id="target-section"></div>-->
 				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> multi color</span><br>
 				Turn on if you want each measure node to be created with a random colour. This is helpful if you're creating more than one measure node on the same mesh so you can tell which distance belongs to which measure node.
+				<p></p>
+				
+				Colours are chosen at random from a predetermined list to avoid ugly hard to see measurments, a different random colour is used if the previous measure node already used that colour.
 				<br>
 				<div class="centered-gif">
 					<a href="gifs/DM_02.gif" target="_blank"><img src="gifs/DM_thumb_02.gif" class="scaled-gif"></a>
@@ -5215,6 +5218,128 @@
 				
 				<a href="https://youtu.be/bC1lhtDG0no?list=PLAUgGUDpaMENfz8Nd7Zw-LxDK_v5ZflY6" target="_blank"><span class="youtube-link">YouTube Video</span></a>
 				<p></p>
+				
+				<div class="page-end-vertical-space"></div>		
+            </div>
+			</></></>
+			
+			
+			<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+			<div id="section_name" class="content-section active">
+				<br>
+				<span class=hf1>Naming Toolbox</span>
+				<p></p>
+				<img src="images/quick_start_guide/name.png" class="script-icon">
+				<p></p>
+				<br>
+				
+				<div class="bold">Renames selected objects with increment.</div>
+				<p></p>
+
+				This toolbox comes with a bunch of custom tools to make renaming objects easier than Maya’s built in naming tool. For example, name matching for baking, removing or replacing part of a name, incrementing names with a letter instead of a number, etc.
+				<p></p>
+				
+				To start, select some objects and type a name into the upper rename/search for: field. Choose an increment style from the increment dropdown menu and press the rename button to rename your objects.
+				<p></p>
+				
+				Object names are incremented in the order you selected them. For example, if you want the increment to be _01, _02, _03, etc. vertically from the top down in the Outliner, you have to select the objects in that order in the Outliner.
+				<p></p>
+				
+				Maya has a bug where if the UV Toolkit is loaded and you rename multiple objects repeatedly in the same session, Maya becomes unresponsive and you can't save or exit. This bug occurs even if you close the UV Toolkit, or if it's collapsed to a tab. To get around the bug I have to unload the UV Toolkit before renaming which causes Maya to freeze for a second each time you rename anything using this toolbox.
+				<div class="centered-gif">
+					<a href="gifs/Name_01.gif" target="_blank"><img src="gifs/Name_thumb_01.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br>
+
+				<span class="yellow-button">sort outliner by name</span>
+				<br>
+				Sorts selected objects alphabetically in the Outliner, if nothing's selected the whole outliner is sorted alphabetically.
+				<br>
+				<br>
+				
+				<span class="checkbox-button"><span style="background-color: #292929;"></span>rename/search for:</span><br>
+				Stores the current name you want things renamed to, also acts as the search for field when you want to replace part of a name.
+				<br>
+				<br>
+
+				<span class="grey-button" style="width: 70px;">replace</span> <span class="checkbox-button" style="width: 111px;">replace with:</span><br>
+				Replaces the characters in the upper text field with the characters in the lower text field on selected objects.
+				<p></p>
+				
+				To replace part of a name use the upper text field to search for, and the lower text field to replace with. For example, if you want to change poly_sphere_01 to poly_cube_01, type sphere in the upper field and cube in the lower field and press the replace button.
+				<p></p>
+				
+				If you want to remove part of a name, leave the upper text field blank, and type the part of the name you want removed in the lower text field. For example, if you want to change poly_sphere_01 to poly_01, type sphere in the upper field and nothing in the lower field and press the replace button.
+				<div class="centered-gif">
+					<a href="gifs/Name_03.gif" target="_blank"><img src="gifs/Name_thumb_03.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br>
+<!--Scroll to me
+<div id="target-section"></div>-->
+				<span class="purple-button" style="width: 35px;">pre</span> <span class="blue-button" style="width: 35px;">suf</span> <span class="green-button" style="width: 106px;">name match</span><br>
+				The pre button appends the characters in the upper text field to the beginning of the object name. The suf button appends the characters in the upper text field to the end of the object name.
+				<p></p>
+				
+				The name match button inserts the word _high or _low before the increment if the mesh is inside a group named high or low.
+				<p></p>
+
+				This is helpful for renaming multiple meshes in one click if you're going to use the name matching feature of Marmoset Toolbag, Substance Painter, or another baking program.
+				<p></p>
+				
+				Create a group named high and a group named low using all lowercase letters. Put your high and low meshes into the corresponding groups, make sure the hierarchical order of the meshes is the same in both groups so the numbered increment corresponds to the correct mesh in each group.
+				<p></p>
+				
+				Type a base name into the upper text field if you want to rename all the meshes to the same name, this can save time if you don't care about names because everything will be name matched in the baking program.
+				<p></p>
+				
+				If you want to keep existing names, leave the upper text field blank and the name match button will keep your existing names up until the first underscore and replace everything after the first underscore with _high or _low and the increment.
+				<p></p>
+				
+				Hold Ctrl and click the first mesh inside the high group, then hold Shift and click the last mesh inside the high group to select everything, but the group. Do the same for the meshes in the low group, make sure your selection order is the same between both groups so the increment gets added correctly. Press the name match button.
+				<p></p>
+
+				Meshes will be renamed to:<br>
+				name_high_01, name_high_02, name_high_03, etc.<br>
+				name_low_01, name_low_02, name_low_03, etc.<br>
+				<div class="centered-gif">
+					<a href="gifs/Name_02.gif" target="_blank"><img src="gifs/Name_thumb_02.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br>
+
+				<span class="grey-button" style="width: 68px;">trim pre</span> <span class="checkbox-button" style="width: 40px;">1</span> <span class="grey-button" style="width: 68px;">trim suf</span><br>
+				The trim pre button removes a specified number of characters from the beginning of the name, and the trim suf button removes a specified number of characters from the end of the name.
+				<p></p>
+
+				The numeric input field is used to set how many characters will be removed when you press the trim pre or trim suf buttons.
+				<br>
+				<br> 
+
+				<span class="checkbox-button" style="width: 91px;">increment</span> <span class="checkbox-button" style="width:90px;"><span style="background-color: #292929;"></span>_01 &nbsp;▼</span><br>
+				Sets which increment style gets added to the end of the name when you press the rename or name match buttons.
+				<p></p>
+				
+				Choose from seven styles:<br>
+				name_A, name_B, name_C, etc.<br>
+				name1, name2, name3, etc.<br>
+				name_1, name_2, name_3, etc.<br>
+				name_01, name_02, name_03, etc.<br>
+				name_001, name_002, name_003, etc.<br>
+				name_0001, name_0002, name_0003, etc.<br>
+				name_LOD_0, name_LOD_1, name_LOD_2, etc.
+				<br>
+				<br>
+				
+				<span class="orange-button">rename</span>
+				<br>
+				Renames selected objects to what you typed in the upper text field.
+				<br>
+				<br>
+
+			
+				<a href="https://youtu.be/TpgpDisTDLM?list=PLAUgGUDpaMENfz8Nd7Zw-LxDK_v5ZflY6" target="_blank"><span class="youtube-link">YouTube Video from 2020</span></a>
 				
 				<div class="page-end-vertical-space"></div>		
             </div>
