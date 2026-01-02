@@ -604,7 +604,7 @@
                     <ul id="toc-fileExport" class="nested">
                         <li><a href="#" onclick="showContent('section_objHandler')">Obj Import Export Toolbox</a></li>
 						<li><a href="#" onclick="showContent('section_export')">One Click Export to C:\drive</a></li>
-						<li><a href="#" onclick="showContent('section_export')">One Click Import from C:\drive</a></li>
+						<li><a href="#" onclick="showContent('section_import')">One Click Import from C:\drive</a></li>
 					</ul>
                 </li>			
 				
@@ -759,7 +759,7 @@
 			
 			<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 			<!--Quick Start Guide content-->
-			<div id="section_QuickStartGuide" class="content-section">
+			<div id="section_QuickStartGuide" class="content-section active">
 				<br>
 				<span class=hf1>Quick Start Guide</span>
 				<p style="height: 2px; margin-top: 10px; margin-bottom: 10px;"></p>
@@ -821,7 +821,7 @@
 					<img src="images/quick_start_guide/import.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>One Click Import from C:\drive</b></p>
-						<p class="QSG-text-row">Imports the temp.ma, temp.obj, or temp.fbx file the above button creates without any file browsing.</p>
+						<p class="QSG-text-row">Imports the temp.ma, temp.obj, or temp.fbx file the export tool creates without any file browsing.</p>
 					</div>
 				</div>
 				
@@ -4882,7 +4882,7 @@
 			
 			<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 			<!--File Export content-->
-			<div id="section_objHandler" class="content-section active">
+			<div id="section_objHandler" class="content-section">
 				<br>
 				<span class=hf1>Obj Import Export Toolbox</span>
 				<p></p>
@@ -4915,8 +4915,7 @@
 				</div>
 				<br>
 				<br>
-<!--Scroll to me-->
-<div id="target-section"></div>				
+
 				<span class="grey-button">reset</span><br>
 				Resets the toolbox back to default settings.
 				<br>
@@ -5002,12 +5001,112 @@
             </div>
 			
 			
+			<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+			<div id="section_export" class="content-section">
+				<br>
+				<span class=hf1>One Click Export to C:\drive</span>
+				<p></p>
+				<img src="images/quick_start_guide/export.png" class="script-icon">
+				<p></p>
+				<br>
+				
+				<div class="bold">Exports selected to a temp.ma file on your hard drive.</div>
+				<p></p>
+				
+				This is helpful for moving objects between scenes or saving a temp file without any file browsing.
+				<p></p>
+				
+				If you have two copies of Maya open you can export selected objects between them, for example if you don't want to close your main Maya, but want to <a href="#" onclick="showContent('section_import')">import</a> part of a scene from another file.
+				<p></p>
+				
+				The temp file stays on your hard drive even if you close Maya and can be imported at any time until the temp file is overwritten.
+				<p></p>
+
+				The import/export tools strip out name spaces and combine materials on import to avoid scene clutter.
+				<br>
+				<div class="centered-gif">
+					<a href="gifs/export_01.gif" target="_blank"><img src="gifs/export_thumb_01.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br>
+			
+				<div class="bold">Export Temp.obj</div>&nbsp;&nbsp;(right click the shelf button to access this tool)
+				<p></p>
+				
+				Exports selected to a temp.obj file on your hard drive without any file browsing.
+				<br>
+				<br>
+			
+				<div class="bold">Export Temp.fbx</div>&nbsp;&nbsp;(right click the shelf button to access this tool)
+				<p></p>
+				
+				Exports selected to a temp.fbx file on your hard drive without any file browsing.
+				<br>
+				<br>
+			
+				<div class="bold">Find File Location</div>&nbsp;&nbsp;(right click the shelf button to access this tool)
+				<p></p>
+				
+				Opens the folder where the temp file was exported to.
+				
+				
+				<div class="page-end-vertical-space">
+				</div>				
+            </div>
 			
 			
+			<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+			<div id="section_import" class="content-section">
+				<br>
+				<span class=hf1>One Click Import from C:\drive</span>
+				<p></p>
+				<img src="images/quick_start_guide/import.png" class="script-icon">
+				<p></p>
+				<br>
+				
+				<div class="bold">Imports the temp.ma file the export tool created.</div>
+				<p></p>
+				
+				This is helpful for moving objects between scenes without any file browsing.
+				<p></p>
+				
+				If you have two copies of Maya open you can <a href="#" onclick="showContent('section_export')">export</a> selected objects between them, for example if you don't want to close your main Maya, but want to import part of a scene from another file.
+				<p></p>
+				
+				The temp file stays on your hard drive even if you close Maya and can be imported at any time until the temp file is overwritten.
+				<p></p>
+
+				The import/export tools strip out name spaces and combine materials on import to avoid scene clutter.
+				<br>
+				<div class="centered-gif">
+					<a href="gifs/export_01.gif" target="_blank"><img src="gifs/export_thumb_01.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br>
 			
+				<div class="bold">Import Temp.obj</div>&nbsp;&nbsp;(right click the shelf button to access this tool)
+				<p></p>
+				
+				Imports the temp.obj file the Export Temp.obj tool created without any file browsing.
+				<br>
+				<br>
 			
+				<div class="bold">Import Temp.fbx</div>&nbsp;&nbsp;(right click the shelf button to access this tool)
+				<p></p>
+				
+				Imports the temp.fbx file the Export Temp.fbx tool created without any file browsing.
+				<br>
+				<br>
 			
-			
+				<div class="bold">Find File Location</div>&nbsp;&nbsp;(right click the shelf button to access this tool)
+				<p></p>
+				
+				Opens the folder where the temp file will be imported from.
+				
+				
+				<div class="page-end-vertical-space">
+				</div>				
+            </div>
 			
 			
 			<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -5195,6 +5294,13 @@
 				<p></p>
 				
 				This tool is useful if you feel a crash coming on because it saves all your preferences unlike the Maya built in command. For example, if you make a change to the MTK custom shelf and Maya crashes or doesn't close correctly, you'll lose that edit along with a bunch of other settings you've changed.
+				<p></p>
+				
+				In the example image you can see I make changes to the MTK custom shelf, then simulate a crash by ending task in the Task Manager. After restarting Maya I haven't lost any of my changes to the MTK custom shelf.
+				<br>
+				<div class="centered-gif">
+					<a href="gifs/sPref_01.gif" target="_blank"><img src="gifs/sPref_thumb_01.gif" class="scaled-gif"></a>
+				</div>
 				<br>
 				<br>
 				
