@@ -603,6 +603,7 @@
 				    <button class="collapsible" onclick="toggleCollapse('toc-fileExport')">File Export</button>
                     <ul id="toc-fileExport" class="nested">
                         <li><a href="#" onclick="showContent('section_objHandler')">Obj Import Export Toolbox</a></li>
+						<li><a href="#" onclick="showContent('section_fbxHandler')">Fbx Import Export Toolbox</a></li>
 						<li><a href="#" onclick="showContent('section_export')">One Click Export to C:\drive</a></li>
 						<li><a href="#" onclick="showContent('section_import')">One Click Import from C:\drive</a></li>
 					</ul>
@@ -804,6 +805,15 @@
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Obj Import Export Toolbox</b></p>
 						<p class="QSG-text-row">Speeds up exporting meshes as .obj for use with applications like Zbrush. Export each mesh as a separate file, triangulate, import multiple, custom file location, and more.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/fbx.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Fbx Import Export Toolbox</b></p>
+						<p class="QSG-text-row">Speeds up exporting meshes as .fbx for use with applications like Unreal and Unity. Export each mesh as a separate file, move to origin, freeze transform, folder from scene name, combine meshes, and more.</p>
 					</div>
 				</div>
 				
@@ -2478,7 +2488,7 @@
 				<br> 
 				
 				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> export tangents</span><br>
-				Turn on if want to export tangents with the .fbx file that gets created when using the export low button.
+				Turn on if you want to export tangents with the .fbx file that gets created when using the export low button.
 				<p></p>
 
 				If you want tangents included in the .fbx file that gets created when using the export high button you must turn on export tangents, turn on export high UVs, and turn off triangulate high. Tangents will not appear in the high .fbx file unless these exact checkboxes are set, this is due to a design flaw in Maya.
@@ -5016,6 +5026,199 @@
 				<div class="page-end-vertical-space"></div>		
             </div>
 			
+			
+			<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+			<div id="section_fbxHandler" class="content-section">
+				<br>
+				<span class=hf1>Fbx Import Export Toolbox</span>
+				<p></p>
+				<img src="images/quick_start_guide/fbx.png" class="script-icon">
+				<p></p>
+				<br>
+
+				<div class="bold">Speeds up exporting meshes as .fbx for use with applications like Unreal and Unity.</div>
+				<p></p>
+				
+				The main benefit of this toolbox over the Maya built in Game Exporter is that the workflow is more streamlined and geared towards environment artists that are primarily exporting static meshes. This toolbox takes up less screen space and also has some custom tools the Game Exporter doesn't, such as freeze transform on export, folder from scene name on export, combine meshes on export, and add meshes to scene even if the same mesh already exists in the scene.
+				<p></p>
+				
+				I received many requests to create a better easier to use .fbx exporter for Maya, that being said many of the features of this toolbox overlap with the built in Game Exporter.
+				<p></p>
+				
+				If you're working primarily with animations or character art you'll probably want to stick with the built in Game Exporter. If you're working with environment assets or static meshes this toolbox should speed up your workflow.
+				<p></p>
+				
+				To get started press the ... button beside the export location field to browse to where you want the files exported to. Select some meshes and press the export fbx button to export selected.
+				<p></p>
+				
+				The exported file is named the same as the scene name by default, if you want the file named the same as the first mesh you select, turn on the mesh checkbox. If you want the file to have a custom name, turn on the text checkbox and type a name into the text field.
+				<p></p>
+				
+				At any time you can press the find button to open the folder where the files were exported to.
+				<p></p>
+				
+				Press the ... button beside the import location field to browse to the file you want imported, you have to select the actual file not the folder.
+				<p></p>
+				
+				Press the import fbx button to import the .fbx file shown in the import location field. Note that the meshes are added to the scene unlike the built in Maya .fbx import file menu. If you want the meshes overwritten on import, turn off the import mode add checkbox.
+				<p></p>
+				
+				If you want to import multiple .fbx files from the same import location you set, press the all button to import all .fbx files found in that folder. This gives you the ability to import just the specific file you want, or everything from the folder without any file browsing.
+				<br>
+				<div class="centered-gif">
+					<a href="gifs/fbxHandler_01.gif" target="_blank"><img src="gifs/fbxHandler_thumb_01.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br>
+
+				<span class="grey-button">reset</span><br>
+				Resets the toolbox back to default settings.
+				<br>
+				<br>
+
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> file for each mesh</span><br>
+				Turn on if you want to export a separate .fbx file for each mesh when you press the export fbx button. File names are derived from the mesh names in the outliner.
+				<br>
+				<br>
+				
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> triangulate</span><br>
+				Turn on if you want the meshes in the exported .fbx file to be triangulated. Meshes in the current scene are not affected.
+				<br>
+				<br>
+
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> combine meshes</span><br>
+				Turn on if you want the meshes in the exported .fbx file to be combined into a single object. Meshes in the current scene are not affected.
+				<br>
+				<br>
+
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> folder from scene</span><br>
+				Turn on if you want the exported meshes to be placed in a folder named the same as the scene name. This is helpful if you want to store each file in it's own folder inside the main folder that you browsed to with the export location field.
+				<p></p>
+				
+				For example, if you have a main folder named C:\Game\Props\ and want each prop you export to go into its own folder inside the \Props\ folder. This checkbox will save time because you don't have to do any file browsing when working with different prop scene files.
+				<br>
+				<br>
+				
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> export animation</span><br>
+				Turn on if you want animation to be included with the exported .fbx file.
+				<br>
+				<br>
+
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> export tangents</span><br>
+				Turn on if you want to export tangents with the .fbx file. Note you must also turn off the triangulate checkbox or tangents will not appear in the .fbx file, this is due to a design flaw in Maya.
+				<br>
+				<br>
+
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> freeze transform</span><br>
+				Turn on if you want transforms frozen for everything in the exported .fbx file. Objects in the current scene are not affected.
+				<br>
+				<br>
+				
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> export at origin</span><br>
+				Turn on if you want to move everything to the world origin in the exported .fbx file. Objects in the current scene are not affected.
+				<p></p>
+				
+				This is helpful if you want to model a modular kit in context in one scene with correct pivot points and then automatically export the kit at the world origin for use in Unreal or Unity. You can turn on the file for each mesh checkbox to export each mesh to a seperate file at the world origin, this lets you use your main scene as the working file and overwrite all the kit piece files in Unreal or Unity with one click.
+				<br>
+				<div class="centered-gif">
+					<a href="gifs/fbxHandler_02.gif" target="_blank"><img src="gifs/fbxHandler_thumb_02.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br>
+				
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> export from set</span><br>
+				Turn on if you want to export only the objects found in the fbxHandler_Export_Set when you press the export fbx button. Selected objects are ignored when this checkbox is turned on.
+				<p></p>
+				
+				This is helpful so you don't have to select meshes each time you want to export, but also because you can include work in progress meshes and other objects in the scene and still export a clean file for Unreal or Unity.
+				<p></p>
+				
+				To create the fbxHandler_Export_Set in the Outliner press the create/add button to add objects to the set, use the remove button to remove objects from the set.
+				<br>
+				<br>
+				
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> export selected</span><br>
+				Turn on if you want to export only selected objects when you press the export fbx button.
+				<br>
+				<br>
+<!--Scroll to me
+<div id="target-section"></div>-->
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> import mode add</span><br>
+				Turn on if you want to import .fbx files and add the objects contained in the file to the existing scene rather than overwriting the existing objects with the objects you just imported.
+				<p></p>
+				
+				In most cases for environment assets when you import anything into the scene it's expected to be added as new objects, this is how file import works for almost all file types. For .fbx this is not the case, by default when you import a .fbx file that contains meshes that are already in the scene it tries to update the meshes in place which often leads to confusion and sometimes lost work.
+				<p></p>
+				
+				If you're working primarily with static meshes I recommend turning this checkbox on.
+				<br>
+				<div class="centered-gif">
+					<a href="gifs/fbxHandler_03.gif" target="_blank"><img src="gifs/fbxHandler_thumb_03.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br>
+				
+				<span class="checkbox-button"><span style="background-color: #292929;"></span>FBX Export Set</span><br>
+				<span class="grey-button" style="width: 105px;">create/add</span> <span class="grey-button" style="width: 76px;">remove</span><br>
+				The create/add button creates and adds selected objects to the fbxHandler_Export_Set in the Outliner. The remove button removes selected objects from the fbxHandler_Export_Set.
+				<p></p>
+				
+				If the export from set checkbox is turned on only objects found in the fbxHandler_Export_Set get exported when you press the export fbx button.
+				<p></p>
+				
+				This is helpful so you don't have to select meshes each time you want to export, but also because you can include work in progress meshes and other objects in the scene and still export a clean file for Unreal or Unity.
+				<br>
+				<br>
+				
+				<span class="checkbox-button"><span style="background-color: #292929;"></span>FBX File Naming From</span><br>
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> scene &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="background-color: #292929;">&nbsp;✔&nbsp;</span> mesh<span style="background-color: #292929;"></span></span><br>
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> text&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
+				Turn on the scene checkbox if you want the exported .fbx file to be named the same as the scene file.
+				<p></p>
+				
+				Turn on the mesh checkbox if you want the exported .fbx file to be named the same as the first mesh you select. If you also have the export from set checkbox turned on the file will be named alphabetically based on what names it finds in the fbxHandler_Export_Set.
+				<p></p>
+				
+				Turn on the text checkbox if you want the exported .fbx file to be named what you type in the text field.
+				<br>
+				<div class="centered-gif">
+					<a href="gifs/fbxHandler_04.gif" target="_blank"><img src="gifs/fbxHandler_thumb_04.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br>
+				
+				<span class="checkbox-button" style="width: 140px;">export location</span> <span class="grey-button" style="width: 41px;">...</span><br>
+				Sets the export location the export fbx button uses.
+				<p></p>
+				
+				Use the ... button to browse to a folder where the exported file will go when you press the export fbx button. You have to select an existing folder, a file won't work.
+				<br>
+				<br>
+				
+				<span class="orange-button" style="width: 140px;">export obj</span> <span class="orange-button" style="width: 41px;">find</span><br>
+				The export fbx button exports selected objects as .fbx to the folder specified in the export location field. The find button opens the folder specified in the export location field.
+				<p></p>
+				
+				Turn on the export from set checkbox if you want the export fbx button to export only the objects found in the fbxHandler_Export_Set.
+				<br>
+				<br>
+				
+				<span class="checkbox-button" style="width: 140px;">import location</span> <span class="grey-button" style="width: 41px;">...</span><br>
+				Sets the import location the import fbx and all buttons use.
+				<p></p>
+				
+				Use the ... button to browse to a specific file you want to import when you press the import fbx button. You have to select an existing file, a folder won't work.
+				<br>
+				<br>
+				
+				<span class="seafoam-button" style="width: 100px;">import fbx</span> <span class="seafoam-button" style="width: 38px;">all</span> <span class="seafoam-button" style="width: 38px;">find</span><br>
+				The import fbx button imports the file specified in the import location field. The all button imports all .fbx files found in the same folder as the file specified in the import location field. The find button opens the folder specified in the import location field.
+				<br>
+				<br>
+				
+				<div class="page-end-vertical-space"></div>		
+            </div>
+		
 			
 			<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 			<div id="section_export" class="content-section">
