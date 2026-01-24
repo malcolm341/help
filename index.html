@@ -143,7 +143,18 @@
 
         .sidebar .active {
             display: block;
-        }
+        }		
+		
+		.sidebar a.collapsible
+		{
+			display: block;
+			padding: 10px;
+			font-size: 18px;
+			font-weight: bold;
+			color: #007bff;
+			text-decoration: none;
+		}
+		
 		
 		h1
 		{
@@ -427,6 +438,48 @@
 			text-align: center; /* Center text horizontally */
 		}
 		
+		.beveler1-button
+		{
+			background-color: #d470a3; /*Background colour*/
+			border: 1px solid black; /*Border colour*/
+			/*padding: 5px; /* Increase padding vertical */
+			/*padding-left: 10px; /* Add padding to the left */
+			
+			margin-bottom: 5px;
+			box-sizing: border-box; /* Include padding and border in the element's total width and height */
+			width: 185px; /* Set a fixed width */
+			display: inline-block; /* Ensure the width is applied while staying inline */
+			text-align: center; /* Center text horizontally */
+		}
+		
+		.beveler2-button
+		{
+			background-color: #30a1a1; /*Background colour*/
+			border: 1px solid black; /*Border colour*/
+			/*padding: 5px; /* Increase padding vertical */
+			/*padding-left: 10px; /* Add padding to the left */
+			
+			margin-bottom: 5px;
+			box-sizing: border-box; /* Include padding and border in the element's total width and height */
+			width: 185px; /* Set a fixed width */
+			display: inline-block; /* Ensure the width is applied while staying inline */
+			text-align: center; /* Center text horizontally */
+		}
+		
+		.beveler3-button
+		{
+			background-color: #6387cf; /*Background colour*/
+			border: 1px solid black; /*Border colour*/
+			/*padding: 5px; /* Increase padding vertical */
+			/*padding-left: 10px; /* Add padding to the left */
+			
+			margin-bottom: 5px;
+			box-sizing: border-box; /* Include padding and border in the element's total width and height */
+			width: 185px; /* Set a fixed width */
+			display: inline-block; /* Ensure the width is applied while staying inline */
+			text-align: center; /* Center text horizontally */
+		}
+	
 		.checkbox-button
 		{
 			color: #c2c2c2; /*Text colour*/ 
@@ -466,7 +519,7 @@
 		{
 			outline: none;
 		}
-	
+
 		
     </style>
 </head>
@@ -487,49 +540,65 @@
             <!--These are the sub-section names that expand in the table of contents-->
 			<ul>			
 				<!--About toc-->
-				<li>
+				<!-- <li>
 				    <button class="collapsible" onclick="showContent('section_About')">About</button>
                     <ul id="toc-About"></ul>
-                </li>
+                </li> -->
+				
+				<li>
+					<a class="collapsible" href="#section_About">About</a>
+					<ul id="toc-About"></ul>
+				</li>
+
 				
 				<!--License Agreement toc-->
-				<li>
+				<!-- <li>
 				    <button class="collapsible" onclick="showContent('section_License')">License Agreement</button>
                     <ul id="toc-License"></ul>
-                </li>
+                </li> -->
+				
+				<li>
+					<a class="collapsible" href="#section_License">License Agreement</a>
+					<ul id="toc-License"></ul>
+				</li>
 				
 				<!--Installatioin toc-->
 				<li>
-				    <button class="collapsible" onclick="showContent('section_Installation')">Installation</button>
+					<a class="collapsible" href="#section_Installation">Installation</a>
 					<ul id="toc-Installation"></ul>
-                </li>
+				</li>
+				
 				
 				<!--Quick Start Guide toc-->
 				<li>
-				    <button class="collapsible" onclick="showContent('section_QuickStartGuide')">Quick Start Guide</button>
+					<a class="collapsible" href="#section_QuickStartGuide">Quick Start Guide</a>
 					<ul id="toc-QuickStartGuide"></ul>
-                </li>
+				</li>
 				
 				<!--Display toc-->
 				<li>
 				    <button class="collapsible" onclick="toggleCollapse('toc-Display')">Display</button>
                     <ul id="toc-Display" class="nested">
-                        <li><a href="#" onclick="showContent('section_Xray')">Xray Selected Objects</a></li>
+                        <!-- <li><a href="#" onclick="showContent('section_Xray')">Xray Selected Objects</a></li>
 						<li><a href="#" onclick="showContent('section_wire')">Wireframe Selected Objects</a></li>
 						<li><a href="#" onclick="showContent('section_shelfSizer')">Increase Shelf Height Toolbox</a></li>
-						<li><a href="#" onclick="showContent('section_extraHUD')">Extra HUD Toolbox</a></li>
-                    </ul>
+						<li><a href="#" onclick="showContent('section_extraHUD')">Extra HUD Toolbox</a></li> -->
+						<li><a href="#section_Xray">Xray Selected Objects</a></li>
+						<li><a href="#section_wire">Wireframe Selected Objects</a></li>
+						<li><a href="#section_shelfSizer">Increase Shelf Height Toolbox</a></li>
+						<li><a href="#section_extraHUD">Extra HUD Toolbox</a></li>
+					</ul>
                 </li>
 				
 				<!--Selection toc-->
 				<li>
 				    <button class="collapsible" onclick="toggleCollapse('toc-Selection')">Selection</button>
                     <ul id="toc-Selection" class="nested">
-                        <li><a href="#" onclick="showContent('section_skipSelector')">Select Every Other Edge Vert Face</a></li>
-						<li><a href="#" onclick="showContent('section_Half')">Select Half Your Mesh from Edge Loop</a></li>
-						<li><a href="#" onclick="showContent('section_findGB')">Show Geometry Border Edges</a></li>
-						<li><a href="#" onclick="showContent('section_matID')">Select Faces by Material id</a></li>
-						<li><a href="#" onclick="showContent('section_graph')">Graph Materials from Selected Faces</a></li>
+						<li><a href="#section_skipSelector">Select Every Other Edge Vert Face</a></li>
+						<li><a href="#section_Half">Select Half Your Mesh from Edge Loop</a></li>
+						<li><a href="#section_findGB">Show Geometry Border Edges</a></li>
+						<li><a href="#section_matID">Select Faces by Material id</a></li>
+						<li><a href="#section_graph">Graph Materials from Selected Faces</a></li>
                     </ul>
                 </li>
 				
@@ -537,28 +606,28 @@
 				<li>
 				    <button class="collapsible" onclick="toggleCollapse('toc-Transform')">Transform</button>
                     <ul id="toc-Transform" class="nested">
-                        <li><a href="#" onclick="showContent('section_pivot')">Move Pivot to Selection Center</a></li>
-						<li><a href="#" onclick="showContent('section_reBuild')">Rebuild Rotation Axis from Component</a></li>
-						<li><a href="#" onclick="showContent('section_faceY')">Rotate Mesh to Face Y Axis</a></li>
-						<li><a href="#" onclick="showContent('section_stSurf')">Snap Objects to Surface Normal</a></li>
-						<li><a href="#" onclick="showContent('section_stCent')">Duplicate Object to Components</a></li>
-                    </ul>
+						<li><a href="#section_pivot">Move Pivot to Selection Center</a></li>
+						<li><a href="#section_reBuild">Rebuild Rotation Axis from Component</a></li>
+						<li><a href="#section_faceY">Rotate Mesh to Face Y Axis</a></li>
+						<li><a href="#section_stSurf">Snap Objects to Surface Normal</a></li>
+						<li><a href="#section_stCent">Duplicate Object to Components</a></li>
+					</ul>
                 </li>			
 				
 				<!--Modeling toc-->
 				<li>
 				    <button class="collapsible" onclick="toggleCollapse('toc-Modeling')">Modeling</button>
                     <ul id="toc-Modeling" class="nested">
-						<li><a href="#" onclick="showContent('section_refMaker')">Reference Planes Toolbox</a></li>
-					    <li><a href="#" onclick="showContent('section_vertSnapper')">Vert Snapping Toolbox</a></li>
-						<li><a href="#" onclick="showContent('section_weldTC')">Weld Selected to Closest</a></li>
-						<li><a href="#" onclick="showContent('section_weldTT')">Weld Selected to Target</a></li>
-						<li><a href="#" onclick="showContent('section_CPAS')">Create Primitive at Selection Toolbox</a></li>
-						<li><a href="#" onclick="showContent('section_lattice')">Axis Aligned Lattice Deformer</a></li>
-						<li><a href="#" onclick="showContent('section_mirrorEr')">Mirror and Instance Toolbox</a></li>
-                        <li><a href="#" onclick="showContent('section_cleanCombine')">Clean Combine</a></li>
-						<li><a href="#" onclick="showContent('section_cleanExtract')">Clean Extract</a></li>
-						<li><a href="#" onclick="showContent('section_cleanDuplicate')">Clean Duplicate</a></li>
+						<li><a href="#section_refMaker">Reference Planes Toolbox</a></li>
+						<li><a href="#section_vertSnapper">Vert Snapping Toolbox</a></li>
+						<li><a href="#section_weldTC">Weld Selected to Closest</a></li>
+						<li><a href="#section_weldTT">Weld Selected to Target</a></li>
+						<li><a href="#section_CPAS">Create Primitive at Selection Toolbox</a></li>
+						<li><a href="#section_lattice">Axis Aligned Lattice Deformer</a></li>
+						<li><a href="#section_mirrorEr">Mirror and Instance Toolbox</a></li>
+						<li><a href="#section_cleanCombine">Clean Combine</a></li>
+						<li><a href="#section_cleanExtract">Clean Extract</a></li>
+						<li><a href="#section_cleanDuplicate">Clean Duplicate</a></li>
 					</ul>
                 </li>
 				
@@ -566,24 +635,26 @@
 				<li>
 				    <button class="collapsible" onclick="toggleCollapse('toc-Normals')">Normals</button>
                     <ul id="toc-Normals" class="nested">
-                        <li><a href="#" onclick="showContent('section_tbExporter')">Marmoset Export Toolbox</a></li>
-						<li><a href="#" onclick="showContent('section_uvEdges')">Easy Normals Toolbox</a></li>
-						<li><a href="#" onclick="showContent('section_normR')">Normal Map Viewport Mode</a></li>
-                    </ul>
+						<li><a href="#section_tbExporter">Marmoset Export Toolbox</a></li>
+						<li><a href="#section_tbBeveler">Marmoset Bevel Toolbox</a></li>
+						<li><a href="#section_uvEdges">Easy Normals Toolbox</a></li>
+						<li><a href="#section_normR">Normal Map Viewport Mode</a></li>
+					</ul>
                 </li>
 
 				<!--UV Mapping toc-->
 				<li>
 				    <button class="collapsible" onclick="toggleCollapse('toc-UVMapping')">UV Mapping</button>
                     <ul id="toc-UVMapping" class="nested">
-                        <li><a href="#" onclick="showContent('section_checkerMap')">Checker Map Toolbox</a></li>
-						<li><a href="#" onclick="showContent('section_uvGrabber')">UV Grabber Toolbox</a></li>
-						<li><a href="#" onclick="showContent('section_udimPacker')">Udim Packing Toolbox</a></li>
-						<li><a href="#" onclick="showContent('section_lightMapper')">Light Mapping Toolbox</a></li>
-						<li><a href="#" onclick="showContent('section_unWrapper')">Easy UVs Toolbox</a></li>
-						<li><a href="#" onclick="showContent('section_gridUV')">Gridify UVs</a></li>
-						<li><a href="#" onclick="showContent('section_recUV')">Rectangularize UVs</a></li>
-						<li><a href="#" onclick="showContent('section_uvMapper')">UV Mapping Toolbox</a></li>
+                        <li><a href="#section_checkerMap">Checker Map Toolbox</a></li>
+						<li><a href="#section_uvGrabber">UV Grabber Toolbox</a></li>
+						<li><a href="#section_udimPacker">Udim Packing Toolbox</a></li>
+						<li><a href="#section_lightMapper">Light Mapping Toolbox</a></li>
+						<li><a href="#section_unWrapper">Easy UVs Toolbox</a></li>
+						<li><a href="#section_gridUV">Gridify UVs</a></li>
+						<li><a href="#section_recUV">Rectangularize UVs</a></li>
+						<li><a href="#section_uvMapper">UV Mapping Toolbox</a></li>
+						<li><a href="#section_uvGrouper">UV Grouping Toolbox</a></li>
 					</ul>
                 </li>
 				
@@ -591,10 +662,10 @@
 				<li>
 				    <button class="collapsible" onclick="toggleCollapse('toc-Materials')">Materials</button>
                     <ul id="toc-Materials" class="nested">
-                        <li><a href="#" onclick="showContent('section_copy')">Copy Material to Clipboard</a></li>
-						<li><a href="#" onclick="showContent('section_paste')">Paste Material from Clipboard</a></li>
-						<li><a href="#" onclick="showContent('section_replace')">Replace Material id from Clipboard</a></li>
-						<li><a href="#" onclick="showContent('section_defaultMat')">Change Default Material Toolbox</a></li>
+						<li><a href="#section_copy">Copy Material to Clipboard</a></li>
+						<li><a href="#section_paste">Paste Material from Clipboard</a></li>
+						<li><a href="#section_replace">Replace Material id from Clipboard</a></li>
+						<li><a href="#section_defaultMat">Change Default Material Toolbox</a></li>
 					</ul>
                 </li>			
 				
@@ -602,10 +673,10 @@
 				<li>
 				    <button class="collapsible" onclick="toggleCollapse('toc-fileExport')">File Export</button>
                     <ul id="toc-fileExport" class="nested">
-                        <li><a href="#" onclick="showContent('section_objHandler')">Obj Import Export Toolbox</a></li>
-						<li><a href="#" onclick="showContent('section_fbxHandler')">Fbx Import Export Toolbox</a></li>
-						<li><a href="#" onclick="showContent('section_export')">One Click Export to C:\drive</a></li>
-						<li><a href="#" onclick="showContent('section_import')">One Click Import from C:\drive</a></li>
+						<li><a href="#section_objHandler">Obj Import Export Toolbox</a></li>
+						<li><a href="#section_fbxHandler">Fbx Import Export Toolbox</a></li>
+						<li><a href="#section_export">One Click Export to C:\drive</a></li>
+						<li><a href="#section_import">One Click Import from C:\drive</a></li>
 					</ul>
                 </li>			
 				
@@ -613,12 +684,12 @@
 				<li>
 				    <button class="collapsible" onclick="toggleCollapse('toc-Utilities')">Utilities</button>
                     <ul id="toc-Utilities" class="nested">
-                        <li><a href="#" onclick="showContent('section_DEG')">Delete Empty Groups</a></li>
-						<li><a href="#" onclick="showContent('section_slowPlugins')">Fast Open Maya</a></li>
-						<li><a href="#" onclick="showContent('section_close')">Fast Close Maya</a></li>
-						<li><a href="#" onclick="showContent('section_sPref')">Advanced Save Preferences</a></li>
-						<li><a href="#" onclick="showContent('section_DM')">Dynamic Measuring Toolbox</a></li>
-						<li><a href="#" onclick="showContent('section_name')">Naming Toolbox</a></li>
+						<li><a href="#section_DEG">Delete Empty Groups</a></li>
+						<li><a href="#section_slowPlugins">Fast Open Maya</a></li>
+						<li><a href="#section_close">Fast Close Maya</a></li>
+						<li><a href="#section_sPref">Advanced Save Preferences</a></li>
+						<li><a href="#section_DM">Dynamic Measuring Toolbox</a></li>
+						<li><a href="#section_name">Naming Toolbox</a></li>
 						<br>
 						<br>
 						<br>
@@ -642,7 +713,7 @@
 				I created the Mega Pack to make Maya faster and easier to use, and it's fun to automate tasks that would otherwise be time consuming and tedious inside of Maya. 
 				All the tools are written in MEL script which means they work on newly released versions of Maya without needing to be updated.
 				<p>
-				If you're new to the Mega Pack take a look at the <a href="#" onclick="showContent('section_QuickStartGuide')">Quick Start Guide</a> to get an overview of what each script does.
+				If you're new to the Mega Pack take a look at the <a href="#section_QuickStartGuide">Quick Start Guide</a> to get an overview of what each script does.
 				<p>
 				<br>
 				
@@ -777,7 +848,7 @@
 					<img src="images/quick_start_guide/tbExp.png" class="QSG-left-image">
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Marmoset Export Toolbox</b></p>
-						<p class="QSG-text-row">Speeds up exporting meshes for baking in Marmoset Toolbag or Substance Painter with name matching, material ids, normal editing, and export settings all in one place.</p>
+						<p class="QSG-text-row">Speeds up exporting meshes for baking in Marmoset Toolbag or Substance Painter with name matching, material ids, bevel shader width, normal editing, and export settings all in one place.</p>
 					</div>
 				</div>
 				
@@ -2354,7 +2425,7 @@
 				<div class="bold">Speeds up exporting meshes for baking in Marmoset Toolbag or Substance Painter.</div>
 				<p></p>
 				
-				This toolbox gives you access to name matching, material ids, normal editing, and export settings all in one place which can save a lot of time and simplify the export process. 
+				This toolbox gives you access to name matching, material ids, bevel shader width, normal editing, and export settings all in one place which can save a lot of time and simplify the export process. 
 				<p></p>
 				
 				To get started create a group named high and a group named low. Put your high poly and low poly meshes into the corresponding groups.
@@ -2428,19 +2499,19 @@
 				<br>
 				<br>
 				
-				<span class="grey-button">vis edges</span><br>
+				<span class="grey-button">show edges</span><br>
 				Toggles polygon edge display on/off in the viewport.
 				<br>
 				<br>
-				
-				<span class="green-button">TB name match</span><br>
+
+				<span class="green-button">name match</span><br>
 				Renames meshes and inserts the word _high or _low if the mesh is inside a group named high or low.
 				<p></p>
 				
 				This is helpful for renaming multiple meshes in one click if you're going to use the name matching feature of Marmoset Toolbag or another baking program.
 				<p></p>
 				
-				Create a group named high and a group named low. Put your high and low meshes into the corresponding groups. Type a base name into the input field directly above the TB name match button. Select the meshes in the groups, but not the groups themselves and click the TB name match button. Make sure to select meshes in the numeric order you want them named so the number increment works correctly.
+				Create a group named high and a group named low. Put your high and low meshes into the corresponding groups. Type a name into the input field if you want to rename the meshes, leave it blank if you want to use existing names. Select the meshes in the groups, but not the groups themselves and click the name match button. Make sure to select meshes in the numeric order you want them named so the number increment works correctly.
 				<p></p>
 				
 				Meshes will be renamed
@@ -2454,6 +2525,22 @@
 				</div>
 				<br>
 				<br>
+<!--Scroll to me
+<div id="target-section"></div>-->
+				<span class="seafoam-button">tbBeveler</span><br>
+				Opens the <a href="#section_tbBeveler">Marmoset Bevel Toolbox.</a>
+				<p></p>
+				
+				The Marmoset Bevel Toolbox makes it easy to set up vertex colours for use with the Marmoset Toolbag Bevel Shader.
+				<p></p>
+				
+				It also makes it easy to view vertex colours in the viewport and identify what edges belong to what bevel width. This is important because the Marmoset Bevel Shader uses vertex colour values that range from 0-1 to set bevel width. The 0-1 vertex colour range is really hard to see in the viewport without using this toolbox.
+				<br>
+				<div class="centered-gif">
+					<a href="gifs/tbBeveler_01.gif" target="_blank"><img src="gifs/tbBeveler_thumb_01.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br> 
 				
 				<span class="greenYellow-button">MAT id</span><br>
 				Applies a randomly coloured material to each geometry shell/element on the currently selected mesh.
@@ -2526,6 +2613,106 @@
 				<br>
 				
 				<a href="https://youtu.be/r_zs0A6sWEY?list=PLAUgGUDpaMENfz8Nd7Zw-LxDK_v5ZflY6" target="_blank"><span class="youtube-link">YouTube Video</span></a>
+				
+				<div class="page-end-vertical-space"></div>		
+            </div>
+			
+			
+			<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+			<div id="section_tbBeveler" class="content-section">
+				<br>
+				<span class=hf1>Marmoset Bevel Toolbox</span>
+				<p></p>
+				<img src="images/quick_start_guide/tbExp.png" class="script-icon">
+				<p></p>
+				<br>
+				
+				<div class="bold">Makes it easy to set up vertex colours for use with the Marmoset Toolbag Bevel Shader.</div>
+				<p></p>
+				
+				To open the Marmoset Bevel Toolbox press the tbBeveler button inside the <a href="#section_tbExporter">Marmoset Export Toolbox.</a>
+				<p></p>
+				
+				The main benefit of this toolbox is it makes it easy to apply different vertex colour values to the red channel of selected edges or faces and identify what edges belong to what bevel width. This is important because the Marmoset Bevel Shader uses vertex colour values that range from 0-1 to set bevel width. The 0-1 vertex colour range is really hard to see in the Maya viewport without using this toolbox.
+				<p></p>
+				
+				To get started select some edges or faces and press any of the 1-10 buttons to apply the value from the input field associated with that button to the red channel of the selected components.
+				<p></p>
+				
+				The components you had selected are now assigned to a colour set to indicate what bevel width you currently have applied.
+				<p></p>
+				
+				You can modify the value the button uses from 0-1. This is helpful if you want specific bevel width values, but be aware if you change the value you need to select the components again and re-apply the new value to make sure your mesh is up to date.
+				<p></p>
+
+				At any time you can toggle vertex colours on/off, base color mode on, or toggle show edges on/off to help with visualization as you work.
+				<p></p>
+				
+				When you're happy with your vertex colour assignments, export the mesh to Marmoset Toolbag and set up a Bevel Shader to see how it looks. For help setting up the Bevel Shader in Marmoset Toolbag follow this link to their official tutorial <a href="https://youtu.be/lxCBlPSMyls">https://youtu.be/lxCBlPSMyls</a> 
+				<p></p>
+				
+				For everything to work correctly you need to set the vertex colour mask to R on the Bevel Shader inside of Marmoset Toolbag. I also recommend selecting the Scene node in the Marmoset Outliner and in the Scale & Units tab changing scene units to centimeters(cm) and imported units to centimeters(cm). This will make it a lot easier to set the Bevel Shader width value because it will map 1:1 with the Maya scene scale, so setting the Bevel Shader width value to 10mm will actually be 10cm and is much easier to think about if you work primarily in centimeters in Maya.
+				<br>
+				<div class="centered-gif">
+					<a href="gifs/tbBeveler_01.gif" target="_blank"><img src="gifs/tbBeveler_thumb_01.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br>
+				
+				<span class="grey-button" style="width: 185px;">reset</span><br>
+				Resets the toolbox back to default settings.
+				<br>
+				<br>
+				
+				<span class="seafoam-button">reset viewport</span><br>
+				Resets the Maya viewport to default settings.
+				<br>
+				<br>
+				
+				<span class="blue-button" style="width: 90px;">colors on</span> <span class="blue-button" style="width: 91px;">colors off</span><br>
+				The colors on button enables vertex colour display in the viewport. The colors off button disables vertex colour display in the viewport.
+				<p></p>
+				
+				Vertex colours are not removed from the mesh when you press the colors off button, they are just hidden in the viewport.
+				<br>
+				<br>
+<!--Scroll to me
+<div id="target-section"></div>-->
+				<span class="checkbox-button"><span style="background-color: #292929;"></span>View Mode</span><br>
+				<span class="grey-button" style="width: 90px;">diffuse</span> <span class="grey-button" style="width: 91px;">base color</span><br>
+				The diffuse button enables diffuse lighting in the viewport. The base color button enables base colour mode in the viewport.
+				<p></p>
+				
+				Base colour is the actual colour of the vertex without any lighting or shading.
+				<br>
+				<br>
+				
+				<span class="grey-button">show edges</span><br>
+				Toggles polygon edge display on/off in the viewport.
+				<br>
+				<br>
+				
+				<span class="yellow-button">remove vert colors</span><br>
+				Removes vertex colours from selected components, also works in object mode.
+				<br>
+				<br>
+				
+				<span class="beveler1-button">1</span><br>
+				<span class="beveler2-button">2</span><br>
+				<span class="beveler3-button">3</span><br>
+				Applies the value from the input field associated with the button to the red channel of the vertex colour. Works on edges, faces, and meshes.
+				<p></p>
+				
+				You can modify the value the button uses from 0-1. This is helpful if you want specific bevel width values, but be aware if you change the value you need to select the components again and re-apply the new value to make sure your mesh is up to date.
+				<p></p>
+				
+				In Marmoset Toolbag the bevel width will be relative to what you set the Bevel Shader width value to and what units the current Marmoset scene is set to. For example, if you apply 0.5 vertex colour in Maya then set the Bevel Shader width value to 10mm and set imported units to centimeters(cm), the components you applied 0.5 vertex colour to will get a bevel width of 5mm in Marmoset.
+				<br>
+				<div class="centered-gif">
+					<a href="gifs/tbBeveler_02.gif" target="_blank"><img src="gifs/tbBeveler_thumb_02.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br>
 				
 				<div class="page-end-vertical-space"></div>		
             </div>
@@ -4253,9 +4440,9 @@
 				
 				To get help on gridUV and recUV click the links below to go to their individual help pages:
 				<br>
-				<a href="#" onclick="showContent('section_gridUV')">Gridify UVs</a>
+				<a href="#section_gridUV">Gridify UVs</a>
 				<br>
-				<a href="#" onclick="showContent('section_recUV')">Rectangularize UVs</a>
+				<a href="#section_recUV">Rectangularize UVs</a>
 				<p></p>
 				
 				Both tools work the same as the shelf button versions, but these versions use the texel density from the pix per unit input field found in this toolbox to create the grid of UVs. The shelf button versions of these tools have a fixed texel density that you have to modify in the script itself if you want to change it. 
@@ -4490,66 +4677,14 @@
 				<br>
 
 				<span class="purple-button">UV grouper</span><br>
-				Opens the UV Grouping Toolbox.
+				Opens the <a href="#section_uvGrouper">UV Grouping Toolbox.</a>
 				<p></p>
 				
 				Grouping UVs allows you to manually choose which UV shells stack on top of eachother when you press the layout UVs button in the UV Mapping Toolbox or the UV Grouping Toolbox.
 				<br>
-				<br>
-				
-				<div class="bold">Limitations:</div><br>
-				-There's only one set of UV groups saved per scene file.<br>
-				-If you duplicate a mesh that has UV groups you need to clear all the groups from the newly created mesh to avoid errors.
-				<br>
-				<br>
-				
-				To create a UV group, first turn off the stack checkbox in the UV Mapping Toolbox, then select two or more UV shells and press one of the 1 to 50 number buttons to assign the UV shells to that group number. When you assign shells to a UV group faces are selected to show you what shells the group consists of. To save time you only need to select one or more UVs on each shell to assign them to a group.
-				<p></p>
-				
-				Number buttons in the toolbox are coloured if they contain one or more shells, buttons that don't contain any shells are grey.
-				<p></p>
-				
-				UV groups are exclusive, so if you assign shells from group 1 to group 2 those shells are automatically removed from group 1.
-				<p></p>
-				
-				If you forget which shells are assigned to which groups, select UVs on the shells in question and the group numbers will display at the top of the toolbox. UV shells that don't belong to any group will display as None.
-				<p></p>
-				
-				The clear button removes all shells from the group, you only need to select one component from a grouped shell to remove all shells from that group. The clear all button clears all UV shell groups.
 				<div class="centered-gif">
 					<a href="gifs/uvMapper_12.gif" target="_blank"><img src="gifs/uvMapper_thumb_12.gif" class="scaled-gif"></a>
 				</div>
-				<br>
-				<br>
-
-				<span class="checkbox-button"><span style="background-color: #292929;"></span>Group Shells</span><br>
-				<span class="grey-button" style="width: 33.5px;">sel</span> <span class="grey-button" style="width: 33.5px;">sel</span> <span class="grey-button" style="width: 33.5px;">sel</span> <span class="grey-button" style="width: 33.5px;">sel</span> <span class="grey-button" style="width: 33.5px;">sel</span>
-				<br>
-				<span class="grey-button" style="width: 33.5px;">1</span> <span class="grey-button" style="width: 33.5px;">2</span> <span class="grey-button" style="width: 33.5px;">3</span> <span class="grey-button" style="width: 33.5px;">4</span> <span class="grey-button" style="width: 33.5px;">5</span>
-				<br>				
-				Number buttons assign selected UV shells to that group number, sel buttons select the contents of the corresponding group number.
-				<p></p>
-				
-				To save time you only need to select one or more UVs on each shell to assign them to a group.
-				<br>
-				<br>
-				
-				<span class="checkbox-button"><span style="background-color: #292929;"></span>Clear Groups</span><br>
-				<span class="orange-button" style="width: 90px;">clear</span> <span class="red-button" style="width: 90px;">clear all</span><br>
-				Clears selected UVs shells from whatever group they're in or clear all UV shells from all groups.
-				<p></p>
-				
-				To save time you only need to select one or more UVs on each shell you want to clear from whatever group they're in. Clear all doesn't require any selection.
-				<br>
-				<br>
-				
-				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> layout after edit</span><br>
-				Turn on if you want to layout UVs each time you add or remove something from a UV group. This is helpful to see how your UV shells stack without needing to press the layout UVs button each time you make an edit to a UV group.
-				<br>
-				<br>
-				
-				<span class="yellow-button">layout UVs</span><br>
-				Lays out UVs using the checkboxes you've configured in the UV Mapping Toolbox.
 				<br>
 				<br>
 
@@ -4713,6 +4848,85 @@
 
 
 			<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+			<div id="section_uvGrouper" class="content-section">
+				<br>
+				<span class=hf1>UV Grouping Toolbox</span>
+				<p></p>
+				<img src="images/quick_start_guide/uvMap.png" class="script-icon">
+				<p></p>
+				<br>
+				
+				<div class="bold">Allows you to choose which UV shells stack on top of eachother when you press the layout UVs button in the UV Mapping Toolbox or the UV Grouping Toolbox.</div>
+				<p></p>
+				
+				To open the UV Grouping Toolbox press the UV grouper button inside the <a href="#section_uvMapper">UV Mapping Toolbox.</a>
+				<br>
+				<br>
+				
+				<div class="bold">Limitations:</div><br>
+				-There's only one set of UV groups saved per scene file.<br>
+				-If you duplicate a mesh that has UV groups you need to clear all the groups from the newly created mesh to avoid errors.
+				<br>
+				<br>
+				
+				To create a UV group, first turn off the stack checkbox in the UV Mapping Toolbox, then select two or more UV shells and press one of the 1 to 50 number buttons to assign the UV shells to that group number. When you assign shells to a UV group faces are selected to show you what shells the group consists of. To save time you only need to select one or more UVs on each shell to assign them to a group.
+				<p></p>
+				
+				Number buttons in the toolbox are coloured if they contain one or more shells, buttons that don't contain any shells are grey.
+				<p></p>
+				
+				UV groups are exclusive, so if you assign shells from group 1 to group 2 those shells are automatically removed from group 1.
+				<p></p>
+				
+				If you forget which shells are assigned to which groups, select UVs on the shells in question and the group numbers will display at the top of the toolbox. UV shells that don't belong to any group will display as None.
+				<p></p>
+				
+				The clear button removes all shells from the group, you only need to select one component from a grouped shell to remove all shells from that group. The clear all button clears all UV shell groups.
+				<div class="centered-gif">
+					<a href="gifs/uvMapper_12.gif" target="_blank"><img src="gifs/uvMapper_thumb_12.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br>
+
+				<span class="checkbox-button"><span style="background-color: #292929;"></span>Group Shells</span><br>
+				<span class="grey-button" style="width: 33.5px;">sel</span> <span class="grey-button" style="width: 33.5px;">sel</span> <span class="grey-button" style="width: 33.5px;">sel</span> <span class="grey-button" style="width: 33.5px;">sel</span> <span class="grey-button" style="width: 33.5px;">sel</span>
+				<br>
+				<span class="grey-button" style="width: 33.5px;">1</span> <span class="grey-button" style="width: 33.5px;">2</span> <span class="grey-button" style="width: 33.5px;">3</span> <span class="grey-button" style="width: 33.5px;">4</span> <span class="grey-button" style="width: 33.5px;">5</span>
+				<br>				
+				Number buttons assign selected UV shells to that group number, sel buttons select the contents of the corresponding group number.
+				<p></p>
+				
+				To save time you only need to select one or more UVs on each shell to assign them to a group.
+				<br>
+				<br>
+				
+				<span class="checkbox-button"><span style="background-color: #292929;"></span>Clear Groups</span><br>
+				<span class="orange-button" style="width: 90px;">clear</span> <span class="red-button" style="width: 90px;">clear all</span><br>
+				Clears selected UVs shells from whatever group they're in or clear all UV shells from all groups.
+				<p></p>
+				
+				To save time you only need to select one or more UVs on each shell you want to clear from whatever group they're in. Clear all doesn't require any selection.
+				<br>
+				<br>
+				
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> layout after edit</span><br>
+				Turn on if you want to layout UVs each time you add or remove something from a UV group. This is helpful to see how your UV shells stack without needing to press the layout UVs button each time you make an edit to a UV group.
+				<br>
+				<br>
+				
+				<span class="yellow-button">layout UVs</span><br>
+				Lays out UVs using the checkboxes you've configured in the UV Mapping Toolbox.
+				<br>
+				<br>
+
+				
+				<div class="page-end-vertical-space">
+				</div>		
+            </div>
+			</></></>
+
+
+			<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 			<!--Materials content-->
 			<div id="section_copy" class="content-section">
 				<br>
@@ -4725,10 +4939,10 @@
 				<div class="bold">Copies the material from the currently selected face and stores it in the clipboard.</div>
 				<p></p>
 				
-				Copying a material to the clipboard allows you to <a href="#" onclick="showContent('section_paste')">paste</a> the material to other objects or faces without opening the Hypershade.
+				Copying a material to the clipboard allows you to <a href="#section_paste">paste</a> the material to other objects or faces without opening the Hypershade.
 				<p></p>
 				
-				The copied material stays in the clipboard until you copy a different material or close Maya. You can also use the <a href="#" onclick="showContent('section_replace')">replace</a> tool to replace whole material ids.
+				The copied material stays in the clipboard until you copy a different material or close Maya. You can also use the <a href="#section_replace">replace</a> tool to replace whole material ids.
 				<p></p>
 				
 				In object mode the first material it finds on the mesh gets stored in the clipboard. This is helpful if you only have one material on the mesh and can save time not having to enter face mode.
@@ -4757,7 +4971,7 @@
 				Pasting a material from the clipboard allows you to apply that material to other objects or faces without opening the Hypershade.
 				<p></p>
 				
-				The copied material stays in the clipboard until you <a href="#" onclick="showContent('section_copy')">copy</a> a different material or close Maya. You can also use the <a href="#" onclick="showContent('section_replace')">replace</a> tool to replace whole material ids.
+				The copied material stays in the clipboard until you <a href="#section_copy">copy</a> a different material or close Maya. You can also use the <a href="#section_replace">replace</a> tool to replace whole material ids.
 				<br>
 				<div class="centered-gif">
 					<a href="gifs/copy_01.gif" target="_blank"><img src="gifs/copy_thumb_01.gif" class="scaled-gif"></a>
@@ -4791,7 +5005,7 @@
 				Select a single face of the material id you want to replace and press the replace button.
 				<p></p>
 				
-				<a href="#" onclick="showContent('section_copy')">Copy</a> and replacing is a quick way to change material ids without opening the Hypershade.
+				<a href="#section_copy">Copy</a> and replacing is a quick way to change material ids without opening the Hypershade.
 				<br>
 				<div class="centered-gif">
 					<a href="gifs/replace_01.gif" target="_blank"><img src="gifs/replace_thumb_01.gif" class="scaled-gif"></a>
@@ -5235,7 +5449,7 @@
 				This is helpful for moving objects between scenes or saving a temp file without any file browsing.
 				<p></p>
 				
-				If you have two copies of Maya open you can export selected objects between them, for example if you don't want to close your main Maya, but want to <a href="#" onclick="showContent('section_import')">import</a> part of a scene from another file.
+				If you have two copies of Maya open you can export selected objects between them, for example if you don't want to close your main Maya, but want to <a href="#section_import">import</a> part of a scene from another file.
 				<p></p>
 				
 				The temp file stays on your hard drive even if you close Maya and can be imported at any time until the temp file is overwritten.
@@ -5289,7 +5503,7 @@
 				This is helpful for moving objects between scenes without any file browsing.
 				<p></p>
 				
-				If you have two copies of Maya open you can <a href="#" onclick="showContent('section_export')">export</a> selected objects between them, for example if you don't want to close your main Maya, but want to import part of a scene from another file.
+				If you have two copies of Maya open you can <a href="#section_export">export</a> selected objects between them, for example if you don't want to close your main Maya, but want to import part of a scene from another file.
 				<p></p>
 				
 				The temp file stays on your hard drive even if you close Maya and can be imported at any time until the temp file is overwritten.
@@ -5806,9 +6020,12 @@ function activateSectionFromHash() {
   const hash = location.hash.replace('#', '');
   if (!hash) return;
 
+  // Split into section + optional inline anchor
+  const [section, anchor] = hash.split("&");
+
   // Activate the section
   if (typeof showContent === 'function') {
-    showContent(hash);
+    showContent(section);
   }
 
   // Force-expand the correct TOC group
@@ -5817,17 +6034,17 @@ function activateSectionFromHash() {
     const nestedList = group.querySelector('.nested');
     const links = nestedList?.querySelectorAll('a') || [];
     links.forEach(link => {
-      if (link.getAttribute('onclick')?.includes(hash)) {
+      if (link.getAttribute('href')?.includes(section)) {
         if (nestedList) nestedList.style.display = 'block';
       }
     });
   });
 
-  // Scroll to the section
-  const target = document.getElementById(hash);
-  if (target) {
+  // Scroll to inline anchor if present
+  if (anchor) {
     setTimeout(() => {
-      target.scrollIntoView({ behavior: 'smooth' });
+      const el = document.getElementById(anchor);
+      if (el) el.scrollIntoView({ behavior: 'auto' });
     }, 100);
   }
 }
