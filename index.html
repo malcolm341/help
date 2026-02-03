@@ -831,7 +831,7 @@
 			
 			<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 			<!--Quick Start Guide content-->
-			<div id="section_QuickStartGuide" class="content-section active">
+			<div id="section_QuickStartGuide" class="content-section">
 				<br>
 				<span class=hf1>Quick Start Guide</span>
 				<p style="height: 2px; margin-top: 10px; margin-bottom: 10px;"></p>
@@ -2205,12 +2205,12 @@
 				</div>
 				<br>
 				<br>
-				
+
 				<span class="grey-button" style="width: 185px;">reset</span><br>
 				Resets the toolbox back to default settings.
 				<br>
 				<br>
-				
+
 				<span class="r-button" style="width: 140px;">mirror object X</span> <span class="r-button" style="width: 40px;">flip</span>
 				<br>
 				Mirrors or flips selected meshes on the X axis, meshes are mirrored or flipped from their current pivot points.
@@ -2222,20 +2222,19 @@
 				Mirrors or flips selected meshes on the Y axis, meshes are mirrored or flipped from their current pivot points.
 				<br>
 				<br>
-				
+
 				<span class="b-button" style="width: 140px;">mirror object Z</span> <span class="b-button" style="width: 40px;">flip</span>
 				<br>
 				Mirrors or flips selected meshes on the Z axis, meshes are mirrored or flipped from their current pivot points.
 				<br>
 				<br>
 				
-				<span class="purpleDrank-button">history</span><br>
-				Duplicates selected objects with history and no mirroring, this can be useful for duplicating primitives so you can adjust the number of segments without having to create a new primitive. Only works on objects that currently have history.
-				<br>
-				<br>
+				<span class="checkbox-button"><span style="background-color: #292929;"></span>Duplicate Object With</span><br>
+				<span class="purpleDrank-button" style="width: 90px;">history</span> <span class="blue-button" style="width: 91px;">instance</span><br>
+				The history button duplicates selected objects with history and no mirroring. The instance button duplicates selected objects as instances and no mirroring.
+				<p></p>
 				
-				<span class="blue-button">instance</span><br>
-				Duplicates selected objects as instances without mirroring.
+				Duplicating objects with history is useful for primitives so you can adjust the number of segments without having to create a new primitive each time.
 				<br>
 				<br>
 				
@@ -2243,7 +2242,8 @@
 				Turn on to create mirrored meshes as instances instead of duplicates.
 				<br>
 				<br> 
-				
+<!--Scroll to me-->
+<div id="target-section"></div>								
 				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> flip UV</span><br>
 				Turn on to mirror UVs for the resulting mirrored mesh.
 				<br>
@@ -2269,28 +2269,24 @@
 				<br>
 				<br>
 				
-				<span class="grey-button">de-instance</span><br>
-				Converts selected instances into regular objects, de-instances them.
-				<br>
-				<br>
+				<span class="grey-button" style="width: 110px;">de-instance</span> <span class="yellow-button" style="width: 71px;">findGB</span><br>
+				The de-instance button converts selected instances into regular objects, de-instances them.
+				<p></p>
 				
-				<span class="yellow-button">findGB</span><br>
-				Selects geometry border edges. This is helpful for identifying unweled verts and open edges as you model, and is easier to see than the Maya viewport setting for border edges.
+				The findGB button selects geometry border edges. This is helpful for identifying unweled verts and open edges as you model, and is easier to see than the Maya viewport setting for border edges.
 				<br>
 				<br>
+			
+				<span class="orange-button" style="width: 90px;">combine</span> <span class="orange-button" style="width: 91px;">extract</span><br>
+				The combine button combines selected meshes without creating extra nodes in the outliner. The last selected mesh's name, pivot, and transform will be used to create the new combined object.
+				<p></p>
 				
-				<span class="orange-button">combine</span><br>
-				Comebines selected meshes without creating extra nodes in the outliner. The last selected mesh's name, pivot, and transform will be used to create the new combined object.
-				<br>
-				<br>
-				
-				<span class="orange-button">extract</span><br>
-				Extracts selected faces without creating extra nodes in the outliner. In object mode extract will separate each mesh element into a new object.
+				The extract button extracts selected faces without creating extra nodes in the outliner. In object mode extract will separate each mesh element into a new object.
 				<br>
 				<br>
 				
 				<span class="orange-button">combine/merge</span><br>
-				Combines selected meshes and merges overlapping verts using the current value from the merge input field, combine/merge also works on instances.
+				Combines selected meshes and merges overlapping verts using the distance value from the merge input field, combine/merge also works on instances.
 				<p></p>
 				
 				If you have exactly two verts selected combine/merge will merge them to center no matter how far apart they are.
