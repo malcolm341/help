@@ -2211,41 +2211,65 @@
 				<br>
 				<br>
 
-				<span class="r-button" style="width: 140px;">mirror object X</span> <span class="r-button" style="width: 40px;">flip</span>
-				<br>
-				Mirrors or flips selected meshes on the X axis, meshes are mirrored or flipped from their current pivot points.
+				<span class="r-button" style="width: 25px;">-</span> <span class="r-button" style="width: 25px;">+</span> <span class="r-button" style="width: 88.5px;">mirror X</span> <span class="r-button" style="width: 33px;">flip</span><br>
+				The mirror X button mirrors selected meshes or faces on the X axis. The flip button flips selected meshes or faces on the X axis. Meshes and faces are mirrored or flipped from their current pivot points.
+				<p></p>
+				
+				The + and - buttons activate the mirror cut tool on the X axis in the positive or negative direction.
+				<p></p>
+				
+				Use the + button if you're going to move the mirror cut manipulator along positive X in world space.<br>
+				Use the - button if you're going to move the mirror cut manipulator along negative X in world space.
 				<br>
 				<br>
 				
-				<span class="g-button" style="width: 140px;">mirror object Y</span> <span class="g-button" style="width: 40px;">flip</span>
-				<br>
-				Mirrors or flips selected meshes on the Y axis, meshes are mirrored or flipped from their current pivot points.
+				<span class="g-button" style="width: 25px;">-</span> <span class="g-button" style="width: 25px;">+</span> <span class="g-button" style="width: 88.5px;">mirror Y</span> <span class="g-button" style="width: 33px;">flip</span><br>
+				The mirror Y button mirrors selected meshes or faces on the Y axis. The flip button flips selected meshes or faces on the Y axis. Meshes and faces are mirrored or flipped from their current pivot points.
+				<p></p>
+				
+				The + and - buttons activate the mirror cut tool on the Y axis in the positive or negative direction.
+				<p></p>
+				
+				Use the + button if you're going to move the mirror cut manipulator along positive Y in world space.<br>
+				Use the - button if you're going to move the mirror cut manipulator along negative Y in world space.
 				<br>
 				<br>
 
-				<span class="b-button" style="width: 140px;">mirror object Z</span> <span class="b-button" style="width: 40px;">flip</span>
-				<br>
-				Mirrors or flips selected meshes on the Z axis, meshes are mirrored or flipped from their current pivot points.
-				<br>
-				<br>
+				<span class="b-button" style="width: 25px;">-</span> <span class="b-button" style="width: 25px;">+</span> <span class="b-button" style="width: 88.5px;">mirror Z</span> <span class="b-button" style="width: 33px;">flip</span><br>
+				The mirror Z button mirrors selected meshes or faces on the Z axis. The flip button flips selected meshes or faces on the Z axis. Meshes and faces are mirrored or flipped from their current pivot points.
+				<p></p>
 				
+				The + and - buttons activate the mirror cut tool on the Z axis in the positive or negative direction.
+				<p></p>
+				
+				Use the + button if you're going to move the mirror cut manipulator along positive Z in world space.<br>
+				Use the - button if you're going to move the mirror cut manipulator along negative Z in world space.
+				<br>
+				<br>
+<!--Scroll to me
+<div id="target-section"></div>-->
 				<span class="checkbox-button"><span style="background-color: #292929;"></span>Duplicate Object With</span><br>
 				<span class="purpleDrank-button" style="width: 90px;">history</span> <span class="blue-button" style="width: 91px;">instance</span><br>
 				The history button duplicates selected objects with history and no mirroring. The instance button duplicates selected objects as instances and no mirroring.
 				<p></p>
 				
-				Duplicating objects with history is useful for primitives so you can adjust the number of segments without having to create a new primitive each time.
+				Duplicating objects with history is useful for primitives so you can adjust the number of segments without having to create a new primitive each time. Objects need to have usable history for this tool to work.
+				<div class="centered-gif">
+					<a href="gifs/mirrorEr_02.gif" target="_blank"><img src="gifs/mirrorEr_thumb_02.gif" class="scaled-gif"></a>
+				</div>
 				<br>
 				<br>
 				
 				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> instance</span><br>
 				Turn on to create mirrored meshes as instances instead of duplicates.
+				<div class="centered-gif">
+					<a href="gifs/mirrorEr_03.gif" target="_blank"><img src="gifs/mirrorEr_thumb_03.gif" class="scaled-gif"></a>
+				</div>
 				<br>
-				<br> 
-<!--Scroll to me
-<div id="target-section"></div>-->
+				<br>
+
 				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> flip UV</span><br>
-				Turn on to mirror UVs for the resulting mirrored mesh.
+				Turn on to mirror UVs for the resulting mirrored mesh or faces.
 				<br>
 				<br>
 				
@@ -2255,19 +2279,23 @@
 				<br>
 				
 				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> findGB</span><br>
-				Turn on to select geometry border edges after meshes have been merged. This is very helpful to show if overlapping verts have actually been merged and if unwelded edges still remain.
-				<br>
-				<br>
+				Turn on to select geometry border edges after meshes have been mirrored and merged, or merged using the combine/merge button. This is very helpful to show if overlapping verts have actually been merged during mirroring and if unwelded edges still remain.
+				<p></p>
 				
-				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> cut+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="background-color: #292929;">&nbsp;✔&nbsp;</span> cut- </span><br>
-				Turn on cut+ or cut- if you'd like the resulting mirrored mesh to be a live mirror cut node. cut+ should be used when the resulting mirrored mesh is going to be created in a positive world space direction from the object's current pivot point.
+				In the example image you can see the horizontal edges are merged because they fall within the merge distance I set. The vertical edges are automatically selected to indicate the merge distance was too low to merge those edges.
+				<div class="centered-gif">
+					<a href="gifs/mirrorEr_04.gif" target="_blank"><img src="gifs/mirrorEr_thumb_04.gif" class="scaled-gif"></a>
+				</div>
 				<br>
 				<br>
 				
 				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> use WP</span><br>
-				Turn on if you'd like the mesh to be mirrored from the world pivot instead of the mesh pivot. This can save time if you always work at the center of the grid and don't want to set a custom pivot point before mirroring.
+				Turn on if you'd like the selected mesh or faces to be mirrored from the world pivot instead of the selection pivot. This can save time if you always work at the center of the grid and don't want to set a custom pivot point before mirroring.
+				<div class="centered-gif">
+					<a href="gifs/mirrorEr_05.gif" target="_blank"><img src="gifs/mirrorEr_thumb_05.gif" class="scaled-gif"></a>
+				</div>
 				<br>
-				<br>
+				<br> 
 				
 				<span class="grey-button" style="width: 110px;">de-instance</span> <span class="yellow-button" style="width: 71px;">findGB</span><br>
 				The de-instance button converts selected instances into regular objects, de-instances them.
@@ -2282,6 +2310,11 @@
 				<p></p>
 				
 				The extract button extracts selected faces without creating extra nodes in the outliner. In object mode extract will separate each mesh element into a new object.
+				<br>
+				<br>
+				
+				<span class="orange-button">duplicate face</span><br>
+				Duplicates selected faces as a new object without creating extra nodes in the outliner.
 				<br>
 				<br>
 				
