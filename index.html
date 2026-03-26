@@ -2050,7 +2050,7 @@
 				Select one or more components on a mesh and click any of the primitive buttons to create that primitive type.
 				<p></p>
 				
-				For best results select a single face and then choose a primitive type. If multiple components are selected the average normal of the components will be used to align the primitive which may or may not be useful.
+				For best results select faces and then choose a primitive type. Each primitive will be aligned using the face normal.
 				<p></p>
 				
 				If you set any of the transform tools to object orientation you can transform the object on the current alignment.
@@ -2064,81 +2064,135 @@
 				
 				If you press the t key directly after creating a primitive it will bring up the attributes box where you can modify the subdivisions and other properties.
 				<br>
-			
 				<div class="centered-gif">
 					<a href="gifs/CPAS_01.gif" target="_blank"><img src="gifs/CPAS_thumb_01.gif" class="scaled-gif"></a>
 				</div>
 				<br>
 				<br>
-
+<!--Scroll to me
+<div id="target-section"></div>-->
 				<span class="checkbox-button">Scale <span style="background-color: #292929;"></span></span><br>
-				Sets the scale the primitives will be created at.
+				Sets the scale primitives will be created at.
 				<br>
 				<br>
 				
-				<span class="checkbox-button"><span style="background-color: #292929;"></span>Pivot at</span><br>
-				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> base</span><br>
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> pivot Y</span><br>
 				Turn on if you want the primitive's pivot point to be at the base of the mesh.
 				<br>
 				<br>
+
+				<span class="checkbox-button">1 <span style="background-color: #292929;">&nbsp;✔&nbsp;</span> <span style="background-color: #292929;">&nbsp;✔&nbsp;</span> 2</span><br>
+				<span class="checkbox-button">3 <span style="background-color: #292929;">&nbsp;✔&nbsp;</span> <span style="background-color: #292929;">&nbsp;✔&nbsp;</span> 4</span><br>
+				Turn on if you want the primitive's pivot point to be at one of the four corners of the mesh.
+				<p></p>
 				
-				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> corner</span><br>
-				Turn on if you want the primitive's pivot point to be at the corner of the mesh.
+				The 1, 2, 3, 4 checkboxes correspond to the four corners of the mesh if you look at it from the top view in Y up.
+				<br>
+				<div class="centered-gif">
+					<a href="gifs/CPAS_help_01.jpg" target="_blank"><img src="gifs/CPAS_help_01.jpg" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br>
+				
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> inst.</span><br>
+				Turn on if you want the primitive to be created as an instance.
+				<p></p>
+				
+				The first instance is created at the world origin and is automatically selected for convenience. This is helpful if you want to place a bunch of instances at selected components because you can then make modeling edits to the instance at the world origin that doesn't have any rotations applied.
+				<p></p>
+				
+				The inst. checkbox has no affect when creating locators, groups, or if you have nothing selected when you create a primitive. If you want to create an instance, select at least one object or one component first.
+				<div class="centered-gif">
+					<a href="gifs/CPAS_03.gif" target="_blank"><img src="gifs/CPAS_thumb_03.gif" class="scaled-gif"></a>
+				</div>
 				<br>
 				<br>
 				
 				<span class="orange-button" style="width: 185px;">cube</span><br>
 				Creates a cube.
+				<p></p>
+				
+				Press t on the keyboard after creating a primitive to modify subdivisions and other properties.
 				<br>
 				<br>
 				
 				<span class="purpleDrank-button" style="width: 185px;">plane</span><br>
 				Creates a plane.
+				<p></p>
+				
+				Press t on the keyboard after creating a primitive to modify subdivisions and other properties.
 				<br>
 				<br>
 				
 				<span class="green-button" style="width: 185px;">sphere</span><br>
 				Creates a sphere.
+				<p></p>
+				
+				Press t on the keyboard after creating a primitive to modify subdivisions and other properties.
 				<br>
 				<br>
 				
 				<span class="blue-button" style="width: 185px;">cylinder</span><br>
 				Creates a cylinder.
+				<p></p>
+				
+				Press t on the keyboard after creating a primitive to modify subdivisions and other properties.
 				<br>
 				<br>
 				
 				<span class="greenYellow-button" style="width: 185px;">pipe</span><br>
 				Creates a pipe.
+				<p></p>
+				
+				Press t on the keyboard after creating a primitive to modify subdivisions and other properties.
 				<br>
 				<br>
 				
 				<span class="yellow-button" style="width: 185px;">helix</span><br>
 				Creates a helix.
+				<p></p>
+				
+				Press t on the keyboard after creating a primitive to modify subdivisions and other properties.
 				<br>
 				<br>
 				
 				<span class="red-button" style="width: 185px;">platonic</span><br>
-				Creates a platonic multi-purpose primitive. 
+				Creates a platonic multi-purpose primitive. The default shape is set to quad-sphere for convenience.  
+				<p></p>
+				
+				Due to a limitation in Maya pressing t on the keyboard has no effect on this primitive type. If you'd like to modify subdivisions and other properties you need to use the chnnel box or the attribute editor.
 				<br>
 				<br>
 				
 				<span class="seafoam-button" style="width: 185px;">torus</span><br>
 				Creates a torus.
+				<p></p>
+				
+				Press t on the keyboard after creating a primitive to modify subdivisions and other properties.
 				<br>
 				<br>
 				
 				<span class="blue-button" style="width: 185px;">cone</span><br>
 				Creates a cone.
+				<p></p>
+				
+				Press t on the keyboard after creating a primitive to modify subdivisions and other properties.
 				<br>
 				<br>
 				
 				<span class="purple-button" style="width: 185px;">locator</span><br>
 				Creates a locator.
+				<p></p>
+				
+				The pivot Y, 1, 2, 3, 4 and inst. checkboxes have no affect on this primitive type.
 				<br>
 				<br>
 				
 				<span class="grey-button" style="width: 185px;">group</span><br>
 				Creates a group.
+				<p></p>
+				
+				The scale setting, pivot Y, 1, 2, 3, 4, and inst. checkboxes have no affect on this primitive type.
 				<br>
 				<br>
 			
@@ -5832,8 +5886,11 @@
 				<br>
 				<br>
 				
-				<span class="red-button">undo measure</span><br>
-				Removes the last created measure node each time you press the button.
+				<span class="red-button" style="width: 141px;">undo measure</span> <span class="red-button" style="width: 40px;">all</span><br>
+				The undo measure button removes the last created measure node each time you press the button.
+				<p></p>
+				
+				The all button removes all measure nodes from the scene.
 				<p></p>
 				
 				Maya's undo doesn't work correctly with this toolbox and undoing will create empty nodes in the Outliner. To avoid this, use the undo measure button, or select a measure group in the Outliner and delete it.
