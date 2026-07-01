@@ -648,6 +648,7 @@
                     <ul id="toc-UVMapping" class="nested">
                         <li><a href="#section_checkerMap">Checker Map Toolbox</a></li>
 						<li><a href="#section_uvGrabber">UV Grabber Toolbox</a></li>
+						<li><a href="#section_trimMapper">Trim Mapping Toolbox</a></li>
 						<li><a href="#section_udimPacker">Udim Packing Toolbox</a></li>
 						<li><a href="#section_lightMapper">Light Mapping Toolbox</a></li>
 						<li><a href="#section_unWrapper">Easy UVs Toolbox</a></li>
@@ -761,7 +762,7 @@
 				<br>
 				<span class=hf1>Installation</span>
 				<p>
-				<span class =hf2>Compatability:</span><br>
+				<span class =hf2>Compatibility:</span><br>
 				-Works on the newest version of Maya and old versions of Maya back to 2019<br>
 				-Works on Maya 2018 update 6<br>
 				-Works on Maya 2017 update 5<br>
@@ -1228,6 +1229,15 @@
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>UV Grabber Toolbox</b></p>
 						<p class="QSG-text-row">Takes UV snapshots with one click and opens them in Photoshop or the image viewer of your choice. Saves a lot of time exporting wireframes and works with UDIM tiles.</p>
+					</div>
+				</div>
+				
+				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
+				<div class="QSG-image-QSG-text-container">
+					<img src="images/quick_start_guide/Trim.png" class="QSG-left-image">
+					<div class="QSG-text-container">
+						<p class="QSG-text-row"><b>Trim Mapping Toolbox</b></p>
+						<p class="QSG-text-row">Fits UV shells to specific positions on a trim sheet texture. Uses a similar workflow to the Ultimate Trim Texturing Technique used on Sunset Overdrive and many other games.</p>
 					</div>
 				</div>
 				
@@ -3057,13 +3067,13 @@
 				<div class="bold">Grabs UV snapshots with one click and sends them directly to Photoshop or the image viewer of your choice.</div>
 				<p></p>
 				
-				This tool works with UDIM tiles and you can set a range of which tiles you want to export.
+				This toolbox works with UDIM tiles and you can set a range of which tiles you want to export.
 				<p></p>
 			
-				If you want the UV snapshot to open in Photoshop automatically, click the ... button and browse to the Photoshop app on the hard drive and select it.
+				If you want the UV snapshot to open in Photoshop automatically, click the ... button and browse to the Photoshop app on your hard drive and select it.
 				<p></p>
 				
-				For PC users the folder is usually C:\Program Files\Adobe\Adobe Photoshop
+				For PC users the Photoshop folder is usually C:\Program Files\Adobe\
 				<p></p>
 				
 				If you don't want the UVs to automatically open in the assigned image editor turn off the send to editor checkbox. Turning this checkbox off can be helpful for capturing a lot of UDIM tiles because the images generate faster if they don't need to be sent to the image editor.
@@ -3085,6 +3095,9 @@
 				<p></p>
 				
 				Click the ... button to browse to Photoshop or another program that can open images. By default images open in fcheck which is Maya's built in image viewer.
+				<p></p>
+				
+				For PC users the Photoshop folder is usually C:\Program Files\Adobe\
 				<br>
 				<br>				
 				
@@ -3229,7 +3242,7 @@
 				
 				<span class="purpleDrank-button" style="width: 42px;">up</span> <span class="purpleDrank-button" style="width: 42px;">left</span> <span class="purpleDrank-button" style="width: 45.5px;">down</span> <span class="purpleDrank-button" style="width: 42px;">right</span>
 				<br>
-				Moves selected shells by one tile in the choosen direction. To save time only one component needs to be selected on the shell to move the whole shell.
+				Moves selected shells by one tile in the chosen direction. To save time only one component needs to be selected on the shell to move the whole shell.
 				<br>
 				<br>
 				
@@ -3273,7 +3286,7 @@
 				<br>
 				
 				<span class="checkbox-button"><span style="background-color: #292929;"></span>map size &nbsp;▼</span><br>
-				The map size drop down allows you to control how padding works relative to what the final texture size is you're going to apply to the model. Set map size to the final texture resolution you plan to use on your model.
+				The map size drop-down allows you to control how padding works relative to what the final texture size is you're going to apply to the model. Set map size to the final texture resolution you plan to use on your model.
 				<br>
 				<br>
 				
@@ -3712,12 +3725,12 @@
 				<br>
 				
 				<span class="checkbox-button"><span style="background-color: #292929;"></span>map size &nbsp;▼</span><br>
-				The map size drop down allows you to control how padding works relative to what the final light map size is you're going to apply to the model. Set map size to the final light map texture resolution you plan to use on your model.
+				The map size drop-down allows you to control how padding works relative to what the final light map size is you're going to apply to the model. Set map size to the final light map texture resolution you plan to use on your model.
 				<br>
 				<br>
 				
 				<span class="checkbox-button"><span style="background-color: #292929;"></span>padding &nbsp;▼</span><br>
-				The padding drop down controls the amount of space between each UV shell and is relative to what you set the map size to. UV tile edge padding will automatically be half of whatever you set padding to.
+				The padding drop-down controls the amount of space between each UV shell and is relative to what you set the map size to. UV tile edge padding will automatically be half of whatever you set padding to.
 				<br>
 				<br> 
 				
@@ -4022,7 +4035,7 @@
 				<br>
 				
 				<span class="checkbox-button"><span style="background-color: #292929;"></span>map size &nbsp;▼</span><br>
-				The map size drop down allows you to control how padding works relative to what the final texture size is you're going to apply to the model. Set map size to the final texture resolution you plan to use on your model.
+				The map size drop-down allows you to control how padding works relative to what the final texture size is you're going to apply to the model. Set map size to the final texture resolution you plan to use on your model.
 				<br>
 				<br>
 				
@@ -4336,6 +4349,251 @@
 			
 			
 			<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+			<div id="section_trimMapper" class="content-section">
+				<br>
+				<span class=hf1>Trim Mapping Toolbox</span>
+				<p></p>
+				<img src="images/quick_start_guide/Trim.png" class="script-icon">
+				<p></p>
+				<br>
+				
+				<div class="bold">Fits UV shells to specific positions on a trim sheet texture.</div>
+				<p></p>
+			
+				This toolbox uses a similar workflow to the <a href="https://www.gdcvault.com/play/1022323/The-Ultimate-Trim-Texturing-Techniques" target="_blank">Ultimate Trim Texturing Technique</a> used on Sunset Overdrive</a> and <a href="https://trevelyan.artstation.com/projects/qQGK6y" target="_blank">The Last of Us Part 1.</a>
+				<p></p>
+				
+				This toolbox doesn't UV map anything, it fits existing UV shells into trim indexes. You need to UV map the trims you're going to use first before using this toolbox.
+				<br>
+				<br>
+
+				<div class="bold">Limitations:</div>
+				<br>
+				-Only horizontal trim sheet textures are supported.
+				<br>
+				-End cap indexes are supported, but they only work if you add edges to the bottom face of the trim index plane.
+				<br>
+				-The toolbox doesn't work when Maya is set to Z up.
+				<br>
+				<br>
+			
+				Create a trim index plane based on your trim sheet texture, then use the toolbox to easily fit your UV shells to any of the trim indexes you've loaded from the trim index plane.
+				<div class="centered-gif">
+					<a href="gifs/trimMapper_01.gif" target="_blank"><img src="gifs/trimMapper_thumb_01.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br>
+				
+				To get started click the create trim index plane button and browse to the trim texture you want to use.
+				<p></p>
+				
+				A plane is created at the world origin with your texture applied. The scale and position of the plane don't matter so you can move the plane and uniformly scale it if you want.
+				<p></p>
+
+				Select the plane and press the multi-cut button, cut the plane horizontally between each section of the trim texture to create horizontal edges. Each rectangular face you create on the plane is used as a trim index in the toolbox. Make sure your cuts are as accurate as possible down to the pixel.
+				<div class="centered-gif">
+					<a href="gifs/trimMapper_02.gif" target="_blank"><img src="gifs/trimMapper_thumb_02.gif" class="scaled-gif"></a>
+				</div>
+				<p></p>
+
+				Use the map size dropdown to select the size the texture will be in game. Set the padding to your preferred distance.
+				<p></p>
+				
+				Select the plane and press the map trim index plane button to UV map the plane 0-1 and cut each face into a UV shell with padding based on the map size and padding you choose in the toolbox. This workflow is non-destructive so if you want to move/add/delete edges, or change map size/padding you can do that now and then press the map trim index plane button again to update the index plane with your edits. Now is a good time to make sure your padding choice doesn't cause any texture bleeding between trims.
+				<div class="centered-gif">
+					<a href="gifs/trimMapper_03.gif" target="_blank"><img src="gifs/trimMapper_thumb_03.gif" class="scaled-gif"></a>
+				</div>
+				<p></p>
+				
+				Select the trim index plane you just finished creating and press the load trim index plane button to load the indexes and padding into the toolbox.
+				<p></p>
+				
+				Select a UV shell on a different mesh and press the up and down buttons to send the shell to the indexes you currently have loaded in the toolbox.
+
+				Trim indexes are stored in the toolbox until you press the reset button, or load a different trim index plane.
+				<p></p>
+				
+				If you need to share your settings with another artist you can give them the trim index plane you created and they can load it into their version of the toolbox. Make sure to give them a trim index plane that you've run the map trim index plane button on, otherwise they won't have any indexes or padding to load.
+				<p></p>
+				
+				Think of the trim index plane as the config file for the toolbox. 
+				<div class="centered-gif">
+					<a href="gifs/trimMapper_help_01.jpg" target="_blank"><img src="gifs/trimMapper_help_thumb_01.jpg" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br>
+				
+				<span class="grey-button">reset</span>
+				<br>
+				Resets the toolbox back to default settings.
+				<br>
+				<br>
+
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> on top of UV editor</span>
+				<br>
+				Turn on if you want the toolbox to stay on top of the UV editor when the UV editor is undocked. If you close the UV editor with this checkbox on, the toolbox will also close which is a limitation of how Maya works. If you're primarily working with a docked UV editor I recommend turning this checkbox off.
+				<br>
+				<br>
+
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> image dimming</span>
+				<br>
+				Toggles UV editor image dimming on/off. After the checkbox is turned on the desired brightness level can be adjusted in the UV editor using the standard controls.
+				<p></p>
+
+				The image dimming checkbox loads your last dimming settings the next time you open the toolbox. This is helpful because image dimming always resets to off when you close Maya.
+				<br>
+				<br> 
+
+				<span class="seafoam-button" style="width: 116px;">checker map</span> <span class="seafoam-button" style="width: 30px;">+</span> <span class="seafoam-button" style="width: 30px;">-</span>
+				<br>
+				Toggles the checker map on/off, press the plus or minus buttons to increase or decrease the checker map size.
+				<br>
+				<br>
+				
+				<span class="seafoam-button" style="width: 90px;">UV shaded</span> <span class="seafoam-button" style="width: 90px;">UV border</span>
+				<br>
+				Toggles shaded UVs and UV border edges on/off in the UV editor.
+				<br>
+				<br>
+
+				<span class="grey-button" style="width: 90px;">show edges</span> <span class="grey-button" style="width: 90px;">base color</span>
+				<br>
+				The show edges button toggles polygon edge display on/off in the viewport.
+				<p></p>
+				
+				The base color button toggles base colour mode on/off in the viewport. Base colour is the actual colour of the texture without any lighting or shading.
+				<br>
+				<br>
+
+				<span class="blue-button">create trim index plane</span><br>
+				Opens a browse window where you can select the trim sheet texture you want to use as a guide to create your trim index plane.
+				<p></p>
+				
+				After you load the texture you want to use, a plane is created at the world origin with the texture applied.
+				<br>
+				<br>
+
+				<span class="blue-button">multi-cut</span><br>
+				Enters the multi-cut tool.
+				<p></p>
+				
+				Use multi-cut to cut horizontal edges on a plane to create trim indexes. Each horizontal rectangular face you create on the plane is used as a trim index in the toolbox. Make sure your cuts are as accurate as possible down to the pixel.
+				<p></p>
+				
+				If you want to create end cap trim indexes, cut the bottom face of the plane vertically so you have multiple faces on the bottom row only. Vertical edges are not supported anywhere on the trim index plane except the bottom row, if you have vertical edges anywhere other than the bottom row the toolbox won't work. Each face on the bottom row of the trim index plane is used for end cap indexes and is where the UV shell will go when you press the left or right buttons.
+				<br>
+				<br>
+				
+				<span class="checkbox-button"><span style="background-color: #292929;"></span>map size &nbsp;▼</span><br>
+				The map size drop-down allows you to control how padding works relative to what the final texture size is you're going to apply to the model. Set map size to the final texture resolution you plan to use on your model.
+				<br>
+				<br>
+
+				<span class="checkbox-button"><span style="background-color: #292929;"></span>padding</span><br>
+				Padding controls the amount of space between each UV shell and is relative to what you set the map size to. UV tile edge padding will automatically be half of whatever you set padding to.
+				<br>
+				<br> 
+
+				<span class="blue-button">map trim index plane</span><br>
+				UV maps the selected trim index plane 0-1, then cuts each face into it's own UV shell, then applies padding.
+				<p></p>
+				
+				This button is necessary to finalize your trim index plane which you then need to load into the toolbox for it to work correctly.
+				<br>
+				<br>
+
+				<span class="purple-button">load trim index plane</span><br>
+				Loads the selected trim index plane into the toolbox. Think of the trim index plane as the config file for the toolbox.
+				<p></p>
+				
+				If you don't have a trim index plane loaded the toolbox won't work.
+				<p></p>
+				
+				The currently loaded trim index name is displayed below the load trim index plane button.
+				<p></p>
+				
+				The toolbox uses the last loaded trim index plane until you press the reset button or load a different trim index plane. If you switch to a scene that has no trim index plane or restart Maya, the toolbox uses the last loaded plane. Multiple trim index planes can be stored in the same scene and can be loaded into the toolbox as needed.
+				<br>
+				<br>
+
+				<span class="grey-button">select UV shells</span><br>
+				Enters UV shell select mode, this is helpful for selecting trim UV shells in the 3D viewport which is often the easiest way to select specific overlapping shells that are on the same trim index in the UV editor.
+				<br>
+				<br>
+				
+				<span class="grey-button" style="width: 90px;">flipU</span> <span class="grey-button" style="width: 91px;">flipV</span>
+				<br>
+				Flips selected UVs along U or V. Unlike Maya's standard flip tool, UVs are not cut in the flipping process and modified selection pivots are supported.
+				<br>
+				<br>
+				
+				<span class="green-button" style="width: 42px;">up</span> <span class="green-button" style="width: 42px;">left</span> <span class="green-button" style="width: 45.5px;">down</span> <span class="green-button" style="width: 42px;">right</span><br>
+				Sends selected UV shells to the closest trim index in the chosen direction. To save time only one component needs to be selected on the shell to move the whole shell.
+				<p></p>
+				
+				Remember, you need to create a valid trim index plane and load it into the toolbox before these buttons work.
+				<p></p>
+				
+				Sending UV shells to trim indexes is a non-destructive workflow, the width/height ratio of the UV shell is preserved, the UV shell is uniformly scaled to fit the height of the trim index it was sent to.
+				<p></p>
+				
+				If you use a trim sheet texture with end caps on the bottom row, you can use the left and right buttons to send UV shells to those indexes if you loaded a valid trim index plane that has multiple faces on the bottom row.
+				<p></p>
+				
+				Sending shells up and down resets their horizontal position so UV tiling is consistently left justified, but if you want to use end caps on other rows besides the bottom of the texture, just send the UV shell to the correct vertical index first, then use the left and right buttons to send it to the correct horizontal index.
+				<div class="centered-gif">
+					<a href="gifs/trimMapper_04.gif" target="_blank"><img src="gifs/trimMapper_thumb_04.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br>
+
+				<span class="yellow-button">send by selected order</span><br>
+				Sends each selected UV shell to a trim index based on the order you selected them. The first selected UV shell goes to the first trim index and the rest of the shells go to the remaining indexes in numerical order. Trim index 1 is vertically at the top of the trim index plane and the subsequent indexes are lower.
+				<p></p>
+				
+				Sending UV shells to trim indexes by selected order can be helpful for organization if you've lost track of where certain shells are in the UV editor because it will reorder the shells into trim indexes based on what order you selected them in. This allows you to vertically sort the UV shells into the order you want them.
+				<p></p>
+				
+				In very specific situations you can also use this button to send shells to the exact trim indexes you want without any of the shells landing on the same index.
+				<div class="centered-gif">
+					<a href="gifs/trimMapper_05.gif" target="_blank"><img src="gifs/trimMapper_thumb_05.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br>
+<!--Scroll to me
+<div id="target-section"></div>-->
+				<span class="purpleDrank-button">send by closest size</span><br>
+				Sends each selected UV shell to the trim index that matches closest to the UV shell's current height in the UV editor. Make sure your UV shells have been UV mapped correctly before using this button, shells with zero height are ignored.
+				<p></p>
+				
+				Depending on your shell sizes and the trim index plane you've loaded into the toolbox, some shells will be sent to the same index. For example, if all of your UV shells are taller than the tallest trim index you have loaded, all the shells will go to that one index.
+				<p></p>
+				
+				Sending all your UV shells to indexes by closest size can be a good way to get started because some shells will automatically go to the trim index you intended without any work. From there use the up, down, left, right, buttons to send shells exactly where you want them.
+				<div class="centered-gif">
+					<a href="gifs/trimMapper_06.gif" target="_blank"><img src="gifs/trimMapper_thumb_06.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br>
+				
+				<span class="red-button">unstack shells</span><br>
+				Moves each selected UV shell above the 0-1 UV tile and spaces the shells out so there's no overlap. This is helpful if you have a lot of overlapping UV shells and need to organize them, or if you want to organize everything before you start sending shells to trim indexes.
+				<p></p>
+				
+				Unstacking shells is a non-destructive workflow and doesn't change the width/height ratio or the size of any of the UV shells, it only moves the shells and evenly spaces them for organization purposes.
+				<div class="centered-gif">
+					<a href="gifs/trimMapper_07.gif" target="_blank"><img src="gifs/trimMapper_thumb_07.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br>
+				
+				<div class="page-end-vertical-space">
+				</div>		
+            </div>
+			</></></>
+			
+			
+			<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 			<div id="section_uvMapper" class="content-section">
 				<br>
 				<span class=hf1>UV Mapping Toolbox</span>
@@ -4602,7 +4860,7 @@
 				</div>
 				
 				<span class="purpleDrank-button" style="width: 42px;">up</span> <span class="purpleDrank-button" style="width: 42px;">left</span> <span class="purpleDrank-button" style="width: 45.5px;">down</span> <span class="purpleDrank-button" style="width: 42px;">right</span><br>
-				Moves selected shells by one tile in the choosen direction. To save time only one component needs to be selected on the shell to move the whole shell.
+				Moves selected shells by one tile in the chosen direction. To save time only one component needs to be selected on the shell to move the whole shell.
 				<br>
 				<br>
 
@@ -4870,7 +5128,7 @@
 				<br>
 				
 				<span class="checkbox-button"><span style="background-color: #292929;"></span>map size &nbsp;▼</span><br>
-				The map size drop down allows you to control how padding works relative to what the final texture size is you're going to apply to the model. Set map size to the final texture resolution you plan to use on your model.
+				The map size drop-down allows you to control how padding works relative to what the final texture size is you're going to apply to the model. Set map size to the final texture resolution you plan to use on your model.
 				<br>
 				<br>
 
