@@ -4366,33 +4366,22 @@
 				<p></p>
 				
 				This toolbox doesn't UV map anything, it fits existing UV shells into trim indexes. You need to UV map the trims you're going to use first before using this toolbox.
-				<br>
-				<br>
+				<p></p>
 
-				<div class="bold">Limitations:</div>
-				<br>
-				-Only horizontal trim sheet textures are supported.
-				<br>
-				-End cap indexes are supported, but they only work if you add edges to the bottom face of the trim index plane.
-				<br>
-				-The toolbox doesn't work when Maya is set to Z up.
-				<br>
-				<br>
-			
 				Create a trim index plane based on your trim sheet texture, then use the toolbox to easily fit your UV shells to any of the trim indexes you've loaded from the trim index plane.
 				<div class="centered-gif">
 					<a href="gifs/trimMapper_01.gif" target="_blank"><img src="gifs/trimMapper_thumb_01.gif" class="scaled-gif"></a>
 				</div>
 				<br>
 				<br>
-				
+
 				To get started click the create trim index plane button and browse to the trim texture you want to use.
 				<p></p>
 				
 				A plane is created at the world origin with your texture applied. The scale and position of the plane don't matter so you can move the plane and uniformly scale it if you want.
 				<p></p>
 
-				Select the plane and press the multi-cut button, cut the plane horizontally between each section of the trim texture to create horizontal edges. Each rectangular face you create on the plane is used as a trim index in the toolbox. Make sure your cuts are as accurate as possible down to the pixel.
+				Select the plane and press the multi-cut button, cut the plane between each section of the trim texture to create edges. Each face you create on the plane is used as a trim index in the toolbox. Make sure your cuts are as accurate as possible down to the pixel.
 				<div class="centered-gif">
 					<a href="gifs/trimMapper_02.gif" target="_blank"><img src="gifs/trimMapper_thumb_02.gif" class="scaled-gif"></a>
 				</div>
@@ -4479,10 +4468,7 @@
 				Enters the multi-cut tool.
 				<p></p>
 				
-				Use multi-cut to cut horizontal edges on a plane to create trim indexes. Each horizontal rectangular face you create on the plane is used as a trim index in the toolbox. Make sure your cuts are as accurate as possible down to the pixel.
-				<p></p>
-				
-				If you want to create end cap trim indexes, cut the bottom face of the plane vertically so you have multiple faces on the bottom row only. Vertical edges are not supported anywhere on the trim index plane except the bottom row, if you have vertical edges anywhere other than the bottom row the toolbox won't work. Each face on the bottom row of the trim index plane is used for end cap indexes and is where the UV shell will go when you press the left or right buttons.
+				Use multi-cut to cut edges on a plane to create trim indexes. Each face you create on the plane is used as a trim index in the toolbox. Make sure your cuts are as accurate as possible down to the pixel.
 				<br>
 				<br>
 				
@@ -4511,9 +4497,9 @@
 				If you don't have a trim index plane loaded the toolbox won't work.
 				<p></p>
 				
-				The currently loaded trim index name is displayed below the load trim index plane button.
+				The currently loaded trim index plane name is displayed below the load trim index plane button.
 				<p></p>
-				
+			
 				The toolbox uses the last loaded trim index plane until you press the reset button or load a different trim index plane. If you switch to a scene that has no trim index plane or restart Maya, the toolbox uses the last loaded plane. Multiple trim index planes can be stored in the same scene and can be loaded into the toolbox as needed.
 				<br>
 				<br>
@@ -4522,6 +4508,21 @@
 				Enters UV shell select mode, this is helpful for selecting trim UV shells in the 3D viewport which is often the easiest way to select specific overlapping shells that are on the same trim index in the UV editor.
 				<br>
 				<br>
+				
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> preserve U tiling</span>
+				<br>
+				Turn on if you want to preserve the horizontal width of UV shells when you press the up/left/down/right buttons, the send by selected order buttons, and the send by closest size button. Turning this on is usually what you want to avoid UV stretching and get correct horizontal tiling along U.
+				<br>
+				<br>
+
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> stretch to trim index</span>
+				<br>
+				Turn on if you want to stretch UV shells to fit horizontally and vertically into the trim index when you press the up/left/down/right buttons, the send by selected order buttons, and the send by closest size button.
+				<p></p>
+				
+				This can be helpful for end caps which sometimes can't be aligned properly with your trim sheet texture without some form of stretching. 
+				<br>
+				<br> 
 				
 				<span class="grey-button" style="width: 90px;">flipU</span> <span class="grey-button" style="width: 91px;">flipV</span>
 				<br>
@@ -4536,42 +4537,43 @@
 				Remember, you need to create a valid trim index plane and load it into the toolbox before these buttons work.
 				<p></p>
 				
-				Sending UV shells to trim indexes is a non-destructive workflow, the width/height ratio of the UV shell is preserved, the UV shell is uniformly scaled to fit the height of the trim index it was sent to.
+				Sending UV shells to trim indexes is a non-destructive workflow if the preserve U tiling checkbox is turned on, the width/height ratio of the UV shell is preserved when this checkbox is on and the UV shell is uniformly scaled to fit the height of the trim index it was sent to.
 				<p></p>
 				
-				If you use a trim sheet texture with end caps on the bottom row, you can use the left and right buttons to send UV shells to those indexes if you loaded a valid trim index plane that has multiple faces on the bottom row.
-				<p></p>
-				
-				Sending shells up and down resets their horizontal position so UV tiling is consistently left justified, but if you want to use end caps on other rows besides the bottom of the texture, just send the UV shell to the correct vertical index first, then use the left and right buttons to send it to the correct horizontal index.
+				Sending shells in any direction will move them back into the 0-1 UV space and position them using the bottom left corner of the shell's bounding box to the closest index in the chosen direction.
 				<div class="centered-gif">
 					<a href="gifs/trimMapper_04.gif" target="_blank"><img src="gifs/trimMapper_thumb_04.gif" class="scaled-gif"></a>
 				</div>
 				<br>
 				<br>
 
-				<span class="yellow-button">send by selected order</span><br>
-				Sends each selected UV shell to a trim index based on the order you selected them. The first selected UV shell goes to the first trim index and the rest of the shells go to the remaining indexes in numerical order. Trim index 1 is vertically at the top of the trim index plane and the subsequent indexes are lower.
+				<span class="checkbox-button"><span style="background-color: #292929;"></span>Send by Selected Order</span><br>
+				<span class="yellow-button" style="width: 59px;">UV</span> <span class="yellow-button" style="width: 58px;">U</span> <span class="yellow-button" style="width: 59px;">V</span><br>
+				Sends each selected UV shell to a trim index based on the order you selected them in and the UV direction button you pressed.
 				<p></p>
 				
-				Sending UV shells to trim indexes by selected order can be helpful for organization if you've lost track of where certain shells are in the UV editor because it will reorder the shells into trim indexes based on what order you selected them in. This allows you to vertically sort the UV shells into the order you want them.
+				The UV button sends shells to indexes from left to right starting on the left most horizontal index on the top row, when it runs out of horizontal indexes the shells go to the next row below the current row starting with the left most horizontal index.
 				<p></p>
 				
-				In very specific situations you can also use this button to send shells to the exact trim indexes you want without any of the shells landing on the same index.
+				The U button sends shells to indexes from left to right only starting on the left most horizontal index and stops when it runs out of indexes.
+				<p></p>
+				
+				The V button sends shells to indexes from top to bottom only starting on the top most vertical index and stops when it runs out of indexes.
+				<p></p>
+				
+				Sending UV shells to trim indexes by selected order can be helpful for certain trim sheet textures like stairs. 
 				<div class="centered-gif">
 					<a href="gifs/trimMapper_05.gif" target="_blank"><img src="gifs/trimMapper_thumb_05.gif" class="scaled-gif"></a>
 				</div>
 				<br>
 				<br>
-<!--Scroll to me
-<div id="target-section"></div>-->
+<!--Scroll to me-->
+<div id="target-section"></div>
 				<span class="purpleDrank-button">send by closest size</span><br>
-				Sends each selected UV shell to the trim index that matches closest to the UV shell's current height in the UV editor. Make sure your UV shells have been UV mapped correctly before using this button, shells with zero height are ignored.
+				Sends each selected UV shell to the trim index that matches closest to the UV shell's current width/height in the UV editor. Make sure your UV shells have been UV mapped correctly before using this button, shells with zero width or zero height don't work.
 				<p></p>
 				
-				Depending on your shell sizes and the trim index plane you've loaded into the toolbox, some shells will be sent to the same index. For example, if all of your UV shells are taller than the tallest trim index you have loaded, all the shells will go to that one index.
-				<p></p>
-				
-				Sending all your UV shells to indexes by closest size can be a good way to get started because some shells will automatically go to the trim index you intended without any work. From there use the up, down, left, right, buttons to send shells exactly where you want them.
+				Sending all your UV shells to indexes by closest size can be a good way to get started because some shells will automatically go to the trim index you intended without any work. From there use the up, left, down, right, buttons to send shells exactly where you want them, or scale the shells uniformly so they almost fit where you want them and then use the send by closest size button again.
 				<div class="centered-gif">
 					<a href="gifs/trimMapper_06.gif" target="_blank"><img src="gifs/trimMapper_thumb_06.gif" class="scaled-gif"></a>
 				</div>
