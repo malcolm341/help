@@ -4511,7 +4511,7 @@
 				
 				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> keep aspect ratio</span>
 				<br>
-				Turn on if you want to preserve the horizontal width/height of UV shells when you press the up/left/down/right buttons, the send by selected order buttons, and the send by closest size button. Turning this on is usually what you want to avoid UV stretching and get correct horizontal tiling along U.
+				Turn on if you want to preserve the horizontal width/height ratio of UV shells when you press the up/left/down/right buttons, the send by selected order buttons, and the send by closest size button. Turning this on is usually what you want to avoid UV stretching and is a non-destructive workflow because the shells are uniformly scalled to fit the vertical trim index height.
 				<br>
 				<br>
 
@@ -4520,7 +4520,10 @@
 				Turn on if you want to stretch UV shells to fit horizontally and vertically into the trim index when you press the up/left/down/right buttons, the send by selected order buttons, and the send by closest size button.
 				<p></p>
 				
-				This can be helpful for end caps which sometimes can't be aligned properly with your trim sheet texture without some form of stretching. 
+				This can be helpful for end caps which sometimes can't be aligned properly with your trim sheet texture without some form of stretching. This is a destructive workflow and will change the width/height ratio of your UV shells to fit into the trim index width/height exactly.
+				<div class="centered-gif">
+					<a href="gifs/trimMapper_08.gif" target="_blank"><img src="gifs/trimMapper_thumb_08.gif" class="scaled-gif"></a>
+				</div>
 				<br>
 				<br> 
 				
