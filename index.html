@@ -655,7 +655,6 @@
 						<li><a href="#section_lightMapper">Light Mapping Toolbox</a></li>
 						<li><a href="#section_easyUV">Easy UVs Toolbox</a></li>
 						<li><a href="#section_gridUV">Gridify UVs</a></li>
-						<li><a href="#section_recUV">Rectangularize UVs</a></li>
 						<li><a href="#section_uvMapper">UV Mapping Toolbox</a></li>
 						<li><a href="#section_uvGrouper">UV Grouping Toolbox</a></li>
 					</ul>
@@ -1275,19 +1274,10 @@
 					<a href="#section_gridUV"><img src="images/quick_start_guide/gridUV.png" class="QSG-left-image"></a>
 					<div class="QSG-text-container">
 						<p class="QSG-text-row"><b>Gridify UVs</b></p>
-						<p class="QSG-text-row">UV maps selected faces into a uniform grid of UVs. Existing UVs are not required for this tool to work, so you can gridify UVs on unmapped faces if you want.</p>
-					</div>
-				</div>
-				
-				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
-				<div class="QSG-image-QSG-text-container">
-					<a href="#section_recUV"><img src="images/quick_start_guide/recUV.png" class="QSG-left-image"></a>
-					<div class="QSG-text-container">
-						<p class="QSG-text-row"><b>Rectangularize UVs</b></p>
 						<p class="QSG-text-row">UV maps selected faces into a non-uniform grid of UVs with correct aspect ratio. Better and faster results than Maya's straighten UVs tool because faces are UV mapped instead of trying to straighten existing UVs which is slow and error prone. Existing UVs are not required for this tool to work.</p>
 					</div>
 				</div>
-				
+			
 				<p style="height: 11px; margin-top: 10px; margin-bottom: 10px;"></p>
 				<div class="QSG-image-QSG-text-container">
 					<a href="#section_uvMapper"><img src="images/quick_start_guide/uvMap.png" class="QSG-left-image"></a>
@@ -4077,175 +4067,27 @@
 				<p></p>
 				<br>
 				
-				<div class="bold">UV maps selected faces into a uniform grid of UVs.</div>
-				<p></p>
-				
-				<!-- Creates better faster results than Maya's straighten UVs tool because faces are UV mapped instead of trying to straighten existing UVs which is slow and error prone. As well, there's no tolerence setting so UVs won't collapse back onto themselves like the built in straighten UVs tool. -->
-				Select some faces in the 3d viewport or the UV editor and run the tool to gridify UVs.
-				<p></p>
-				
-				Existing UVs are not required for this tool to work so you can gridify UVs on unmapped faces if you want.
-				<br>
-				<br>
-			
-				<div class="bold">Limitations:</div>
-				<br>
-				-Doesn't work on triangles.
-				<br>
-				-Doesn't work on n-gons.
-				<br>
-				<br>
-
-				If the newly created grid of UV's is facing the wrong way, click the gridUV button a second time to rotate it by 90 degrees.
-				<div class="centered-gif">
-					<a href="gifs/gridUV_01.gif" target="_blank"><img src="gifs/gridUV_thumb_01.gif" class="scaled-gif"></a>
-				</div>
-				<br>
-				<br>
-				
-				This tool uses Maya's auto seam feature to automatically cut a UV seem when needed. For example, on cylindrical shaped meshes that don't have a natural UV border edge.
-				<p></p>
-				
-				If you're not happy with the resulting auto seam you can manually choose which edge loop to use as the UV seam:
-				<br>
-				<div style="margin-left: 10px;">
-				-Select your mesh, hold right mouse button and choose Multi.
-				<br>
-				-Select the edge loop you want to use as the UV cutting seam.
-				<br>
-				-Hold shift and select the faces you want to gridify so you have edges and faces selected at the same time.
-				<br>
-				-Selection order doesn't matter if you prefer to select faces first.
-				<br>
-				-Run the tool.				
-				<br>
-				</div>
-				<div class="centered-gif">
-					<a href="gifs/gridUV_02.gif" target="_blank"><img src="gifs/gridUV_thumb_02.gif" class="scaled-gif"></a>
-				</div>
-				<br>
-				<br>
-<!--Scroll to me
-<div id="target-section"></div>-->
-				The texel density the UVs are created with is 5.12 pixels per unit, if you'd like to modify this value locally:
-				<br>
-				<div style="margin-left: 10px;">
-					-Right click the gridUV button on the shelf and choose edit.
-					<br>
-					-A window opens displaying the code for the tool.
-					<br>
-					-Near the top of the code look for float $pixPerUnit = 5.1200;
-					<br>
-					-Change 5.1200; to whatever texel density you prefer.
-					<br>
-					-Next time you run the tool it will use the updated value you set.
-					<br>
-				</div>
-				<div class="centered-gif">
-					<a href="gifs/gridUV_03.gif" target="_blank"><img src="gifs/gridUV_thumb_03.gif" class="scaled-gif"></a>
-				</div>
-				<br>
-				<br>
-				
-				If you'd like to keep the existing texel density of the selected faces and apply that to the grid of UVs:
-				<br>
-				<div style="margin-left: 10px;">
-					-Right click the gridUV button on the shelf and choose edit.
-					<br>
-					-A window opens displaying the code for the tool.
-					<br>
-					-Near the top of the code look for $gridUVs_keepExistingShellTD = 0;
-					<br>
-					-Change the 0 to a 1.
-					<br>
-					-Next time you run the tool it will use the size of the selected faces in the UV editor as the texel density. If no UVs exist for the selected faces it will normalize the resulting grid of UVs to fill the 0-1 UV space.
-					<br>
-				</div>
-				<div class="centered-gif">
-					<a href="gifs/gridUV_04_v2.gif" target="_blank"><img src="gifs/gridUV_thumb_04_v2.gif" class="scaled-gif"></a>
-				</div>
-				<br>
-				<br>
-				
-				If you'd like to always normalize the grid of UVs to fill the 0-1 UV space:
-				<br>
-				<div style="margin-left: 10px;">
-					-Right click the gridUV button on the shelf and choose edit.
-					<br>
-					-A window opens displaying the code for the tool.
-					<br>
-					-Near the top of the code look for $gridUVs_normalizeShell = 0;
-					<br>
-					-Change the 0 to a 1.
-					<br>
-					-Next time you run the tool it will normalize the resulting grid of UVs to fill the 0-1 UV space.
-					<br>
-				</div>
-				<div class="centered-gif">
-					<a href="gifs/gridUV_05.gif" target="_blank"><img src="gifs/gridUV_thumb_05.gif" class="scaled-gif"></a>
-				</div>
-				<br>
-				<br>
-				
-				<a href="https://youtu.be/FI7UzPo_vqY?list=PLAUgGUDpaMENfz8Nd7Zw-LxDK_v5ZflY6" target="_blank"><span class="youtube-link">YouTube Video</span></a>
-				
-				<div class="page-end-vertical-space">
-				</div>				
-            </div>
-			
-			
-			<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-			<div id="section_recUV" class="content-section">
-				<br>
-				<span class=hf1>Rectangularize UVs</span>
-				<p></p>
-				
-				<img src="images/quick_start_guide/recUV.png" class="script-icon">
-				<p></p>
-				<br>
-				
-				<div class="bold">UV maps selected faces into a non-uniform grid of UVs with correct aspect ratio.</div>
+				<div class="bold">UV maps selected faces into non-uniform grid of UVs with correct aspect ratio.</div>
 				<p></p>
 				
 				This tool creates better and faster results than Maya's straighten UVs tool because faces are UV mapped instead of trying to straighten existing UVs which is slow and error prone. As well, there's no tolerence setting so UVs won't collapse back onto themselves if they're too close together like the built in straighten UVs tool.
 				<p></p>
 				
-				Select some faces that form a square, rectangle, or strip in the 3d viewport or the UV editor and run the tool to rectangularize UVs.
+				Select faces or meshes in the 3d viewport or the UV editor and run the tool to gridify UVs.
 				<p></p>
 				
-				Existing UVs are not required for this tool to work so you can rectangularize UVs on unmapped faces if you want.
-				<br>
-				<br>
-			
-				<div class="bold">Limitations:</div>
-				<br>
-				-Doesn't work on triangles.
-				<br>
-				-Doesn't work on n-gons.
-				<br>
-				-Doesn't work on selections that are jagged/stair stepped.
+				Existing UVs are not required for this tool to work so you can gridify UVs on unmapped faces if you want.
 				<br>
 				<br>
 
-				If the newly created grid of UV's is facing the wrong way, click the recUV button a second time to rotate it by 90 degrees.
+				If the newly created grid of UV's is facing the wrong way, click the gridUV button a second time to rotate it by 90 degrees.
 				<div class="centered-gif">
 					<a href="gifs/recUV_01.gif" target="_blank"><img src="gifs/recUV_thumb_01.gif" class="scaled-gif"></a>
 				</div>
 				<br>
 				<br>
 				
-				The recUV tool doesn't work on selections that are jagged or stair stepped, for the tool to work you need to select faces that form a square, rectangle, or strip. If you want to gridify a jagged selection use the gridUV tool instead.
-				<p></p>
-				
-				In the example image below you can see what type of face selection will work with the tool and what won't.
-				<br>
-				<div class="centered-gif">
-					<a href="gifs/recUV_help_01.jpg" target="_blank"><img src="gifs/recUV_help_thumb_01.jpg" class="scaled-gif"></a>
-				</div>
-				<br>
-				<br>
-				
-				This tool uses Maya's auto seam feature to automatically cut a UV seem when needed. For example, on cylindrical shaped meshes that don't have a natural UV border edge.
+				This tool automatically cuts UV seems when needed. For example, on cylindrical shaped meshes that don't have a natural UV border edge.
 				<p></p>
 				
 				If you're not happy with the resulting auto seam you can manually choose which edge loop to use as the UV seam:
@@ -4264,19 +4106,6 @@
 				</div>
 				<div class="centered-gif">
 					<a href="gifs/recUV_02.gif" target="_blank"><img src="gifs/recUV_thumb_02.gif" class="scaled-gif"></a>
-				</div>
-				<br>
-				<br>
-				
-				In certain situations even though you selected faces that form a square, rectangle, or strip, you may find that the tool fails. This is because Maya's auto seam created a UV border edge automatically that doesn't form a square, rectangle, or strip. If this happens you'll need to manually choose which edge loop to use as the UV seam.
-				<p></p>
-				
-				To determine if this is happening on your mesh, select the faces you want and run the gridUV tool instead of the recUV tool. The gridUV tool works on any shape of selection and will reveal the issue.
-				<p></p>
-				
-				If you run the gridUV tool and the UVs that get created are jagged or stair stepped, then you know the problem with recUV is caused by Maya's auto seam feature cutting a jagged edge and you'll need to manually choose which edge loop to use as the UV seam as shown in the example image above.
-				<div class="centered-gif">
-					<a href="gifs/recUV_03.gif" target="_blank"><img src="gifs/recUV_thumb_03.gif" class="scaled-gif"></a>
 				</div>
 				<br>
 				<br>
@@ -4343,7 +4172,17 @@
 				<br>
 				<br>
 				
-				<a href="https://youtu.be/FI7UzPo_vqY?list=PLAUgGUDpaMENfz8Nd7Zw-LxDK_v5ZflY6" target="_blank"><span class="youtube-link">YouTube Video</span></a>
+				<div class="bold">Gridify UVs Evenly</div>&nbsp;&nbsp;(right click the shelf button to access this tool)
+				<p></p>
+				UV maps selected faces into a uniform grid of UVs ignoring aspect ratio.
+				<br>
+				<div class="centered-gif">
+					<a href="gifs/gridUV_01.gif" target="_blank"><img src="gifs/gridUV_thumb_01.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br>
+				
+				<a href="https://youtu.be/FI7UzPo_vqY?list=PLAUgGUDpaMENfz8Nd7Zw-LxDK_v5ZflY6" target="_blank"><span class="youtube-link">YouTube Video from 2023</span></a>
 				
 				<div class="page-end-vertical-space">
 				</div>				
@@ -4816,7 +4655,7 @@
 				<br>
 				<a href="#section_gridUV">Gridify UVs</a>
 				<br>
-				<a href="#section_recUV">Rectangularize UVs</a>
+				<a href="#section_gridUV">Rectangularize UVs</a>
 				<p></p>
 				
 				Both tools work the same as the shelf button versions, but these versions use the texel density from the pix per unit input field found in this toolbox to create the grid of UVs. The shelf button versions of these tools have a fixed texel density that you have to modify in the script itself if you want to change it. 
