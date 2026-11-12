@@ -4575,33 +4575,27 @@
 				<br>
 				<br>
 
-				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> keep w/h ratio</span>
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> keep aspect ratio</span>
 				<br>
-				Turn on if you want to  keep the width/height ratio during UV creation when you press the map X, Y, Z, cam, automatic, and best buttons.
+				Turn on if you want to  keep the width/height aspect ratio during UV creation when you press the map X, Y, Z, cam, automatic, and best buttons.
 				<p></p>
 				
-				If you turn off keep w/h ratio the proj w/h checkbox is also turned off.
+				If you turn off keep aspect ratio the pix per unit checkbox is also turned off.
 				<div class="centered-gif">
 					<a href="gifs/uvMapper_02.gif" target="_blank"><img src="gifs/uvMapper_thumb_02.gif" class="scaled-gif"></a>
 				</div>
 				<br>
 				<br>
 
-				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> proj w/h</span>
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> pix per unit</span>
 				<br>
-				Turn on if you want to apply world space texel density during UV creation using the map X, Y, Z, cam, automatic, and best buttons.
+				Turn on if you want to apply pixels per unit texel density during UV creation using the map X, Y, Z, cam, automatic, and best buttons.
 				<p></p>
 				
-				Use the input field to set a world space value you want the UV mapping created at and then press the map X, Y, Z, cam, automatic, or best buttons to create UVs at that world space texel density.
+				Use the input field to set a pixels per unit value you want the UV mapping created at and then press the map X, Y, Z, cam, automatic, or best buttons to create UVs at that pixels per unit texel density.
 				<p></p>
 				
-				This is helpful if you want to create UV mapping at a consistent scale as you work. The default value is 400 world space units in Maya which is equal to 5.12 pixels per unit using a 2048x2048 texture. 
-				<p></p>
-				
-				If you want to find out what value you should use if you prefer pixels per unit as a measurement, take the target texture resolution divided by the pix per unit you want. For example, 2048 texture ÷ 5.12 pix per unit = proj w/h 400
-				<p></p>
-				
-				In this example image the plane is 400x400 world space units so applying a proj w/h of 400 and planar mapping on Y projects the UVs into the 0-1 UV space.
+				This is helpful if you want to create UV mapping at a consistent texel density as you work. The default value is 5.12 pixels per unit. 
 				<div class="centered-gif">
 					<a href="gifs/uvMapper_03.gif" target="_blank"><img src="gifs/uvMapper_thumb_03.gif" class="scaled-gif"></a>
 				</div>
