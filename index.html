@@ -4477,7 +4477,7 @@
 				<img src="images/quick_start_guide/uvMap.png" class="script-icon">
 				<p></p>
 				<br>
-				
+
 				<div class="bold">Creates UV mapping faster than Maya's built in method.</div>
 				<p></p>
 			
@@ -4520,6 +4520,12 @@
 				<span class="grey-button">reset</span>
 				<br>
 				Resets the toolbox back to default settings.
+				<br>
+				<br>
+
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> dockable</span>
+				<br>
+				Turn on if you want the toolbox to be dockable.
 				<br>
 				<br>
 
@@ -4646,19 +4652,17 @@
 				<br>
 				<br> 
 
-				<span class="purple-button" style="width: 90px;">grid UV</span> <span class="purple-button" style="width: 90px;">rec UV</span>
+				<span class="purple-button" style="width: 110px;">gridify UVs</span> <span class="purple-button" style="width: 70px;">evenly</span>
 				<br>
-				The grid UV button maps selected faces into a uniform grid of UVs, the rec UV button maps selected faces into a non-uniform grid of UVs with correct aspect ratio.
+				The gridify UVs button maps selected faces into non-uniform grid of UVs with correct aspect ratio.
 				<p></p>
 				
-				To get help on gridUV and recUV click the links below to go to their individual help pages:
+				To get help on gridify UVs click the link below to go to the individual help page:
 				<br>
 				<a href="#section_gridUV">Gridify UVs</a>
-				<br>
-				<a href="#section_gridUV">Rectangularize UVs</a>
 				<p></p>
 				
-				Both tools work the same as the shelf button versions, but these versions use the texel density from the pix per unit input field found in this toolbox to create the grid of UVs. The shelf button versions of these tools have a fixed texel density that you have to modify in the script itself if you want to change it. 
+				Gridify UVs works the same as the shelf button gridUV version, but this version uses the texel density from the pix per unit input field found in this toolbox to create the grid of UVs. The shelf button version of this tool has a fixed texel density that you have to modify in the script itself if you want to change it. 
 				<div class="centered-gif">
 					<a href="gifs/recUV_01.gif" target="_blank"><img src="gifs/recUV_thumb_01.gif" class="scaled-gif"></a>
 				</div>
@@ -4778,30 +4782,29 @@
 				UVs are straightened using an angle of 30. For best results using the straighten shell button, select an edge loop that runs across the shell first so that edge loop is used as the line to try to straighten the shell to.
 				<br>
 				<br>
-
+<!--Scroll to me-->
+<div id="target-section"></div>
 				<span class="checkbox-button"><span style="background-color: #292929;"></span>Orient Shells To</span><br>
-				<span class="r-button" style="width: 59px;">X</span> <span class="g-button" style="width: 58px;">Y</span> <span class="b-button" style="width: 59px;">Z</span>
+				<span class="r-button" style="width: 30px;">X</span> <span class="g-button" style="width: 30px;">Y</span> <span class="b-button" style="width: 30px;">Z</span> <span class="grey-button" style="width: 81.5px;">edge/UVs</span>
 				<br>
-				Orients selected UV shells to world space X, Y, or Z. Clicking the button again will flip the shell to face positive or negative along that axis.
+				The X, Y, Z, buttons orient selected UV shells to world space X, Y, Z. Clicking the button again will flip the shells to face positive or negative along that axis.
 				<p></p>
 				
-				Using orient X, Y, Z can be faster than using orient to edge or orient to UVs because you can select whole shells in the 3D viewport which is more intuitive, especially for circular shells where you can't tell which edge is facing which way in the UV editor.
+				Using orient X, Y, Z is much faster than using orient to edge or orient to UVs because you can select whole shells in the 3D viewport and no matter which way they're facing in UV space they'll be adjusted to point in the axis you choose which is helpful for baking programs like Substance Painter.
+				<p></p>
+				
+				The edge/UVs button orients a UV shell to a selected edge, or two selected UVs.
 				<div class="centered-gif">
 					<a href="gifs/uvMapper_07.gif" target="_blank"><img src="gifs/uvMapper_thumb_07.gif" class="scaled-gif"></a>
 				</div>
 				<br>
 				<br>
 
-				<span class="grey-button">edge/UVs</span><br>
-				Orients a UV shell to a selected edge, or two selected UVs.
-				<br>
-				<br>
-				
-				<span class="grey-button" style="width: 90px;">horizontal</span> <span class="grey-button" style="width: 90px;">vertical</span><br>
-				Orients selected UV shells to the horizontal or vertical axis in the UV editor. Clicking the button again will flip the shell to face positive or negative along that axis.
+				<span class="grey-button" style="width: 90px;">length U</span> <span class="grey-button" style="width: 90px;">length V</span><br>
+				Orients selected UV shells to the length of the mesh along U or V. Clicking the button again will flip the shell to face positive or negative along that length.
 				<p></p>
 				
-				These tools should be used in conjunction with orient X, Y, Z. If orient X and Z don't produce a straight shell use orient horizontal. If orient Y doesn't produce a straight shell use orient vertical.
+				These tools are useful if your mesh has no thickness and you need to make all the UV shells follow a specific direction along the mesh, for example hair cards and trim detail on a floor.
 				<div class="centered-gif">
 					<a href="gifs/uvMapper_08.gif" target="_blank"><img src="gifs/uvMapper_thumb_08.gif" class="scaled-gif"></a>
 				</div>
