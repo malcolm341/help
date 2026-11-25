@@ -202,9 +202,17 @@
 			align-items: center; /* Aligns items at the bottom of the container used to be flex-start*/
 		}
 		
+		.QSG-image-QSG-text-container > a
+		{
+			flex-shrink: 0; /* The link around the icon is the flex item, so it must not shrink either */
+			display: block;
+		}
+
 		.QSG-left-image
 		{
 			width: 50px;
+			min-width: 50px;
+			flex-shrink: 0; /* Stops the icon being squeezed by long text on narrow screens */
 			height: auto;
 			margin-right: 10px; /* Space between the image and the text */
 		}
@@ -534,7 +542,54 @@
 			outline: none;
 		}
 
-		
+		/*Mobile layout: stack the table of contents on top and the content below*/
+		@media (max-width: 800px)
+		{
+			body
+			{
+				flex-direction: column;
+				justify-content: flex-start;
+				height: 100dvh; /* dvh accounts for the phone browser's address bar */
+			}
+
+			.banner
+			{
+				position: static;
+				width: 100%;
+			}
+
+			.container
+			{
+				flex-direction: column;
+				width: 100%;
+				max-width: 100%;
+				height: auto;
+				margin-top: 0;
+				flex: 1;
+				min-height: 0;
+			}
+
+			.sidebar
+			{
+				width: 100%;
+				box-sizing: border-box;
+				flex-shrink: 0;
+				max-height: 35vh; /* TOC scrolls in its own box so the content stays visible below */
+			}
+
+			.content
+			{
+				width: 100%;
+				flex: 1;
+				min-height: 0;
+			}
+
+			.content img
+			{
+				max-width: 100%;
+				height: auto;
+			}
+		}
     </style>
 </head>
 
