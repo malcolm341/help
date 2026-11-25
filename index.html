@@ -438,6 +438,20 @@
 			text-align: center; /* Center text horizontally */
 		}
 		
+		.white-button
+		{
+			background-color: white; /*Background colour*/
+			border: 1px solid white; /*Border colour*/
+			/*padding: 5px; /* Increase padding vertical */
+			/*padding-left: 10px; /* Add padding to the left */
+			
+			margin-bottom: 5px;
+			box-sizing: border-box; /* Include padding and border in the element's total width and height */
+			width: 185px; /* Set a fixed width */
+			display: inline-block; /* Ensure the width is applied while staying inline */
+			text-align: center; /* Center text horizontally */
+		}
+		
 		.beveler1-button
 		{
 			background-color: #d470a3; /*Background colour*/
@@ -4484,6 +4498,8 @@
 				The main benefit of this toolbox is it contains the best UV mapping commands and the best UV Toolkit commands all in one place. It also has a bunch of custom tools to make working with UVs faster.
 				<p></p>
 				
+				For example, gridify UVs with correct aspect ratio, layout UVs around pinned UV shells, planar mapping with texel density, group UV shells so they stack together, etc.
+				
 				Having all the best UV tools in a single toolbox significantly speeds up UV creation and editing.
 				<p></p>
 				
@@ -4613,7 +4629,7 @@
 				Applies camera mapping, automatic mapping, or best plane mapping to your selection.
 				<p></p>
 				
-				Automatic mapping needs to be done in world space for the proj w/h checkbox to work correctly so the scale transform will be frozen on any meshes you use automatic mapping on.
+				Automatic mapping needs to be done in world space for the pix per unit checkbox to work correctly so the scale transform will be frozen on any meshes you use automatic mapping on.
 				<p></p>
 				
 				If you want to change the number of automatic map projection planes you can modify the script locally:
@@ -4633,13 +4649,13 @@
 				<p></p>
 				</div>
 				
-				Turn on the keep w/h ratio checkbox and turn off the proj w/h checkbox if you want the automatic mapping to uniformly scale the UV shells to fit into the 0-1 UV space.
+				Turn on the keep aspect ratio checkbox and turn off the pix per unit checkbox if you want the automatic mapping to uniformly scale the UV shells to fit into the 0-1 UV space.
 				<p></p>
 				
-				Turn off the keep w/h and proj w/h checkboxes if you want the automatic mapping to stretch the UV shells to fit into the 0-1 UV space.
+				Turn off the keep aspect ratio and pix per unit checkboxes if you want the automatic mapping to stretch the UV shells to fit into the 0-1 UV space.
 				<p></p>
 				
-				Turn on the keep w/h and proj w/h checkboxes if you want to apply world space texel density to the automatic mapping using the value from the input field, UV shells will be created outside the 0-1 UV space.
+				Turn on the keep aspect ratio and pix per unit checkboxes if you want to apply texel density to the automatic mapping using the value from the input field, UV shells will be created outside the 0-1 UV space.
 				<div class="centered-gif">
 					<a href="gifs/uvMapper_04.gif" target="_blank"><img src="gifs/uvMapper_thumb_04.gif" class="scaled-gif"></a>
 				</div>
@@ -4662,21 +4678,9 @@
 				</div>
 				<br>
 				<br> 
-
-				<span class="checkbox-button">Move Shells <span style="background-color: #292929;">&nbsp;✔&nbsp;</span> align</span><br>
-				Turn off if you want the up, left, down, right buttons to move selected UV shells by one tile in the specified direction.
-				<p></p>
-				
-				Turn on if you want the up, left, down, right buttons to align UVs in the specified direction.
-				<p></p>
-
-				Switch to UV shell component mode and select two or more UV shells if you want to align UV shells in the specified direction instead of aligning individual UVs.
-				<div class="centered-gif">
-					<a href="gifs/uvMapper_05.gif" target="_blank"><img src="gifs/uvMapper_thumb_05.gif" class="scaled-gif"></a>
-				</div>
-				<br>
-				<br> 
-				
+<!--Scroll to me
+<div id="target-section"></div>-->
+				<span class="checkbox-button">Transform</span><br>
 				<span class="grey-button" style="width: 90px;">rotate</span> <span class="grey-button" style="width: 91px;">rotate</span>
 				<br>
 				Rotates selected UVs left or right 90 degrees. The left rotate button rotates left, and the right rotate button rotates right.
@@ -4733,10 +4737,21 @@
 				<p></p>
 				</div>
 				
-				<span class="purpleDrank-button" style="width: 42px;">up</span> <span class="purpleDrank-button" style="width: 42px;">left</span> <span class="purpleDrank-button" style="width: 45.5px;">down</span> <span class="purpleDrank-button" style="width: 42px;">right</span><br>
-				Moves selected shells by one tile in the chosen direction. To save time only one component needs to be selected on the shell to move the whole shell.
+				<span style="display: block; height: 10px; line-height: 0; font-size: 0; margin-bottom: 4.5px;"><span class="white-button" style="width: 68px; height: 10px; vertical-align: top;"></span><span class="purpleDrank-button" style="width: 49px; height: 10px; vertical-align: top; margin-bottom: 0;"></span></span>
+				<span class="white-button" style="width: 68px;"></span><span class="purpleDrank-button" style="width: 49px;">up</span>
 				<br>
+				<span class="purpleDrank-button" style="width: 10px; height: 27px; vertical-align: top; margin-right: 4.5px;"></span><span class="purpleDrank-button" style="width: 49px; vertical-align: top; margin-right: 4.5px;">left</span><span class="purpleDrank-button" style="width: 49px; vertical-align: top; margin-right: 4.5px;">down</span><span class="purpleDrank-button" style="width: 49px; vertical-align: top; margin-right: 4.5px;">right</span><span class="purpleDrank-button" style="width: 10px; height: 27px; vertical-align: top;"></span>
 				<br>
+				<span style="display: block; height: 10px; line-height: 0; font-size: 0; margin-bottom: 4.5px;"><span class="purpleDrank-button" style="width: 185px; height: 10px; vertical-align: top; margin-bottom: 0;"></span></span>
+				The up, left, down, right buttons move selected shells by one tile in the chosen direction. To save time only one component needs to be selected on the shell to move the whole shell.
+				<p></p>
+				
+				The buttons without any text on them align UVs in the chosen direction. Switch to UV shell component mode and select two or more UV shells if you want to align UV shells in the specified direction instead of aligning individual UVs. 
+				<div class="centered-gif">
+					<a href="gifs/uvMapper_05.gif" target="_blank"><img src="gifs/uvMapper_thumb_05.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br> 
 
 				<span class="blue-button" style="width: 79px;">stack</span> <span class="blue-button" style="width: 48px;">flipU</span> <span class="blue-button" style="width: 49px;">flipV</span><br>
 				Stacks selected UV shells on top of each other. To save time only one component needs to be selected on each shell to stack them.
@@ -4946,22 +4961,55 @@
 				</div>
 				<br>
 				<br>
-
+<!--Scroll to me
+<div id="target-section"></div>-->
+				<span class="grey-button" style="width: 76px;">unpin all</span> <span class="grey-button" style="width: 50px;">pin</span> <span class="grey-button" style="width: 50px;">unpin</span><br>
+				The pin button pins selected UV shells in the UV editor. The unpin button unpins selected UV shells in the UV editor. The unpin all button unpins all UV shells in the UV editor.
+				<p></p>
+				
+				To save time only one component needs to be selected on the shell to pin or unpin the whole shell. If you select whole UV shells you can save time by pressing p on the keyboard to pin selected UVs and shift + p to unpin all.
+				<p></p>
+				
+				Pinned UV shells are locked in place and won't be moved, scaled, or rotated when you press the layout UVs button. This is a special feature which is not available in Maya’s default Layout UV window.
+				<p></p>
+				
+				In this toolbox UVs will pack around pinned UV shells allowing you to manually place and stack specific shells where you want, then pin them, then layout UVs around them.
+				<p></p>
+				
+				Turn on the uniform TD checkbox if you want your UV shells to have uniform texel density relative to each other. Unpinned UV shells will be scaled uniformly up or down to fill the empty space in the 0-1 UV tile.
+				<p></p>
+				
+				Turn on the keep TD checkbox if you want your UV shells to keep their current texel density. Unpinned UV shells won't be scaled in any way and will fill up the empty space in the 0-1 UV tile. If there isn't enough room in the 0-1 UV tile shells will overflow into the next tile.
+				<p></p>
+				
+				Turn off the uniform TD checkbox and turn off the keep TD checkbox if you want to keep your UV shells texel density relative to each other. Unpinned UV shells will be scaled relative to each other up or down to fill the empty space in the 0-1 UV tile.
+				<p></p>
+				
+				If you turn off the pack checkbox pinned UVs are ignored.
+				<div class="centered-gif">
+					<a href="gifs/uvMapper_19.gif" target="_blank"><img src="gifs/uvMapper_thumb_19.gif" class="scaled-gif"></a>
+				</div>
+				<br>
+				<br>
+				
 				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> flip</span><br>
 				Turn on if you want to flip reversed UV shells when you press the layout UVs button.
 				<br>
 				<br>
 
 				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> orient</span><br>
-				Turn on if you want to rotate UV shells for best fit when you press the layout UVs button.
-				<br>
-				<br>
-				
-				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> move</span><br>
-				Turn on if you want to move UV shells for best fit when you press the layout UVs button. In most cases you'll want to leave this checkbox on.
+				Turn on if you want to rotate UV shells to 90 degree angles for best fit when you press the layout UVs button.
 				<p></p>
 				
-				Turning this checkbox off will keep your existing UV layout, but scale it up to fill the 0-1 UV space. This is helpful if you want to adjust your UV layout by hand and try different arrangements to get the most efficient UV pack.
+				I recommend turning this checkbox off because it will rotate shells every time you layout. Instead, use the orient shells to buttons for consistent layout results.
+				<br>
+				<br>
+				
+				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> pack</span><br>
+				Turn on if you want to pack UV shells for best fit when you press the layout UVs button. In most cases you'll want to leave this checkbox on.
+				<p></p>
+				
+				Turning this checkbox off will keep your existing UV layout, but scale it up or down to fill the 0-1 UV space. This is helpful if you want to adjust your UV layout by hand and try different arrangements to get the most efficient UV pack.
 				<div class="centered-gif">
 					<a href="gifs/uvMapper_17.gif" target="_blank"><img src="gifs/uvMapper_thumb_17.gif" class="scaled-gif"></a>
 				</div>
@@ -4983,9 +5031,6 @@
 
 				<span class="checkbox-button"><span style="background-color: #292929;">&nbsp;✔&nbsp;</span> keep TD</span><br>
 				Turn on if you want to keep the current texel density of the UV shells when you press the layout UVs button. Keeping the current texel density can result in a UV pack which extends outside the 0-1 UV space.
-				<p></p>
-				
-				The keep TD checkbox works in conjunction with the uniform TD checkbox, so if you'd like to keep the exact texel density you see on all your shells during UV layout, you have to turn off the uniform TD checkbox to avoid shells having uniform texel density relative to one another.
 				<div class="centered-gif">
 					<a href="gifs/uvMapper_18.gif" target="_blank"><img src="gifs/uvMapper_thumb_18.gif" class="scaled-gif"></a>
 				</div>
